@@ -1,0 +1,21 @@
+plague_domain = {
+    description = "Control over sickness and pestilence, including those who are sick."
+    devoted_criteria = "Has three or more illnesses, none of which can be granted directly by you."
+    devoted_effects = "Devoted gain a bonus for each illness they have."
+    follower_effects = "Plague's followers won't die of illness - they gain a health bonus to offset the illness. They otherwise suffer all effects as normal, and can never be cured of a disease by any natural means."
+    special_powers = {
+        plague_eruption = "Start an outbreak of plague in a county, a subtype of cataclysm. Infected characters have a chance of converting to your religion to survive, and so does the county."
+    }
+    other_features = "Deathly ill mortals might convert to you in order to survive.\nEvery so often, a plague starts wherever you are."
+}
+
+love_domain = {
+    description = "Control over love both in true love such as lovers and the more seductive side of intrigue. This love can even include self love as well. Also platonic love such as friendships are covered under this domain."
+    devoted_criteria = "Seeks the aid of their patron deity in their pursue of love either by genuine devotion, falling in love with their arranged marriage partner, or using seduction to acquire a lover."
+    devoted_effects = "Devoted gain a bonus with skills involving seduction (intrigue). Stacks with a decreased amount after a set number of scheme completions to avoid becoming OP."
+    follower_effects = "Followers of the God/Goddess of love find themselves having a much easier time in their mortal lives than others when it comes to romance or the bedside."
+    special_powers = {
+        love_forsaken = "A character has so offended you that they are going to find the path of love fruitless. Their name scorned, despised, and hated. They will have an option to pursue a quest and rectify their offense to you or else go down in history as a legend. The end conclusion results in the character becoming destitute not just of land, but of sound mind being driven insane by the curse."
+    }
+    other_features = "Devotees can organize a festival to honor their patron.\nLove can be divided into four fields: Self Love (a path to decrease stress and focus on self care), Romantic Love, Platonic Love (friendship), and Hedonistic Love (seduction for the sake of pleasure)"
+}
