@@ -359,3 +359,31 @@ mortals_unhappy_from_prayers = {
 	icon = piety_negative
 	monthly_piety_gain_mult = -0.2
 }
+plague_domain_modifier = {
+        icon = magic_positive
+        health = 2
+        epidemic_resistance = 5
+}
+
+love_domain_modifier = {
+        icon = diplomacy_positive
+        diplomacy = 2
+        attraction_opinion = 20
+}
+
+plague_outbreak_modifier = {
+        icon = magic_negative
+        levy_size = -0.3
+        levy_reinforcement_rate = -0.3
+        epidemic_resistance = -10
+        supply_limit_mult = -0.5
+        tax_mult = -0.3
+        stacking = yes
+}
+
+love_forsaken_modifier = {
+        icon = diplomacy_negative
+        diplomacy = -5
+        attraction_opinion = -50
+        fertility = -0.5
+}
