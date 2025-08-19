@@ -1,4 +1,5 @@
 # Divine ascension and domain decisions
+# Ascension limited to non-divine characters, domain embraces grant permanent modifiers
 become_divinity_decision = { #by Linnéa Thimrén
         picture = {
                 reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
