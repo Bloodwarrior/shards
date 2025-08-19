@@ -29,6 +29,11 @@
  lesser_curse_of_battle_modifier: "Lesser Curse of Battle"
  lesser_curse_of_mind_modifier: "Lesser Curse of Mind"
 
+ plague_domain_modifier: "Plague Domain"
+ love_domain_modifier: "Love Domain"
+ plague_outbreak_modifier: "Plague Outbreak"
+ love_forsaken_modifier: "Love Forsaken"
+
  faithful_counties_5: "Faithful Counties: 5-10"
  faithful_counties_5_desc: "The divinity gains stregnth from these counties, using [faith_harvesting|E]"
  faithful_counties_10: "Faithful Counties: 10-20"
