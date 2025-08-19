@@ -1,0 +1,47 @@
+is_a_divinity = {
+	has_trait_with_flag = divinity
+}
+
+has_health_problems = {
+	OR = {
+		has_trait = wounded_1
+		has_trait = wounded_2
+		has_trait = wounded_3
+		has_trait = maimed
+		#has_trait = eunuch
+		has_trait = one_legged
+		has_trait = one_eyed
+		has_trait = infirm
+		has_trait = incapable
+		has_trait = disfigured
+
+		has_trait = blind
+		has_trait = cancer
+		has_trait = ill
+		has_trait = lovers_pox
+		has_trait = consumption
+
+		has_trait = bubonic_plague
+		has_trait = smallpox
+		has_trait = great_pox
+		has_trait = gout_ridden
+		has_trait = disfigured
+	}
+}
+
+should_rebirth = {
+	OR = {
+		has_trait_with_flag = rebirth
+		has_trait_with_flag = rebirth_pl
+		has_character_flag = rebirth
+	}   		
+	NOT = { has_character_flag = no_ressurection }
+}
+
+any_immortal_trait = {
+	OR = {
+		has_trait = eternal_trait
+		has_trait = reborn_trait
+		has_trait = true_immortal_trait
+	}
+}

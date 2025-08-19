@@ -1,0 +1,59 @@
+become_divinity_effect = {
+	trigger_event = divine_creation.0001
+	
+}
+
+set_avatar_trait_level = {
+	remove_trait = avatar_1
+	remove_trait = avatar_2
+	remove_trait = avatar_3
+	remove_trait = avatar_4
+	remove_trait = avatar_5
+	remove_trait = avatar_6
+	if = {
+		limit = {
+			$LEVEL$ = 6
+		}
+		add_trait = avatar_6
+	}
+	else_if = {
+		limit = {
+			$LEVEL$ = 5
+		}
+		add_trait = avatar_5
+	}
+	else_if = {
+		limit = {
+			$LEVEL$ = 4
+		}
+		add_trait = avatar_4
+	}
+	else_if = {
+		limit = {
+			$LEVEL$ = 3
+		}
+		add_trait = avatar_3
+	}
+	else_if = {
+		limit = {
+			$LEVEL$ = 2
+		}
+		add_trait = avatar_2
+	}
+	else_if = {
+		limit = {
+			$LEVEL$ = 1
+		}
+		add_trait = avatar_1
+	}
+	if = {
+		limit = {
+			has_variable = immortal_age
+		}
+		set_immortal_age = var:immortal_age
+	}
+	else = {
+		set_variable = { name = immortal_age value = 20 }
+		set_immortal_age = var:immortal_age
+	}
+}

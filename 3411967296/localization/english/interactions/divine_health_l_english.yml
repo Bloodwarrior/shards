@@ -1,0 +1,10 @@
+﻿l_english:
+ heal_harm_interaction: "Heal\\Harm"
+ heal_harm_interaction_desc: "Harness your divine might to either heal [recipient.GetShortUINameNoTooltip], or inflict terrible harm upon them."
+ heal_option: "Heal"
+ illness_option: "Inflict Illness"
+ injure_option: "Injure"
+ severly_injure_option: "Severly Injure"
+ smite_option: "Smite!"
+ GAIN_TWO_WOUNDS: "[recipient.GetShortUINameNoTooltip] will gain two levels of wounds."
+ WILL_NOT_RETURN: "The character will be permenantly killed - even if blessed by [rebirth|E]."

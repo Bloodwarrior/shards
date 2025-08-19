@@ -1,0 +1,247 @@
+﻿create_army_interaction = {
+	category = interaction_category_religion
+	icon = create_army
+
+	interface_priority = 50
+	desc = create_army_interaction_desc
+	
+	is_shown = {
+		scope:actor = { is_a_divinity = yes }
+	}
+
+	is_valid_showing_failures_only = {
+	}
+
+	send_options_exclusive = yes
+
+	send_option = {
+		flag = levies_500
+		localization = levies_500_option
+	}
+
+	send_option = {
+		flag = levies_2500
+		localization = levies_2500_option
+	}
+
+	send_option = {
+		flag = divine_footmen
+		localization = divine_footmen_option
+	}
+
+	send_option = {
+		flag = divine_footmen_large
+		localization = divine_footmen_large_option
+	}
+
+	send_option = {
+		flag = divine_bowmen
+		localization = divine_bowmen_option
+	}
+
+	send_option = {
+		flag = divine_bowmen_large
+		localization = divine_bowmen_large_option
+	}
+
+	send_option = {
+		flag = divine_knights
+		localization = divine_knights_option
+	}
+
+	send_option = {
+		flag = divine_knights_large
+		localization = divine_knights_large_option
+	}
+
+	send_option = {
+		flag = divine_titan
+		localization = divine_titan_option
+	}
+
+	on_accept = {
+		scope:recipient = {
+			if = {
+				limit = {
+					scope:levies_500 = yes
+				}
+				spawn_army = {
+					inheritable = no
+					levies = 500
+					location = location
+					name = DIVINE_ARMY
+				}
+			}
+
+			if = {
+				limit = {
+					scope:levies_2500 = yes
+				}
+				spawn_army = {
+					inheritable = no
+					levies = 2500
+					location = location
+					name = DIVINE_ARMY
+				}
+			}
+
+			if = {
+				limit = {
+					scope:divine_footmen = yes
+				}
+				spawn_army = {
+					inheritable = no
+					men_at_arms = {
+						type = divine_armored_footmen
+						stacks = 1
+					} 
+					location = location
+					name = DIVINE_ARMY
+				}
+			}
+
+			if = {
+				limit = {
+					scope:divine_footmen_large = yes
+				}
+				spawn_army = {
+					inheritable = no
+					men_at_arms = {
+						type = divine_armored_footmen
+						stacks = 5
+					} 
+					location = location
+					name = DIVINE_ARMY
+				}
+			}
+
+			if = {
+				limit = {
+					scope:divine_bowmen = yes
+				}
+				spawn_army = {
+					inheritable = no
+					men_at_arms = {
+						type = divine_bowmen
+						stacks = 1
+					} 
+					location = location
+					name = DIVINE_ARMY
+				}
+			}
+
+			if = {
+				limit = {
+					scope:divine_bowmen_large = yes
+				}
+				spawn_army = {
+					inheritable = no
+					men_at_arms = {
+						type = divine_bowmen
+						stacks = 5
+					} 
+					location = location
+					name = DIVINE_ARMY
+				}
+			}
+
+			if = {
+				limit = {
+					scope:divine_knights = yes
+				}
+				spawn_army = {
+					inheritable = no
+					men_at_arms = {
+						type = divine_armored_horsemen
+						stacks = 1
+					} 
+					location = location
+					name = DIVINE_ARMY
+				}
+			}
+
+			if = {
+				limit = {
+					scope:divine_knights_large = yes
+				}
+				spawn_army = {
+					inheritable = no
+					men_at_arms = {
+						type = divine_armored_horsemen
+						stacks = 5
+					} 
+					location = location
+					name = DIVINE_ARMY
+				}
+			}
+
+			if = {
+				limit = {
+					scope:divine_titan = yes
+				}
+				spawn_army = {
+					inheritable = no
+					men_at_arms = {
+						type = divine_titan
+						stacks = 1
+					} 
+					location = location
+					name = DIVINE_ARMY
+				}
+			}
+		}
+	
+	}
+
+	auto_accept = yes
+
+	cost = {
+		piety = {
+			add = {
+				desc = "BASE_VALUE"
+				value = create_army_base_cost
+				format = "BASE_VALUE_FORMAT"
+			}
+		
+			if = {
+				limit = {
+					OR = {
+						scope:levies_2500 = yes
+						scope:divine_footmen_large = yes
+						scope:divine_bowmen_large = yes
+						scope:divine_knights_large = yes
+					}
+					
+				}
+				add = {
+					desc = "BIG_REGIMENT"
+					value = create_army_big_regiment_cost
+					# format = "BASE_VALUE_FORMAT"
+				}
+			}
+		
+			if = {
+				limit = {
+					scope:divine_titan = yes
+				}
+				add = {
+					desc = "TITAN"
+					value = create_army_titan_cost
+					# format = "BASE_VALUE_FORMAT"
+				}
+			}
+		}
+	}
+	
+	# AI
+	# ai_targets = {
+	# }
+	# ai_frequency = 12
+
+	# ai_potential = {
+	# }
+
+	# ai_will_do = {
+	# 	base = 0
+	# }
+}

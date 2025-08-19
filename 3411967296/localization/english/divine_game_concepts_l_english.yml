@@ -1,0 +1,37 @@
+﻿l_english:
+ game_concept_rebirth: "Rebirth"
+ game_concept_rebirth_desc: "A potent blessing a divinity can give to their followers, that allows them to return from death - at a cost. The Divnity reforges the follower, remaking them from their own ineffeable energy. Thereafter, each time the Reborn dies, they come back - young and strong, retaining much of their ability and power.\n\nSome things are kept - their stats and traits, appearance, artefacts. Some things are lost, however - relationships, opinions and other trivialties of the mortal condition.\n\nIn addition, each return puts a strain on the immortal mind - over time, the stress of dying and returning tends to overwhelm many of the Reborn, after a few cycles."
+ 
+ game_concept_eternity: "Eternity"
+ game_concept_eternity_desc: "For those so blessed by the divine, forever awaits - as they have become unaging, frozen in time - eternal. They will not grow old, but that does not make them truly immortal - a blade or illness can still strike them down, as do the cruel savagries of fate."
+
+ game_concept_investment: "Investment Level"
+ game_concept_invested: "Invested"
+ game_concept_investment_desc: "When a divinity imbues a mortal with power - wheter it be a blessing, immortality, or even a curse, it changes the mortal in question. The more power the diety invests in a person, the less human they become - and the more #bold divine#! they become.\n\nThis is a double edged sword - for while a person with high Investment Level is better protected from curses and harm originating from other divinities, they are also harder to bless. Each Investment Level makes any power used on the mortal cost more divine might, increasing the piety cost."
+
+ game_concept_faith_harvesting: "Faith Harvesting"
+ game_concept_faith_harvesting_desc: "Divinities benefit from mortal faith. A glorious spark hiding within their hearts, their soul or just thought creating reality - the theories are manyfold as to why infinite beings gain power from humans.\n\nThe most common way for divinities to gain faith from mortals is by converting their counties. Each county brings the god a little more power."
+
+ game_concept_divinity: "Divinity"
+ game_concept_divinity_desc: "This character is a divine being - a God or Godess, imbued with the great powers of creation, destruction and manipulation."
+
+ game_concept_manifestation: "Manifestation"
+ game_concept_manifestation_desc: "A divinity is an infinite being, their power absolute and eldrich. However, that power cannot all manifest in the world at once - a deity needs a connection, or a focus through which to channel their power. For this, the divine habe Manifestations - ways of connecting with the world and bringing their power to bear on it."
+
+ game_concept_avatar: "Avatar"
+ game_concept_avatar_desc: "An Avatar is a [manifestation|E] by which a Divinity creates a physical body out of their divine essence. These bodies are terriable, mighty things, capable of outmaneuvering the mortals around them and smiting armies. They are also mostly immortal - for as long the diety maintains it's Piety Level. As the piety level of the divinity rises, the avatar becomes more powerful.\n\nOn the flipside, such a powerful body takes a lot of power to maintain, taxing the Divinity's energy."
+
+ game_concept_perpendicularity: "Perpendicularity"
+ game_concept_perpendicularity_desc: "A Perpendicularity is a [manifestation|E] by which a Divinity invests itself into a land, creating a powerful, deep connection with it. The invested county changes to fit the deity's nature, and becomes a powerful beacon of divinity.\n\nThe divinity can also create a limited, yet immortal, human body - one that, while powerful, cannot leave the invested county - which hampers it's usefulness.\n\nThere is another major downside - should the invested county ever be conqured, the diety will lose it's connection to the world - effectively dying."
+
+ game_concept_prophet: "Prophet"
+ game_concept_prophet_desc: "A Prophet is a [manifestation|E] by which a Divinity chooses a mortal to be it's Prophet - and forges a deep, personal connection with them. Through that connection, a deity can use it's powers on the world. The Prophet is a mortal like any other, which means they can be blessed and cursed, although not turned immortal. Should the Prophet die, their heir can take their place."
+
+ game_concept_monster: "Monster"
+ game_concept_monster_desc: "A great and terrible combatant. Dragons, titans and transformed demigods belong to this category. Usually created by Divinities or powerful magic, mortals should fear ever facing monsters in combat."
+
+ game_concept_dominion: "Dominion"
+ game_concept_dominion_desc: "A Divnity has Dominion over certain mortals - those who follow him, embody his faith's values, or enter his realm. On these mortals, using divine might is easier. Conversly, those mortals who oppose him - heretics, foreign rulers, enemies - these are harder to affect. A divnity would be wise to instead crush them with the arms of his faithful.\n\n#P + Having virtuous traits to your faith\n+ Mortal is physically in your realm\n+ Character is your subject#!\n\n#N - Character is of a different faith\n- Character is of a hostile faith\n- Character is at war with the Divnity\n\n#!"
+
+ game_concept_prayer: "Prayer"
+ game_concept_prayer_desc: "Mortals face a variety of problems during their short lives - famine, plague, war, destitution and more. Others are simply ambitious or greedy, desiring more than they have now. When these mortals become desperate, they often turn to the divine - that is when a prayer is born. The mortal preforms a ritual to call the attention of the [divinity|e], and then the [divinity|e] can decide whether or not to grant the mortal's wish.\n\nIf the [divinity|e] grants the mortal's request, they become more loyal to them - and will convert to their faith if currently practicing a different religion. If the [divinity|e] refuses, the mortal will become disgruntled, potentially commiting heresy.\n\nA divinity can adjust how many prayers they receive by using the 'Prayer Management' interaction on themsleves. More powerful gods will receive more prayers."

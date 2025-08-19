@@ -1,0 +1,45 @@
+namespace = divine_creation
+
+divine_creation.0001 = {
+	title = divine_creation.0001.title
+	desc = divine_creation.0001.desc
+	theme = faith
+
+	left_portrait = root
+	
+	immediate = {
+		play_music_cue = "mx_cue_general_crusade_event_2"
+		remove_trait = divinity_trait
+		set_variable = { name = prayer_level_preferance value = 1 }
+	}
+	
+	option = {
+		name = divine_creation.0001.a
+		set_local_variable = { name = level  value = { value = piety_level add = 1 }  }
+		set_variable = { name = immortal_age value = age}
+		set_avatar_trait_level = { LEVEL = local_var:level }
+
+	}
+	
+	option = {
+		name = divine_creation.0001.b
+		add_trait = perpendicularity_avatar
+		capital_province = {
+			add_special_building = perpendicularity_01
+		}
+	}
+	
+	option = {
+		name = divine_creation.0001.c
+		add_trait = prophet_manifestation
+	}
+
+	after = {
+		add_to_global_variable_list = {
+			target = this
+			name = divinity_list
+		}
+		trigger_event = { on_action = update_faith_county_modifiers }
+	}
+	
+}

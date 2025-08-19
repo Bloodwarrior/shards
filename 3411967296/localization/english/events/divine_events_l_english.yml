@@ -1,0 +1,22 @@
+﻿l_english:
+ divine_creation.0001.title: "Become a [divinity|E]"
+ divine_creation.0001.desc: "The first step on your divine path - choosing your [manifestation|E], the way by which you connect and affect the world.\n\nThe choices avaliable are [avatar|E], [perpendicularity|E] and [prophet|E]."
+ divine_creation.0001.a: "Avatar"
+ divine_creation.0001.b: "Perpendicularity"
+ divine_creation.0001.c: "Prophet"
+ 
+ cataclysm_events.0001.title: "Cataclysm: Minor"
+ cataclysm_events.0001.desc: "A wrathful divinity has called down a cataclysm upon your location. The mortals are trying to avoid the destruction, and even you are in danger!"
+ cataclysm_events.0001.a: "Dammnation!"
+
+ cataclysm_events.0002.title: "Cataclysm: Major"
+ cataclysm_events.0002.desc: "A wrathful divinity has called down a cataclysm upon your location. The mortals are trying to avoid the destruction, and even you are in danger!"
+ cataclysm_events.0002.a: "Dammnation!"
+
+ cataclysm_events.0003.title: "Cataclysm: Apocalyptic"
+ cataclysm_events.0003.desc: "A wrathful divinity has called down a cataclysm upon your location. The mortals are trying to avoid the destruction, and even you are in danger!"
+ cataclysm_events.0003.a: "Dammnation!"
+
+ cataclysm_events.0004.title: "Cataclysm"
+ cataclysm_events.0004.desc: "It is done - your wrath manifested as a force of your choice has struck down the [target.GetName], bringing deah and destruction. An earthquake, horrific storm, a burning ray of light or fire raining from the heavens - the form matters little to the dead, and those who are left to remember them."
+ cataclysm_events.0004.a: "My Judgement, passed."

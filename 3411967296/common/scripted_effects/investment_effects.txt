@@ -1,0 +1,395 @@
+increase_investment_level = {
+	if = {
+		limit = {
+			NOT = { has_variable = investment_level_var }
+		}
+		set_variable = { name = investment_level_var  value = 0 }
+	}
+	change_variable = { name = investment_level_var add = $amount$ }
+}
+
+heal_effect = {
+	remove_trait = wounded_1
+    remove_trait = wounded_2
+    remove_trait = wounded_3
+    remove_trait = maimed
+    remove_trait = eunuch
+    remove_trait = one_legged
+    remove_trait = one_eyed
+    remove_trait = infirm
+    remove_trait = incapable
+    remove_trait = disfigured
+
+    remove_trait = blind
+    remove_trait = cancer
+    remove_trait = ill
+    remove_trait = lovers_pox
+    remove_trait = consumption
+
+    remove_trait = bubonic_plague
+    remove_trait = smallpox
+    remove_trait = great_pox
+    remove_trait = gout_ridden
+    remove_trait = pneumonic
+	remove_trait = early_great_pox
+	remove_trait = leper
+	remove_trait = typhus
+	remove_trait = measles
+	remove_trait = dysentery
+	remove_trait = ergotism
+	remove_trait = sickly
+	remove_trait = beardless_eunuchs
+}
+
+give_random_illness_effect = {
+	random_list = {
+		3 = {
+			add_trait = ill
+		}
+		1 = {
+			add_trait = cancer
+		}
+		1 = {
+			add_trait = lovers_pox
+		}
+		1 = {
+			add_trait = consumption
+		}
+		1 = {
+			add_trait = bubonic_plague
+		}
+		1 = {
+			add_trait = smallpox
+		}
+		1 = {
+			add_trait = great_pox
+		}
+		1 = {
+			add_trait = gout_ridden
+		}
+	}
+}
+
+change_trait_rank_good_bad = {
+	set_local_variable = {
+		name = current_rank value = {
+			if = {
+				limit = {
+					has_trait = $TRAIT$_bad_3
+				}
+				value = -3
+			}
+			else_if = {
+				limit = {
+					has_trait = $TRAIT$_bad_2
+				}
+				value = -2
+			}
+			else_if = {
+				limit = {
+					has_trait = $TRAIT$_bad_1
+				}
+				value = -1
+			}
+			else_if = {
+				limit = {
+					has_trait = $TRAIT$_good_1
+				}
+				value = 1
+			}
+			else_if = {
+				limit = {
+					has_trait = $TRAIT$_good_2
+				}
+				value = 2
+			}
+			else_if = {
+				limit = {
+					has_trait = $TRAIT$_good_3
+				}
+				value = 3
+			}
+			else = {
+				value = 0
+			} 
+		}
+	}
+	set_local_variable = { name = new_rank value = { value = local_var:current_rank add = $RANK_CHANGE$ }}
+	if = {
+		limit = {
+			has_local_variable = new_rank
+		}
+		hidden_effect = {
+			remove_trait = $TRAIT$_bad_3
+			remove_trait = $TRAIT$_bad_2
+			remove_trait = $TRAIT$_bad_1
+			remove_trait = $TRAIT$_good_1
+			remove_trait = $TRAIT$_good_2
+			remove_trait = $TRAIT$_good_3
+		}
+		if = {
+			limit = {
+				local_var:new_rank = 3
+			}
+			add_trait_force_tooltip = $TRAIT$_good_3
+		}
+		else_if = {
+			limit = {
+				local_var:new_rank = 2
+			}
+			add_trait_force_tooltip = $TRAIT$_good_2
+		}
+		else_if = {
+			limit = {
+				local_var:new_rank = 1
+			}
+			add_trait_force_tooltip = $TRAIT$_good_1
+		}
+		else_if = {
+			limit = {
+				local_var:new_rank = -1
+			}
+			add_trait_force_tooltip = $TRAIT$_bad_1
+		}
+		else_if = {
+			limit = {
+				local_var:new_rank = -2
+			}
+			add_trait_force_tooltip = $TRAIT$_bad_2
+		}
+		else_if = {
+			limit = {
+				local_var:new_rank = -3
+			}
+			add_trait_force_tooltip = $TRAIT$_bad_3
+		}
+	}
+}
+
+
+increase_beauty_rank_investment = {
+	custom_description = {
+		text = change_beauty_trait_text
+		value = $AMOUNT$
+		object = this 
+		change_trait_rank_good_bad = { TRAIT = beauty RANK_CHANGE = $AMOUNT$ }
+	}
+	custom_description = {
+		text = increase_investment_text
+		object = this
+		value = $AMOUNT$
+		increase_investment_level = { amount = $AMOUNT$ }
+	}
+}
+
+increase_intellect_rank_investment = {
+	custom_description = {
+		text = change_intellect_trait_text
+		value = $AMOUNT$
+		object = this 
+		change_trait_rank_good_bad = { TRAIT = intellect RANK_CHANGE = $AMOUNT$ }
+	}
+	custom_description = {
+		text = increase_investment_text
+		object = this
+		value = $AMOUNT$
+		increase_investment_level = { amount = $AMOUNT$ }
+	}
+}
+
+increase_physique_rank_investment = {
+	custom_description = {
+		text = change_physique_trait_text
+		value = $AMOUNT$
+		object = this 
+		change_trait_rank_good_bad = { TRAIT = physique RANK_CHANGE = $AMOUNT$ }
+	}
+	custom_description = {
+		text = increase_investment_text
+		object = this
+		value = $AMOUNT$
+		increase_investment_level = { amount = $AMOUNT$ }
+	}
+}
+
+decrease_beauty_rank_investment = {
+	custom_description = {
+		text = change_beauty_trait_text
+		value = -$AMOUNT$
+		object = this 
+		change_trait_rank_good_bad = { TRAIT = beauty RANK_CHANGE = -$AMOUNT$ }
+	}
+	custom_description = {
+		text = increase_investment_text
+		object = this
+		value = $AMOUNT$
+		increase_investment_level = { amount = $AMOUNT$ }
+	}
+}
+
+decrease_intellect_rank_investment = {
+	custom_description = {
+		text = change_intellect_trait_text
+		value = -$AMOUNT$
+		object = this 
+		change_trait_rank_good_bad = { TRAIT = intellect RANK_CHANGE = -$AMOUNT$ }
+	}
+	custom_description = {
+		text = increase_investment_text
+		object = this
+		value = $AMOUNT$
+		increase_investment_level = { amount = $AMOUNT$ }
+	}
+}
+
+decrease_physique_rank_investment = {
+	custom_description = {
+		text = change_physique_trait_text
+		value = -$AMOUNT$
+		object = this 
+		change_trait_rank_good_bad = { TRAIT = physique RANK_CHANGE = -$AMOUNT$ }
+	}
+	custom_description = {
+		text = increase_investment_text
+		object = this
+		value = $AMOUNT$
+		increase_investment_level = { amount = $AMOUNT$ }
+	}
+}
+
+
+add_blessing = {
+	if = {
+		limit = {
+			has_character_modifier = blessing_of_$BLESSING$_modifier
+		}
+		add_character_modifier = lesser_blessing_of_$BLESSING$_modifier
+	}
+	else = {
+		add_character_modifier = blessing_of_$BLESSING$_modifier
+	}
+	custom_description = {
+		text = increase_investment_text
+		object = this
+		value = 2
+		increase_investment_level = { amount = 2 }
+	}
+}
+
+add_curse = {
+	if = {
+		limit = {
+			has_character_modifier = curse_of_$CURSE$_modifier
+		}
+		add_character_modifier = lesser_curse_of_$CURSE$_modifier
+	}
+	else = {
+		add_character_modifier = curse_of_$CURSE$_modifier
+	}
+	custom_description = {
+		text = increase_investment_text
+		object = this
+		value = 2
+		increase_investment_level = { amount = 2 }
+	}
+}
+
+strength_blessing_effect = {
+	custom_description = {
+		text = increase_investment_text
+		object = this
+		value = 1
+		increase_investment_level = { amount = 1 }
+	}
+	if = {
+		limit = {
+			has_trait = weak
+		}
+		remove_trait = weak
+	}
+	else = {
+		add_trait = strong
+	}
+}
+
+fecund_blessing_effect = {
+	custom_description = {
+		text = increase_investment_text
+		object = this
+		value = 1
+		increase_investment_level = { amount = 1 }
+	}
+	if = {
+		limit = {
+			has_trait = infertile
+		}
+		remove_trait = infertile
+	}
+	else = {
+		add_trait = fecund
+	}
+}
+
+strength_curse_effect = {
+	custom_description = {
+		text = increase_investment_text
+		object = this
+		value = 1
+		increase_investment_level = { amount = 1 }
+	}
+	if = {
+		limit = {
+			has_trait = strong
+		}
+		remove_trait = strong
+	}
+	else = {
+		add_trait = weak
+	}
+}
+
+fecund_curse_effect = {
+	custom_description = {
+		text = increase_investment_text
+		object = this
+		value = 1
+		increase_investment_level = { amount = 1 }
+	}
+	if = {
+		limit = {
+			has_trait = fecund
+		}
+		remove_trait = fecund
+	}
+	else = {
+		add_trait = infertile
+	}
+}
+
+make_immortal_effect = {
+	add_trait_force_tooltip = $IMMORTALITY_TRAIT$
+	custom_description = {
+		text = increase_investment_text
+		object = this
+		value = $INVESTMENT$
+		increase_investment_level = { amount = $INVESTMENT$ }
+	}
+}
+
+make_true_immortal_effect = {
+	if = {
+		limit = {
+			OR = {
+				has_trait = reborn_trait
+				has_trait = eternal_trait
+			}
+		}
+		remove_trait = reborn_trait
+		remove_trait = eternal_trait
+		make_immortal_effect = {IMMORTALITY_TRAIT = true_immortal_trait INVESTMENT = 5}
+	}
+	else = {
+		make_immortal_effect = {IMMORTALITY_TRAIT = true_immortal_trait INVESTMENT = 10}
+	}
+	
+}

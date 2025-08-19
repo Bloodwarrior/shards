@@ -1,0 +1,13 @@
+﻿l_english:
+ prayer_management_interaction: "[prayer|e] Management"
+ prayer_management_interaction_desc: "Manage and control how many prayers you receive."
+ less_prayers_option: "Discourge mortals from praying to you."
+ normal_prayers_option: "Reset prayer amount to normal."
+ more_prayers_option: "Encourage mortals to pray to you."
+ refuse_prayers_option: "Automatically refuse all prayers"
+ trigger_prayer_option: "Listen to Prayer Now"
+ trigger_immediate_prayer: "You will receive a prayer immediately"
+ twice_as_many_prayers: "You will receive twice as many prayers"
+ half_as_many_prayers: "You will receive half as many prayers"
+ normal_prayers: "You will receive the default amount of prayers"
+ 

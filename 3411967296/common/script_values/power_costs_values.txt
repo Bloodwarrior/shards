@@ -1,0 +1,264 @@
+cataclysm_cost = {
+	add = {
+		desc = "BASE_VALUE"
+		value = 1000
+		format = "BASE_VALUE_FORMAT"
+	}
+
+	scope:target = {
+		multiply = {
+			desc = "INVESTMENT_COST_MULTIPLY"
+			value = investment_level_multiplier
+		}
+	}
+
+	multiply = {
+		desc = "DOMINION_COST_MULTIPLY"
+		value = dominion_multiplier
+	}
+}
+
+county_bless_cost = {
+	add = {
+		desc = "BASE_VALUE"
+		value = 500
+		format = "BASE_VALUE_FORMAT"
+	}
+
+	scope:target = {
+		multiply = {
+			desc = "INVESTMENT_COST_MULTIPLY"
+			value = investment_level_multiplier
+		}
+	}
+
+	multiply = {
+		desc = "DOMINION_COST_MULTIPLY"
+		value = dominion_multiplier
+	}
+}
+
+county_curse = {
+	add = {
+		desc = "BASE_VALUE"
+		value = 500
+		format = "BASE_VALUE_FORMAT"
+	}
+
+	scope:target = {
+		multiply = {
+			desc = "INVESTMENT_COST_MULTIPLY"
+			value = investment_level_multiplier
+		}
+	}
+
+	multiply = {
+		desc = "DOMINION_COST_MULTIPLY"
+		value = dominion_multiplier
+	}
+}
+
+bless_cost = {
+	add = {
+		desc = "BASE_VALUE"
+		value = 200
+		format = "BASE_VALUE_FORMAT"
+	}
+
+	scope:recipient = {
+		multiply = {
+			desc = "INVESTMENT_COST_MULTIPLY"
+			value = investment_level_multiplier
+		}
+	}
+	multiply = {
+		desc = "DOMINION_COST_MULTIPLY"
+		value = dominion_multiplier
+	}
+}
+
+create_army_base_cost = 100
+create_army_big_regiment_cost = 400
+create_army_titan_cost = 900
+
+
+curse_cost = {
+	add = {
+		desc = "BASE_VALUE"
+		value = 200
+		format = "BASE_VALUE_FORMAT"
+	}
+
+	scope:recipient = {
+		multiply = {
+			desc = "INVESTMENT_COST_MULTIPLY"
+			value = investment_level_multiplier
+		}
+	}
+
+	multiply = {
+		desc = "DOMINION_COST_MULTIPLY"
+		value = dominion_multiplier
+	}
+}
+
+health_powers_cost = {
+	{
+		add = {
+			desc = "BASE_VALUE"
+			value = 200
+			format = "BASE_VALUE_FORMAT"
+		}
+
+		if = {
+			limit = {
+				scope:severly_injure = yes
+			}
+			add = {
+				desc = "severly_injure_option"
+				value = 150
+				# format = "BASE_VALUE_FORMAT"
+			}
+		}
+		if = {
+			limit = {
+				scope:smite = yes
+			}
+			add = {
+				desc = "smite_option"
+				value = 300
+				# format = "BASE_VALUE_FORMAT"
+			}
+		}
+		scope:recipient = {
+			multiply = {
+				desc = "INVESTMENT_COST_MULTIPLY"
+				value = investment_level_multiplier
+			}
+		}
+
+		multiply = {
+			desc = "DOMINION_COST_MULTIPLY"
+			value = dominion_multiplier
+		}
+
+	}
+}
+
+immortality_base_cost = 500
+true_immortality_add = 500
+
+normal_immortality_cost = {
+	add = {
+		desc = "BASE_VALUE"
+		value = immortality_base_cost
+		format = "BASE_VALUE_FORMAT"
+	}
+
+	scope:recipient = {
+		multiply = {
+			desc = "INVESTMENT_COST_MULTIPLY"
+			value = investment_level_multiplier
+		}
+	}
+
+	multiply = {
+		desc = "DOMINION_COST_MULTIPLY"
+		value = dominion_multiplier
+	}
+}
+
+true_immortality_cost = {
+	add = {
+		desc = "BASE_VALUE"
+		value = immortality_base_cost
+		format = "BASE_VALUE_FORMAT"
+	}
+
+	add = {
+		desc = "TRUE_IMMORTAL"
+		value = true_immortality_add
+	}
+
+	scope:recipient = {
+		multiply = {
+			desc = "INVESTMENT_COST_MULTIPLY"
+			value = investment_level_multiplier
+		}
+	}
+
+	multiply = {
+		desc = "DOMINION_COST_MULTIPLY"
+		value = dominion_multiplier
+	}
+}
+
+heal_injure_cost = {
+	add = {
+		desc = "BASE_VALUE"
+		value = 200
+		format = "BASE_VALUE_FORMAT"
+	}
+
+	scope:recipient = {
+		multiply = {
+			desc = "INVESTMENT_COST_MULTIPLY"
+			value = investment_level_multiplier
+		}
+	}
+
+	multiply = {
+		desc = "DOMINION_COST_MULTIPLY"
+		value = dominion_multiplier
+	}
+}
+
+severly_injure_cost = {
+	add = {
+		desc = "BASE_VALUE"
+		value = 200
+		format = "BASE_VALUE_FORMAT"
+	}
+
+	add = {
+		desc = "severly_injure_option"
+		value = 150
+	}
+
+	scope:recipient = {
+		multiply = {
+			desc = "INVESTMENT_COST_MULTIPLY"
+			value = investment_level_multiplier
+		}
+	}
+
+	multiply = {
+		desc = "DOMINION_COST_MULTIPLY"
+		value = dominion_multiplier
+	}
+}
+
+smite_cost = {
+	add = {
+		desc = "BASE_VALUE"
+		value = 200
+		format = "BASE_VALUE_FORMAT"
+	}
+
+	add = {
+		desc = "smite_option"
+		value = 300
+	}
+
+	scope:recipient = {
+		multiply = {
+			desc = "INVESTMENT_COST_MULTIPLY"
+			value = investment_level_multiplier
+		}
+	}
+
+	multiply = {
+		desc = "DOMINION_COST_MULTIPLY"
+		value = dominion_multiplier
+	}
+}

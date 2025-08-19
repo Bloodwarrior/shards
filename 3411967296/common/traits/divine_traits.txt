@@ -1,0 +1,306 @@
+divinity_trait = { 
+    immortal = yes
+    flag = rebirth
+    no_prowess_loss_from_age = yes
+    opposites = { incapable }
+
+    ruler_designer_cost = 10000
+
+    monthly_piety_gain_mult = 0.5
+    faith_creation_piety_cost_mult = -1
+    diplomatic_range_mult = 5
+    health = 10
+
+    flag = divinity
+}
+
+avatar_1 = {
+    icon = "avatar.dds"
+    opposites = {
+        avatar_2
+        avatar_3
+        avatar_4
+        avatar_5
+        avatar_6
+        prophet_manifestation
+        perpendicularity_avatar
+        incapable
+    }
+
+    no_prowess_loss_from_age = yes
+    diplomatic_range_mult = 5
+    faith_creation_piety_cost_mult = -1
+
+    group = avatar
+    level = 1
+    shown_in_ruler_designer = no
+    flag = divinity
+}
+
+avatar_2 = {
+    icon = "avatar.dds"
+    opposites = {
+        avatar_1
+        avatar_3
+        avatar_4
+        avatar_5
+        avatar_6
+        prophet_manifestation
+        perpendicularity_avatar
+        incapable
+    }
+
+    immortal = yes
+    no_prowess_loss_from_age = yes
+    flag = rebirth_pl
+    diplomatic_range_mult = 5
+    faith_creation_piety_cost_mult = -1
+
+    diplomacy = 5
+    stewardship = 5
+    martial = 5
+    intrigue = 5
+    learning = 5
+    prowess = 20
+
+    advantage = 10
+    enemy_hard_casualty_modifier = 0.3
+
+    monthly_income_mult = 0.2
+
+    monthly_piety_gain_mult = -0.2
+
+    group = avatar
+    level = 2
+    shown_in_ruler_designer = no
+    flag = divinity
+}
+
+avatar_3 = {
+    icon = "avatar.dds"
+    opposites = {
+        avatar_1
+        avatar_2
+        avatar_4
+        avatar_5
+        avatar_6
+        prophet_manifestation
+        perpendicularity_avatar
+        incapable
+    }
+
+    immortal = yes
+    no_prowess_loss_from_age = yes
+    flag = rebirth_pl
+    diplomatic_range_mult = 5
+    faith_creation_piety_cost_mult = -1
+
+    diplomacy = 10
+    stewardship = 10
+    martial = 10
+    intrigue = 10
+    learning = 10
+    prowess = 40
+
+    advantage = 15
+    enemy_hard_casualty_modifier = 0.5
+
+    monthly_income_mult = 0.3
+
+    monthly_piety_gain_mult = -0.3
+
+    group = avatar
+    level = 3
+    shown_in_ruler_designer = no
+    flag = divinity
+}
+
+avatar_4 = {
+    icon = "avatar.dds"
+    opposites = {
+        avatar_1
+        avatar_2
+        avatar_3
+        avatar_5
+        avatar_6
+        prophet_manifestation
+        perpendicularity_avatar
+        incapable
+    }
+
+    immortal = yes
+    no_prowess_loss_from_age = yes
+    flag = rebirth_pl
+    diplomatic_range_mult = 5
+    faith_creation_piety_cost_mult = -1
+
+    diplomacy = 15
+    stewardship = 15
+    martial = 15
+    intrigue = 15
+    learning = 15
+    prowess = 60
+
+    advantage = 20
+    enemy_hard_casualty_modifier = 0.6
+
+    monthly_income_mult = 0.3
+
+    monthly_piety_gain_mult = -0.4
+
+    group = avatar
+    level = 4
+    shown_in_ruler_designer = no
+    flag = divinity
+}
+
+avatar_5 = {
+    icon = "avatar.dds"
+    opposites = {
+        avatar_1
+        avatar_2
+        avatar_3
+        avatar_4
+        avatar_6
+        prophet_manifestation
+        perpendicularity_avatar
+        incapable
+    }
+
+    immortal = yes
+    no_prowess_loss_from_age = yes
+    flag = rebirth_pl
+    diplomatic_range_mult = 5
+    faith_creation_piety_cost_mult = -1
+
+    diplomacy = 20
+    stewardship = 20
+    martial = 20
+    intrigue = 20
+    learning = 20
+    prowess = 80
+
+    advantage = 25
+    enemy_hard_casualty_modifier = 0.6
+
+    monthly_income_mult = 0.3
+
+    monthly_piety_gain_mult = -0.5
+
+    group = avatar
+    level = 5
+    shown_in_ruler_designer = no
+    flag = divinity
+}
+
+avatar_6 = {
+    icon = "avatar.dds"
+    opposites = {
+        avatar_1
+        avatar_2
+        avatar_3
+        avatar_4
+        avatar_5
+        prophet_manifestation
+        perpendicularity_avatar
+        incapable
+    }
+
+    immortal = yes
+    no_prowess_loss_from_age = yes
+    flag = rebirth_pl
+    diplomatic_range_mult = 5
+    faith_creation_piety_cost_mult = -1
+
+    diplomacy = 25
+    stewardship = 25
+    martial = 25
+    intrigue = 25
+    learning = 25
+    prowess = 100
+
+    advantage = 25
+    enemy_hard_casualty_modifier = 0.6
+
+    monthly_income_mult = 0.3
+
+    monthly_piety_gain_mult = -0.5
+
+    group = avatar
+    level = 6
+    shown_in_ruler_designer = no
+    flag = divinity
+}
+
+perpendicularity_avatar = {
+    opposites = {
+        avatar
+        prophet_manifestation
+        incapable
+    }
+
+    disables_combat_leadership = yes
+
+    immortal = yes
+    no_prowess_loss_from_age = yes
+    flag = rebirth
+    diplomatic_range_mult = 5
+    faith_creation_piety_cost_mult = -1
+
+    diplomacy_per_piety_level = 3
+    stewardship_per_piety_level = 3
+    martial_per_piety_level = 3
+    intrigue_per_piety_level = 3
+    learning_per_piety_level = 3
+    prowess_per_piety_level = 10
+    
+    can_have_children = no
+
+
+    character_travel_speed = -5000
+    
+    shown_in_ruler_designer = no
+    flag = divinity
+}
+
+prophet_manifestation = {
+    shown_in_ruler_designer = no
+
+    monthly_piety_gain_mult = 0.5
+    diplomatic_range_mult = 5
+    flag = divinity
+}
+
+
+eternal_trait = {
+    no_prowess_loss_from_age = yes
+    immortal = yes
+    opposites = { incapable }
+    shown_in_ruler_designer = no
+
+    flag = is_immortal
+	flag = immortal_visuals
+	flag = immortal_fertility
+	flag = immortal_incapability
+}
+
+reborn_trait = {
+    flag = rebirth
+    shown_in_ruler_designer = no
+    no_prowess_loss_from_age = yes
+}
+
+true_immortal_trait = {
+    immortal = yes
+    flag = rebirth
+    opposites = { incapable }
+    no_prowess_loss_from_age = yes
+    health = 10
+
+    shown_in_ruler_designer = no
+
+    flag = is_immortal
+	flag = immortal_visuals
+	flag = immortal_fertility
+	flag = immortal_incapability
+}

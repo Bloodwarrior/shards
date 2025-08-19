@@ -1,0 +1,269 @@
+bless_interaction = {
+	category = interaction_category_religion
+	icon = bless
+
+	interface_priority = 100
+	desc = bless_interaction_desc
+	
+	is_shown = {
+		scope:actor = { is_a_divinity = yes }
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			OR = {
+				NOT = {
+					is_a_divinity = yes
+				}
+				has_trait = prophet_manifestation
+			}
+			
+		}
+	}
+
+	send_options_exclusive = yes
+	send_option = {
+		is_valid = {
+			scope:recipient =  {
+				NOT = { has_trait = beauty_good_3 }
+			}
+		}
+		flag = beauty
+		localization = beauty_option
+	}
+
+	send_option = {
+		is_valid = {
+			scope:recipient =  {
+				NOT = { has_trait = intellect_good_3 }
+			}
+		}
+		flag = intellect
+		localization = intellect_option
+	}
+
+	send_option = {
+		is_valid = {
+			scope:recipient =  {
+				NOT = { has_trait = physique_good_3 }
+			}
+		}
+		flag = physique
+		localization = physique_option
+	}
+
+	send_option = {
+		is_valid = {
+			scope:recipient =  {
+				NOT = { has_trait = physique_bad_1 }
+				NOT = { has_trait = physique_bad_2 }
+				NOT = { has_trait = physique_bad_3 }
+				NOT = { has_trait = strong }
+			}
+		}
+		flag = strong
+		localization = strong_option
+	}
+
+	send_option = {
+		is_valid = {
+			scope:recipient =  {
+				NOT = { has_trait = fecund }
+			}
+		}
+		flag = fecund
+		localization = fecund_option
+	}
+
+	send_option = {
+		is_valid = {
+		}
+		flag = blessing_of_war
+		localization = blessing_of_war_option
+	}
+
+	send_option = {
+		is_valid = {
+		}
+		flag = blessing_of_gold
+		localization = blessing_of_gold_option
+	}
+
+	send_option = {
+		is_valid = {
+		}
+		flag = blessing_of_deceit
+		localization = blessing_of_deceit_option
+	}
+
+	send_option = {
+		is_valid = {
+		}
+		flag = blessing_of_love
+		localization = blessing_of_love_option
+	}
+
+	send_option = {
+		is_valid = {
+		}
+		flag = blessing_of_speed
+		localization = blessing_of_speed_option
+	}
+
+	send_option = {
+		is_valid = {
+		}
+		flag = blessing_of_battle
+		localization = blessing_of_battle_option
+	}
+	
+	send_option = {
+		is_valid = {
+		}
+		flag = blessing_of_mind
+		localization = blessing_of_mind_option
+	}
+
+	on_accept = {
+		scope:recipient = {
+			add_opinion = {
+				target = scope:actor
+				modifier = blessed_me_opinion
+			}
+		}
+		
+
+		if = {
+			limit = {
+				scope:beauty = yes
+			}
+			scope:recipient = { 
+				increase_beauty_rank_investment = {AMOUNT = 1}
+				choose_prayer_effect = yes
+			}
+		}
+
+		if = {
+			limit = {
+				scope:intellect = yes
+			}
+			scope:recipient = {
+				increase_intellect_rank_investment = {AMOUNT = 1}	
+			}
+		}
+
+		if = {
+			limit = {
+				scope:physique = yes
+			}
+			scope:recipient = {
+				increase_physique_rank_investment = {AMOUNT = 1}	
+			}
+		}
+
+		if = {
+			limit = {
+				scope:strong = yes
+			}
+			scope:recipient = {
+				strength_blessing_effect = yes
+			}
+		}
+
+		if = {
+			limit = {
+				scope:fecund = yes
+			}
+			scope:recipient = {
+				fecund_blessing_effect = yes
+			}
+		}
+
+		scope:recipient = {
+			if = {
+				limit = {
+					scope:blessing_of_war = yes
+				}
+				add_blessing = {BLESSING = war}
+			}
+	
+			if = {
+				limit = {
+					scope:blessing_of_gold = yes
+				}
+				add_blessing = {BLESSING = gold}
+			}
+
+			if = {
+				limit = {
+					scope:blessing_of_deceit = yes
+				}
+				add_blessing = {BLESSING = deceit}
+			}
+
+			if = {
+				limit = {
+					scope:blessing_of_love = yes
+				}
+				add_blessing = {BLESSING = love}
+			}
+
+			if = {
+				limit = {
+					scope:blessing_of_speed = yes
+				}
+				add_blessing = {BLESSING = speed}
+			}
+
+			if = {
+				limit = {
+					scope:blessing_of_battle = yes
+				}
+				add_blessing = {BLESSING = battle}
+			}
+
+			if = {
+				limit = {
+					scope:blessing_of_mind = yes
+				}
+				add_blessing = {BLESSING = mind}
+			}
+		}
+	
+	}
+
+	auto_accept = yes
+
+	cost = {
+		piety = {
+			add = {
+				desc = "BASE_VALUE"
+				value = 200
+				format = "BASE_VALUE_FORMAT"
+			}
+
+			scope:recipient = {
+				multiply = {
+					desc = "INVESTMENT_COST_MULTIPLY"
+					value = investment_level_multiplier
+				}
+			}
+			multiply = {
+				desc = "DOMINION_COST_MULTIPLY"
+				value = dominion_multiplier
+			}
+		}
+	}
+	
+	# AI
+	# ai_targets = {
+	# }
+	# ai_frequency = 12
+
+	# ai_potential = {
+	# }
+
+	# ai_will_do = {
+	# 	base = 0
+	# }
+}

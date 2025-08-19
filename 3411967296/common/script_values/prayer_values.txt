@@ -1,0 +1,13 @@
+﻿total_enemy_side_strength = {
+	value = 0
+	every_war_enemy = {
+		add = current_military_strength
+	}
+}
+
+total_ally_side_strength = {
+	value = current_military_strength
+	every_war_ally = {
+		add = current_military_strength
+	}
+}

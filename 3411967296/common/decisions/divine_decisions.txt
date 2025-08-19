@@ -1,0 +1,16 @@
+become_divinity_decision = { #by Linnéa Thimrén
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	}
+	desc = become_divinity_decision_desc
+	selection_tooltip = become_divinity_decision_tooltip
+
+	is_shown = {
+		NOT = { is_a_divinity = yes }
+	}
+
+	effect = {
+		become_divinity_effect = yes
+	}
+	
+}

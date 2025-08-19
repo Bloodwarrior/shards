@@ -1,0 +1,7 @@
+﻿l_english:
+ moved_back_to_land.t: "Moved back to Perpendicularity"
+ moved_back_to_land.d: "The avatar is tied to the Perpendicularity, and cannot leave it."
+ perpendicularity_conquered.t: "Perpendicularity Conquered"
+ DIVINE_WAR_CB_NAME: "Divine Great Holy War"
+ DIVINE_ACTIONS: "Divine Interactions"
+ DUMMY_ACTIONS: "Dummy"

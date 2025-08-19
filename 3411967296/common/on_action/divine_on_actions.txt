@@ -1,0 +1,548 @@
+﻿update_god_list = {
+	effect = {
+		clear_global_variable_list  = divinity_list
+		every_ruler = {
+			limit = {
+				is_a_divinity = yes
+			}
+			add_to_global_variable_list = {
+				target = this
+				name = divinity_list
+			}
+		}
+		
+	}
+}
+
+update_faith_county_modifiers = {
+	effect = {
+		every_in_global_list = {
+			variable = divinity_list
+			hidden_effect = {
+				remove_character_modifier = faithful_counties_5
+				remove_character_modifier = faithful_counties_10
+				remove_character_modifier = faithful_counties_20
+				remove_character_modifier = faithful_counties_50
+				remove_character_modifier = faithful_counties_75
+				remove_character_modifier = faithful_counties_100
+				remove_character_modifier = faithful_counties_200
+				remove_character_modifier = faithful_counties_400
+				remove_character_modifier = faithful_counties_750
+				remove_character_modifier = faithful_counties_1000
+				
+				if = {
+					limit = {
+						faith = { num_county_followers >= 1000 }
+					}
+					add_character_modifier = faithful_counties_1000
+					set_variable = { name = power_tier_from_counties value = 3 }
+				}
+				else_if = {
+					limit = {
+						faith = { num_county_followers >= 750 }
+					}
+					add_character_modifier = faithful_counties_750
+					set_variable = { name = power_tier_from_counties value = 3 }
+				}
+				else_if = {
+					limit = {
+						faith = { num_county_followers >= 400 }
+					}
+					add_character_modifier = faithful_counties_400
+					set_variable = { name = power_tier_from_counties value = 3 }
+				}
+				else_if = {
+					limit = {
+						faith = { num_county_followers >= 200 }
+					}
+					add_character_modifier = faithful_counties_200
+					set_variable = { name = power_tier_from_counties value = 2 }
+				}
+				else_if = {
+					limit = {
+						faith = { num_county_followers >= 100 }
+					}
+					add_character_modifier = faithful_counties_100
+					set_variable = { name = power_tier_from_counties value = 2 }
+				}
+				else_if = {
+					limit = {
+						faith = { num_county_followers >= 75 } 
+					}
+					add_character_modifier = faithful_counties_75
+					set_variable = { name = power_tier_from_counties value = 2 }
+				}
+				else_if = {
+					limit = {
+						faith = { num_county_followers >= 50 }
+					}
+					add_character_modifier = faithful_counties_50
+					set_variable = { name = power_tier_from_counties value = 1 }
+				}
+				else_if = {
+					limit = {
+						faith = { num_county_followers >= 20 }
+					}
+					add_character_modifier = faithful_counties_20
+					set_variable = { name = power_tier_from_counties value = 1 }
+				}
+				else_if = {
+					limit = {
+						faith = { num_county_followers >= 10 } 
+					}
+					add_character_modifier = faithful_counties_10
+					set_variable = { name = power_tier_from_counties value = 1 }
+				}
+				else_if = {
+					limit = {
+						faith = { num_county_followers >= 5 } 
+					}
+					add_character_modifier = faithful_counties_5
+					set_variable = { name = power_tier_from_counties value = 1 }
+				}
+				
+			}
+			
+		}
+	}
+}
+
+choose_manifestation = {
+	effect = {
+		every_in_global_list = {
+			variable = divinity_list
+			if = {
+				limit = {
+					has_trait = divinity_trait
+				}
+				trigger_event = divine_creation.0001
+			}
+		}
+	}
+}
+
+piety_level_change_on_action = {
+	effect = {
+		if = {
+			limit = {
+				has_trait = avatar
+			}
+			
+			set_local_variable = { name = level  value = { value = piety_level add = 1 }  }
+			set_avatar_trait_level = { LEVEL = local_var:level }
+		}
+	}
+}
+
+perpendicularity_move_back_army = {
+	effect = {
+		scope:army = {
+			if = {
+				limit = {
+					army_commander ?= {
+						has_trait = perpendicularity_avatar
+					}
+					NOT = {
+						location = {
+							has_building_with_flag = perpendicularity
+							province_owner = scope:army.army_commander
+						}
+					}
+					
+				}
+				
+				army_commander = {
+					send_interface_message = {
+						type = event_war_bad
+						title = moved_back_to_land.t
+						left_icon = this
+						scope:army = {
+							remove_commander = yes
+						}
+						custom_tooltip = moved_back_to_land.d 
+					}
+					
+				}
+			}	
+		}
+	}
+}
+
+perpendicularity_move_back_travel = {
+	effect = {
+		save_scope_as = traveler
+		if = {
+			limit = {
+				has_trait = perpendicularity_avatar
+				NOT = {
+					location = {
+						has_building_with_flag = perpendicularity
+						province_owner = scope:traveler
+					}
+				}
+				
+			}
+			
+			send_interface_message = {
+				type = event_war_bad
+				title = moved_back_to_land.t
+				left_icon = this
+				if = {
+					limit = {
+						exists = involved_activity
+					}
+					invalidate_activity = involved_activity
+				}
+				hidden_effect = {
+					current_travel_plan = {
+						cancel_travel_plan = yes
+					}
+				}	
+				custom_tooltip = moved_back_to_land.d 
+			}
+				
+			
+		}	
+		
+	}
+}
+
+perpendicularity_conquer_injury = {
+	effect = {
+		if = {
+			limit = {
+				scope:county = {
+					any_county_province = {
+						has_building_with_flag = perpendicularity
+						province_owner = {
+							has_trait = perpendicularity_avatar
+						}
+					}
+					
+				}
+			}
+			scope:county = {
+				holder = {
+					send_interface_message = {
+						type = event_war_bad
+						title = perpendicularity_conquered.t
+						left_icon = this
+						add_piety_level = -1
+					}
+					
+				}
+			}
+		}
+		
+	}
+}
+
+perpendicularity_loss = {
+	effect = {
+		if = {
+			limit = {
+				scope:title.tier = tier_county
+				has_trait = perpendicularity_avatar
+				scope:title = {
+					any_county_province = {
+						has_building_with_flag = perpendicularity
+					}
+				}
+				NOT = {
+					any_directly_owned_province = {
+						count = 2
+						has_building_with_flag = perpendicularity
+					}
+				}
+				NOT = {
+					has_character_flag = transition
+				}
+			}
+			add_character_flag = no_ressurection
+			death = { death_reason = death_mysterious }
+		}
+		
+	}
+}
+
+perpendicularity_prison_escape = {
+	effect = {
+		if = {
+			limit = {
+				has_trait = perpendicularity_avatar
+			}
+			send_interface_message = {
+				type = event_war_good
+				title = moved_back_to_land.t
+				left_icon = this
+				release_from_prison = yes
+				custom_tooltip = moved_back_to_land.d 
+			}
+		}
+	}
+}
+
+inherit_prophet_trait = {
+	effect = {
+		if = {
+			limit = {
+				has_trait = prophet_manifestation
+			}
+			player_heir ?= {
+				add_trait = prophet_manifestation
+			} 
+		}
+	}
+}
+
+rebirth = {
+	effect = {
+		if = {
+			limit = {
+				should_rebirth = yes
+			}
+			basic_return = yes
+		}
+	}
+}
+
+ai_god_powers_use = {
+	effect = {
+		every_in_global_list = {
+			variable = divinity_list
+			limit = {
+				is_ai = yes
+			}
+			heal_effect = yes
+			
+			if = {
+				limit = {
+					is_at_war = yes
+				}
+				if = {
+					limit = {
+						piety > 2000
+					}
+					random_list = {
+						2 = {
+							empower_random_knight = yes
+						}
+						2 = {
+							summon_army_ai = yes
+						}
+						1 = {
+							summon_titan_ai = yes
+						}
+					}
+				}
+				else_if = {
+					limit = {piety > 500}
+					random_list = {
+						1 = {
+							empower_random_knight = yes
+						}
+						1 = {
+							summon_army_ai = yes
+						}
+						1 = {}
+					}
+					
+				}
+			}
+			else_if = {
+				limit = {
+					piety > 500
+				}
+				random_list = {
+					1 = {
+						summon_army_ai = yes
+					}
+					1 = {
+						empower_random_knight = yes
+					}
+					2 = {
+						empower_council_ai = yes
+					}
+					3 = {
+						empower_random_vassal = yes
+					}
+					3 = {
+						empower_random_county = yes
+					}
+					1 = {
+						trigger = {
+							piety > 2000
+						}
+						summon_titan_ai = yes
+					}
+					2 = {
+						trigger = {
+							piety > 2000
+						}
+						summon_army_ai = yes
+						summon_army_ai = yes
+					}
+					2 = {
+						trigger = {
+							piety > 2000
+						}
+						empower_council_ai = yes
+						empower_random_vassal = yes
+						empower_random_vassal = yes
+					}
+					7 = {
+						trigger = {
+							piety < 2000
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+create_gods = {
+	effect = {
+		if = {
+			limit = {
+				has_game_rule = ai_gods_exist
+			}
+			set_local_variable = { name = new_gods value = 10 }
+			while = {
+				count = local_var:new_gods
+				random_religion_global = {
+					limit = {
+						any_faith = {
+							num_county_followers > 20
+						}
+					}
+					ordered_faith = {
+						order_by = { value = num_county_followers }
+						limit = {
+							num_county_followers > 1
+							NOT = {
+								any_faith_ruler = {
+									is_a_divinity = yes
+								}
+							}
+						}
+						ordered_faith_ruler = {
+							order_by = {
+								add = current_military_strength
+								if = {
+									limit = {
+										any_held_title = {
+											is_head_of_faith = yes
+										}
+										is_landed = yes
+									}
+									add = 100000000
+								}
+								if = {
+									limit = {
+										is_independent_ruler = yes
+									}
+									add = 5000
+								}
+							 }
+							random_list = {
+								1 = {
+									set_local_variable = { name = level  value = { value = piety_level add = 1 }  }
+									set_avatar_trait_level = { LEVEL = local_var:level }
+								}
+								1 = {
+									add_trait = perpendicularity_avatar
+									capital_province = {
+										add_special_building = perpendicularity_01
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = every_faith_has_god
+			}
+			every_religion_global = {
+				random_faith = {
+					limit = {
+						num_county_followers > 1
+					}
+					ordered_faith_ruler = {
+						order_by = {
+							add = current_military_strength
+							if = {
+								limit = {
+									any_held_title = {
+										is_head_of_faith = yes
+									}
+								}
+								add = 100000000
+							}
+						 }
+						random_list = {
+							1 = {
+								set_local_variable = { name = level  value = { value = piety_level add = 1 }  }
+								set_avatar_trait_level = { LEVEL = local_var:level }
+							}
+							1 = {
+								add_trait = perpendicularity_avatar
+								capital_province = {
+									add_special_building = perpendicularity_01
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+yearly_prayers = {
+	effect = {
+		every_in_global_list = {
+			variable = divinity_list
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_piety = 200
+			}
+			while = {
+				count = { value = divinity_power_level multiply = var:prayer_level_preferance floor = yes}
+				trigger_event = { id = divine_prayer.9000 days = { 1 360 }}
+			}
+			while = {
+				count = { value = var:prayer_level_preferance floor = yes }
+				random_list = {
+					1 = {
+						modifier = {
+							add = divinity_power_level
+							always = yes
+						}
+						trigger_event = { id = divine_prayer.9001 days = { 1 360 }}
+					}
+	
+					1 = {
+	
+					}
+				}
+			}
+		}
+	}
+}
+
+debug_force_prayer = {
+	effect = {
+		random_player = {
+			random_vassal = {
+				save_scope_as = petitioner
+			}
+			#trigger_event = divine_prayer.3000
+		}
+	}
+}

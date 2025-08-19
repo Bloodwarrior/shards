@@ -1,0 +1,47 @@
+﻿can_increase_trait_by = {
+	OR = {
+		AND = {
+			has_trait = $TRAIT$_good_3
+			$AMOUNT$ <= 0
+			$AMOUNT$ >= -6
+		}
+		AND = {
+			has_trait = $TRAIT$_good_2
+			$AMOUNT$ <= 1
+			$AMOUNT$ >= -5
+		}
+		AND = {
+			has_trait = $TRAIT$_good_1
+			$AMOUNT$ <= 2
+			$AMOUNT$ >= -4
+		}
+		AND = {
+			has_trait = $TRAIT$_bad_3
+			$AMOUNT$ <= 6
+			$AMOUNT$ >= 0
+		}
+		AND = {
+			has_trait = $TRAIT$_bad_2
+			$AMOUNT$ <= 5
+			$AMOUNT$ >= -1
+		}
+		AND = {
+			has_trait = $TRAIT$_bad_1
+			$AMOUNT$ <= 4
+			$AMOUNT$ >= -2
+		}
+		AND = {
+			NOR = {
+				has_trait = $TRAIT$_bad_1
+				has_trait = $TRAIT$_bad_2
+				has_trait = $TRAIT$_bad_3
+				has_trait = $TRAIT$_good_1
+				has_trait = $TRAIT$_good_2
+				has_trait = $TRAIT$_good_3
+			}
+			$AMOUNT$ <= 3
+			$AMOUNT$ >= -3
+			
+		}
+	}
+}

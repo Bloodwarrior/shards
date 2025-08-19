@@ -1,0 +1,36 @@
+rebirth = {
+
+}
+eternity = {
+	
+}
+investment = {
+	alias = { invested }
+}
+faith_harvesting = {
+
+}
+divinity = {
+
+}
+manifestation = {
+
+}
+avatar = {
+
+}
+perpendicularity = {
+
+}
+prophet = {
+	
+}
+monster = {
+	
+}
+dominion = {
+	
+}
+prayer = {
+	
+}

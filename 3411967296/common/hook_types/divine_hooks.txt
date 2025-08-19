@@ -1,0 +1,7 @@
+﻿medium_boon = {
+	expiration_days = 3650
+}
+
+major_boon = {
+	strong = yes
+}

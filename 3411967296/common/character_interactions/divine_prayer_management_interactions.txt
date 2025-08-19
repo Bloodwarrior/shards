@@ -1,0 +1,187 @@
+prayer_management_interaction = {
+	category = interaction_category_religion
+	icon = religious
+
+	interface_priority = 100
+	desc = prayer_management_interaction_desc
+	
+	is_shown = {
+		scope:actor = { is_a_divinity = yes }
+		scope:actor = scope:recipient
+	}
+
+
+	send_options_exclusive = yes
+	send_option = {
+		is_valid = {
+			scope:actor =  {
+				trigger_if = {
+					limit = {
+						has_variable = prayer_level_preferance
+					}
+					NOT = { var:prayer_level_preferance = 0.5 }
+				}
+			}
+		}
+		flag = less_prayers
+		localization = less_prayers_option
+	}
+
+	send_option = {
+		is_valid = {
+			scope:actor =  {
+				trigger_if = {
+					limit = {
+						has_variable = prayer_level_preferance
+					}
+					OR = {
+						NOT = { var:prayer_level_preferance = 1 }
+						has_character_flag = refusing_prayers
+					}					
+				}
+			}
+		}
+		flag = normal_prayers
+		localization = normal_prayers_option
+	}
+
+	send_option = {
+		is_valid = {
+			scope:actor =  {
+				trigger_if = {
+					limit = {
+						has_variable = prayer_level_preferance
+					}
+					NOT = { var:prayer_level_preferance = 2 }
+				}
+			}
+		}
+		flag = more_prayers
+		localization = more_prayers_option
+	}
+
+	send_option = {
+		is_valid = {
+			scope:actor =  {
+				NOT = { has_character_flag = refusing_prayers }
+			}
+		}
+		flag = refuse_prayers
+		localization = refuse_prayers_option
+	}
+
+	send_option = {
+		flag = trigger_prayer
+		localization = trigger_prayer_option
+	}
+
+	on_accept = {
+		
+		if = {
+			limit = {
+				scope:less_prayers = yes
+			}
+			scope:actor = { 
+				remove_character_flag = refusing_prayers
+				set_variable = { name = prayer_level_preferance value = 0.5 }
+				if = {
+					limit = { has_character_modifier = mortals_happy_from_prayers }
+					remove_character_modifier = mortals_happy_from_prayers
+				}				
+				add_character_modifier = mortals_unhappy_from_prayers
+				custom_tooltip = half_as_many_prayers
+			}
+		}
+
+		if = {
+			limit = {
+				scope:normal_prayers = yes
+			}
+			scope:actor = { 
+				remove_character_flag = refusing_prayers
+				set_variable = { name = prayer_level_preferance value = 1 }
+				if = {
+					limit = { has_character_modifier = mortals_happy_from_prayers }
+					remove_character_modifier = mortals_happy_from_prayers
+				}
+				if = {
+					limit = { has_character_modifier = mortals_unhappy_from_prayers }
+					remove_character_modifier = mortals_unhappy_from_prayers					
+				}
+				custom_tooltip = normal_prayers
+			}
+		}
+
+		if = {
+			limit = {
+				scope:more_prayers = yes
+			}
+			scope:actor = { 
+				remove_character_flag = refusing_prayers
+				set_variable = { name = prayer_level_preferance value = 2 }
+				if = {
+					limit = { has_character_modifier = mortals_unhappy_from_prayers }
+					remove_character_modifier = mortals_unhappy_from_prayers
+				}	
+				add_character_modifier = mortals_happy_from_prayers
+				custom_tooltip = twice_as_many_prayers
+			}
+		}
+
+		if = {
+			limit = {
+				scope:refuse_prayers = yes
+			}
+			scope:actor = { 
+				add_character_flag = refusing_prayers
+				set_variable = { name = prayer_level_preferance value = 1 }
+				if = {
+					limit = { has_character_modifier = mortals_happy_from_prayers }
+					remove_character_modifier = mortals_happy_from_prayers
+				}
+				if = {
+					limit = { has_character_modifier = mortals_unhappy_from_prayers }
+					remove_character_modifier = mortals_unhappy_from_prayers				
+				}
+				custom_tooltip = will_refuse_prayers
+			}
+		}
+
+		if = {
+			limit = {
+				scope:trigger_prayer = yes
+			}
+			scope:actor = {
+				hidden_effect = {
+					random_list = {
+						1 = {
+							trigger_event = divine_prayer.9000
+						}
+						1 = {
+							trigger_event = divine_prayer.9001
+						}
+					}
+				}
+				custom_tooltip = trigger_immediate_prayer			
+			}
+		}
+		
+		
+	
+	}
+
+	auto_accept = yes
+
+	
+	# AI
+	# ai_targets = {
+	# }
+	# ai_frequency = 12
+
+	# ai_potential = {
+	# }
+
+	# ai_will_do = {
+	# 	base = 0
+	# }
+}

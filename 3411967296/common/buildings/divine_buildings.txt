@@ -1,0 +1,221 @@
+perpendicularity_01 = {
+
+	asset = {
+		type = pdxmesh
+		name = "fp4_legendary_steppe_shrine_01_a_mesh"
+	}
+
+	asset = {
+		type = pdxmesh
+		name = "fp4_legendary_building_christian_shrine_01_mesh"
+		graphical_faiths = { "catholic_gfx" }
+	}
+
+	asset = {
+		type = pdxmesh
+		name = "fp4_legendary_islamic_shrine_01_a_mesh"
+		graphical_faiths = { "islamic_gfx" "judaism_gfx" }
+	}
+
+	asset = {
+		type = pdxmesh
+		name = "fp4_legendary_building_norse_shrine_01_a_mesh"
+		graphical_cultures = { norse_building_gfx }
+		graphical_faiths = { pagan_gfx }
+	}
+
+	asset = {
+		type = pdxmesh
+		name = "fp4_legendary_dharmic_shrine_01_a_mesh"
+		graphical_faiths = { dharmic_gfx }
+	}
+
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_building_legendary_shrine.dds"
+
+	is_enabled = {
+		always = yes
+	}
+
+	character_modifier = {
+		monthly_piety_mult = 0.5
+		controlled_province_advantage = 10
+	}
+
+	county_modifier = {
+		tax_mult = 1
+		monthly_county_control_growth_add = 1
+		fort_level = 5
+		levy_size = 1
+		development_growth = 1
+	}
+
+	province_modifier = {
+		monthly_income = 5
+		stationed_maa_damage_add = 50
+		stationed_maa_toughness_add = 50
+	}
+
+	type = special
+
+	flag = perpendicularity
+
+	next_building = perpendicularity_02
+}
+
+perpendicularity_02 = {
+
+	asset = {
+		type = pdxmesh
+		name = "fp4_legendary_steppe_shrine_01_a_mesh"
+	}
+
+	asset = {
+		type = pdxmesh
+		name = "fp4_legendary_building_christian_shrine_01_mesh"
+		graphical_faiths = { "catholic_gfx" }
+	}
+
+	asset = {
+		type = pdxmesh
+		name = "fp4_legendary_islamic_shrine_01_a_mesh"
+		graphical_faiths = { "islamic_gfx" "judaism_gfx" }
+	}
+
+	asset = {
+		type = pdxmesh
+		name = "fp4_legendary_building_norse_shrine_01_a_mesh"
+		graphical_cultures = { norse_building_gfx }
+		graphical_faiths = { pagan_gfx }
+	}
+
+	asset = {
+		type = pdxmesh
+		name = "fp4_legendary_dharmic_shrine_01_a_mesh"
+		graphical_faiths = { dharmic_gfx }
+	}
+
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_building_legendary_shrine.dds"
+
+	is_enabled = {
+		scope:holder = {
+			piety_level > 2
+		}
+	}
+
+	can_construct = {
+		scope:holder = {
+			piety_level > 2
+		}
+	}
+
+	character_modifier = {
+		monthly_piety_mult = 1
+		controlled_province_advantage = 15
+	}
+
+	county_modifier = {
+		tax_mult = 1
+		monthly_county_control_growth_add = 1
+		fort_level = 10
+		levy_size = 2
+		development_growth = 1
+	}
+
+	province_modifier = {
+		monthly_income = 8
+		stationed_maa_damage_add = 75
+		stationed_maa_toughness_add = 75
+	}
+
+	type = special
+
+	flag = perpendicularity
+
+	cost = {
+		gold = 500
+		piety = 1000
+	}
+
+	next_building = perpendicularity_03
+}
+
+perpendicularity_03 = {
+
+	asset = {
+		type = pdxmesh
+		name = "fp4_legendary_steppe_shrine_01_a_mesh"
+	}
+
+	asset = {
+		type = pdxmesh
+		name = "fp4_legendary_building_christian_shrine_01_mesh"
+		graphical_faiths = { "catholic_gfx" }
+	}
+
+	asset = {
+		type = pdxmesh
+		name = "fp4_legendary_islamic_shrine_01_a_mesh"
+		graphical_faiths = { "islamic_gfx" "judaism_gfx" }
+	}
+
+	asset = {
+		type = pdxmesh
+		name = "fp4_legendary_building_norse_shrine_01_a_mesh"
+		graphical_cultures = { norse_building_gfx }
+		graphical_faiths = { pagan_gfx }
+	}
+
+	asset = {
+		type = pdxmesh
+		name = "fp4_legendary_dharmic_shrine_01_a_mesh"
+		graphical_faiths = { dharmic_gfx }
+	}
+
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_building_legendary_shrine.dds"
+
+	is_enabled = {
+		scope:holder = {
+			piety_level > 3
+		}
+	}
+
+	can_construct = {
+		scope:holder = {
+			piety_level > 3
+		}
+	}
+
+	character_modifier = {
+		monthly_piety_mult = 1.5
+		controlled_province_advantage = 20
+	}
+
+	county_modifier = {
+		tax_mult = 2
+		monthly_county_control_growth_add = 2
+		fort_level = 15
+		levy_size = 3
+		development_growth = 2
+	}
+
+	province_modifier = {
+		monthly_income = 10
+		stationed_maa_damage_add = 100
+		stationed_maa_toughness_add = 100
+	}
+
+	type = special
+
+	flag = perpendicularity
+
+	cost = {
+		gold = 1000
+		piety = 2000
+	}
+}

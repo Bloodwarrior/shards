@@ -1,0 +1,118 @@
+﻿county_cataclysm_interaction = {
+	category = interaction_category_religion
+	icon = cataclysm
+	interface_priority = 60
+
+	desc = county_cataclysm_interaction_desc
+
+	target_type = title
+	target_filter = recipient_domain_titles
+	
+	is_shown = {
+		scope:actor = { is_a_divinity = yes }
+		scope:recipient = {is_landed = yes}
+	}
+
+	can_be_picked = {
+		scope:target = {
+			tier = 2
+		}	
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			OR = {
+				NOT = {
+					is_a_divinity = yes
+				}
+				has_trait = prophet_manifestation
+				scope:recipient = scope:actor
+			}
+			
+		}
+	}
+
+	send_options_exclusive = yes
+
+	send_option = {
+		is_valid = {
+		}
+		flag = minor
+		localization = county_cataclysm_minor_option
+	}
+
+	send_option = {
+		is_valid = {
+			scope:actor = { piety_level > 1 }
+		}
+		flag = major
+		localization = county_cataclysm_major_option
+	}
+
+	send_option = {
+		is_valid = {
+			scope:actor = { piety_level > 2 }
+		}
+		flag = apocalyptic
+		localization = county_cataclysm_apocalyptic_option
+	}
+
+
+	on_accept = {
+		scope:actor = {
+			trigger_event = cataclysm_events.0004
+		}
+		scope:recipient = {
+			add_opinion = {
+				target = scope:actor
+				modifier = cursed_me_opinion
+			}
+		}
+		scope:target = {
+			if = {
+				limit = {
+					scope:minor = yes					
+				}
+				custom_tooltip = GENERAL_MINOR_DESC
+				minor_cataclysm_effect = { target_title = target }
+			}
+
+			if = {
+				limit = {
+					scope:major = yes					
+				}
+				scope:actor = { add_piety_level = -1 }
+				custom_tooltip = GENERAL_MAJOR_DESC
+				major_cataclysm_effect = { target_title = target }
+			}
+
+			if = {
+				limit = {
+					scope:apocalyptic = yes					
+				}
+				scope:actor = { add_piety_level = -2 }
+				custom_tooltip = GENERAL_APOCALYPTIC_DESC
+				apocalyptic_cataclysm_effect = { target_title = target }
+			}
+		}
+	
+	}
+
+	auto_accept = yes
+
+	cost = {
+		piety = cataclysm_cost
+	}
+	
+	# AI
+	# ai_targets = {
+	# }
+	# ai_frequency = 12
+
+	# ai_potential = {
+	# }
+
+	# ai_will_do = {
+	# 	base = 0
+	# }
+}

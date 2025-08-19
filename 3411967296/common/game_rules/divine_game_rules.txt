@@ -1,0 +1,21 @@
+ai_gods = {
+	
+	categories = {
+		difficulty ai
+	}
+	
+	default = ai_gods_exist
+
+	ai_gods_exist = {
+
+	}
+	
+	ai_gods_dont_exist = {
+
+	}
+
+	every_faith_has_god = {
+		
+	}
+	
+}

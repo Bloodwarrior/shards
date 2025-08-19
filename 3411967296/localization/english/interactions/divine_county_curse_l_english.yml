@@ -1,0 +1,7 @@
+﻿l_english:
+ county_curse_interaction: "County Curse"
+ county_curse_interaction_desc: "Cast down a terrible curse on [recipient.GetShortUINameNoTooltip]'s lands, turning once-prosperous counties into shells of their former selves."
+ county_curse_of_destitution_option: "Curse of Destitution"
+ county_curse_of_ruin_option: "Curse of Ruin"
+ county_curse_of_death_option: "Curse of Death"
+ county_curse_of_weakness_option: "Curse of Weakness"

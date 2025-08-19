@@ -1,0 +1,116 @@
+grant_immortality_interaction = {
+	category = interaction_category_religion
+	icon = eternal_trait
+
+	interface_priority = 100
+	desc = grant_immortality_interaction_desc
+	
+	is_shown = {
+		NOT = { scope:actor = scope:recipient }
+		scope:actor = { is_a_divinity = yes }
+		NOT = { scope:recipient = { has_trait = true_immortal_trait } }
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			NOT = {
+				is_a_divinity = yes
+			}
+		}
+	}
+
+	send_options_exclusive = yes
+	send_option = {
+		is_valid = {
+			scope:recipient =  {
+				NOT = { has_trait = eternal_trait }
+				NOT = { has_trait = reborn_trait }
+				NOT = { has_trait = true_immortal_trait }
+			}
+		}
+		flag = eternal
+		localization = eternal_option
+	}
+
+	send_option = {
+		is_valid = {
+			scope:recipient =  {
+				NOT = { has_trait = eternal_trait }
+				NOT = { has_trait = reborn_trait }
+				NOT = { has_trait = true_immortal_trait }
+			}
+		}
+		flag = reborn
+		localization = reborn_option
+	}
+
+	send_option = {
+		is_valid = {
+		}
+		flag = true_immortal
+		localization = true_immortal_option
+	}
+
+	on_accept = {
+		scope:recipient = {
+			add_opinion = {
+				target = scope:actor
+				modifier = made_me_immortal
+			}
+		}
+		if = {
+			limit = {
+				scope:eternal = yes
+			}
+			scope:recipient = {
+				make_immortal_effect = { IMMORTALITY_TRAIT = eternal_trait INVESTMENT = 5 }
+			}
+		}
+
+		if = {
+			limit = {
+				scope:reborn = yes
+			}
+			scope:recipient = {
+				make_immortal_effect = { IMMORTALITY_TRAIT = reborn_trait INVESTMENT = 5 }
+			}
+		}
+
+		if = {
+			limit = {
+				scope:true_immortal = yes
+			}
+			scope:recipient = {
+				make_true_immortal_effect = yes
+			}
+		}
+		
+	}
+
+	auto_accept = yes
+
+	cost = {
+		piety = {	
+			if = {
+				limit = {scope:true_immortal = yes}
+				value = true_immortality_cost
+			}
+			else = {
+				value = normal_immortality_cost
+			}
+		}
+		
+	}
+	
+	# AI
+	# ai_targets = {
+	# }
+	# ai_frequency = 12
+
+	# ai_potential = {
+	# }
+
+	# ai_will_do = {
+	# 	base = 0
+	# }
+}

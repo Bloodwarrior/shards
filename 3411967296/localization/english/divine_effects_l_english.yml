@@ -1,0 +1,7 @@
+﻿l_english:
+ increase_investment_loc: "Increases [investment|E] by $VALUE|0+$"
+ INVESTMENT_COST_MULTIPLY: "[investment|E] cost multiplier"
+ DOMINION_COST_MULTIPLY: "[dominion|E] cost multiplier"
+ change_beauty_trait: "Target's beauty trait will change by $VALUE|0+$"
+ change_physique_trait: "Target's physique trait will change by $VALUE|0+$"
+ change_intellect_trait: "Target's intellect trait will change by $VALUE|0+$"

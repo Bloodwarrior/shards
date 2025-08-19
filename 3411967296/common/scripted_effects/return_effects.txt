@@ -1,0 +1,292 @@
+cure_bad_condition_for_return = {
+    heal_effect = yes
+}
+
+#TODO
+copy_divine_hooks = {
+    if = {
+        limit = { 
+            scope:returned = { has_variable = binder }
+        }
+        scope:returned.var:binder = {
+            add_hook = {
+                type = loyalty_hook
+                target = scope:new_returned
+            }
+            remove_list_variable = {
+                name = honour_bounded
+                target = scope:returned
+            }
+            add_to_variable_list  = {
+                name = honour_bounded
+                target = scope:new_returned
+            }
+        }
+        set_variable = { name = binder value = scope:returned.var:binder}
+    }
+
+    if = {
+        limit = {
+            scope:returned = {
+                has_variable_list = honour_bounded
+            }
+        }
+        scope:returned = {
+            every_in_list = {
+                variable = honour_bounded
+                save_scope_as = current_bound
+                set_variable = {
+                    name = binder
+                    value = scope:new_returned
+                }                        
+                scope:new_returned = {
+                    add_to_variable_list  = {
+                        name = honour_bounded
+                        target = scope:current_bound
+                    }
+                    add_hook = {
+                        type = loyalty_hook
+                        target = scope:current_bound
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+
+copy_all_instances_of_modifier = {
+    if = {
+        limit = {
+            scope:returned = {
+                has_character_modifier = $MODIFIER$
+            }
+        }
+        set_local_variable = { name = modifier_count value = 0 }
+        while = {
+            limit = {
+                scope:returned = {
+                    has_character_modifier = $MODIFIER$
+                }
+            }
+            change_local_variable = {
+                name = modifier_count
+                add = 1
+            }
+            scope:returned = {
+                remove_character_modifier = $MODIFIER$
+            }
+        }
+        while = {
+            count = local_var:modifier_count
+            scope:returned = {
+                add_character_modifier = $MODIFIER$
+            }
+            scope:new_returned = {
+                add_character_modifier = $MODIFIER$
+            }
+        }
+    }
+}
+
+copy_blessings = {
+    copy_all_instances_of_modifier = { MODIFIER = blessing_of_war_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = lesser_blessing_of_war_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = blessing_of_gold_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = lesser_blessing_of_gold_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = blessing_of_deceit_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = lesser_blessing_of_deceit_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = blessing_of_love_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = lesser_blessing_of_love_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = blessing_of_speed_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = lesser_blessing_of_speed_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = blessing_of_battle_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = lesser_blessing_of_battle_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = blessing_of_mind_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = lesser_blessing_of_mind_modifier }
+}
+
+copy_curses = {
+    copy_all_instances_of_modifier = { MODIFIER = curse_of_defeat_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = lesser_curse_of_defeat_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = curse_of_loss_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = lesser_curse_of_loss_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = curse_of_deceit_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = lesser_curse_of_deceit_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = curse_of_hate_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = lesser_curse_of_hate_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = curse_of_sand_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = lesser_curse_of_sand_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = curse_of_battle_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = lesser_curse_of_battle_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = curse_of_mind_modifier }
+    copy_all_instances_of_modifier = { MODIFIER = lesser_curse_of_mind_modifier }
+}
+
+copy_prayer_management = {
+    if = {
+        limit = { 
+            scope:returned = {
+                has_character_modifier = mortals_happy_from_prayers
+            }
+        }
+        scope:new_returned = {
+            add_character_modifier = mortals_happy_from_prayers
+        }
+    }
+    if = {
+        limit = { 
+            scope:returned = {
+                has_character_modifier = mortals_unhappy_from_prayers
+            }
+        }
+        scope:new_returned = {
+            add_character_modifier = mortals_unhappy_from_prayers
+        }
+    }
+    if = {
+        limit = { 
+            scope:returned = {
+                has_variable = prayer_level_preferance
+            }
+        }
+        scope:new_returned = {
+            set_variable = { name = prayer_level_preferance value = scope:returned.var:prayer_level_preferance }
+        }
+    }
+}
+
+
+
+basic_return = {
+    if = {
+        limit = {
+            OR = {
+                has_trait_with_flag = rebirth
+                has_trait_with_flag = rebirth_pl
+                has_character_flag = rebirth
+            }   		
+            NOT = { has_character_flag = no_ressurection }
+        }
+
+        cure_bad_condition_for_return = yes
+        save_scope_as = returned
+        add_character_flag = transition
+        
+        if = {
+            limit = {
+                has_character_modifier = infected_wound_modifier
+            }
+            remove_character_modifier = infected_wound_modifier
+        }
+        if = {
+            limit = {
+                has_character_modifier = gangrene_modifier
+            }
+            remove_character_modifier = gangrene_modifier
+        }
+        create_character = {
+            age = 20
+            gender = scope:returned
+            random_traits = no
+            mother = scope:returned.mother
+            father = scope:returned.father
+            location = scope:returned.location
+            save_scope_as = new_returned
+            dynasty_house = scope:returned.house
+        }
+        scope:new_returned  = {
+            clear_traits = yes
+            copy_inheritable_appearance_from = scope:returned
+            copy_traits = scope:returned
+            change_first_name = { template_character = scope:returned }
+            set_character_faith = scope:returned.faith
+            set_culture_same_as = scope:returned
+            scope:returned = {
+                every_equipped_character_artifact = {
+                    set_owner = scope:new_returned
+                    equip_artifact_to_owner_replace = yes
+                }
+                every_character_artifact = {
+                    set_owner = scope:new_returned 
+                }
+            }
+            copy_blessings = yes
+            copy_curses = yes
+            copy_prayer_management = yes				 
+            
+            if = {
+                limit = {
+                    scope:returned = {
+                        has_trait_with_flag = rebirth_pl
+                    }
+                }
+                add_piety_level = { value = scope:returned.piety_level subtract = scope:new_returned.piety_level subtract = 1 }
+            }
+            else = {
+                add_piety_level = { value = scope:returned.piety_level subtract = scope:new_returned.piety_level }
+            }
+            force_character_skill_recalculation = yes
+            add_prestige_level = {value = scope:returned.prestige_level subtract = scope:new_returned.prestige_level}
+            add_piety_no_experience = { value = scope:returned.piety subtract = scope:new_returned.piety }
+            add_prestige_no_experience = { value = scope:returned.prestige subtract = scope:new_returned.prestige }
+            add_gold = { value = scope:returned.gold subtract = scope:new_returned.gold }
+            add_diplomacy_skill = { value = scope:returned.diplomacy subtract = scope:new_returned.diplomacy }
+            add_martial_skill = { value = scope:returned.martial subtract = scope:new_returned.martial }
+            add_stewardship_skill = { value = scope:returned.stewardship subtract = scope:new_returned.stewardship }
+            add_intrigue_skill = { value = scope:returned.intrigue subtract = scope:new_returned.intrigue }
+            add_learning_skill = { value = scope:returned.learning subtract = scope:new_returned.learning }
+            add_prowess_skill = { value = scope:returned.prowess subtract = scope:new_returned.prowess }
+            set_variable = { name = investment_level_var value = scope:returned.investment_level }
+
+
+            
+
+            scope:returned = {
+                if = {
+                    limit = {
+                        is_landed = yes
+                    }
+                    create_title_and_vassal_change = {
+                        type = conquest
+                        save_scope_as = change
+                    }
+                    every_held_title = {
+                        change_title_holder_include_vassals = {
+                            holder = scope:new_returned
+                            change = scope:change
+                        }
+                    }
+                    resolve_title_and_vassal_change = scope:change
+                    if = {
+                        limit = {
+                            is_local_player = yes
+                        }
+                        set_player_character = scope:new_returned
+                    }
+                }
+                else = {
+                    if = {
+                        limit = {
+                            exists = liege_or_court_owner
+                        }
+                        liege_or_court_owner = {								
+                            add_courtier = scope:new_returned
+                        }
+                    }
+                    else_if = {
+                        limit = {
+                            exists = employer
+                        }
+                        employer = {
+                            add_courtier = scope:new_returned
+                        }
+                    }
+                    
+                }
+            }
+        }				
+        remove_character_flag = transition
+    }
+}

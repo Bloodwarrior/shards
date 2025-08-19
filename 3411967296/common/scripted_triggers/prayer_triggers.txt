@@ -1,0 +1,103 @@
+﻿has_defiency = {
+	OR = {
+		has_trait_rank = {
+			trait = intellect_bad
+			rank > 0
+		}
+
+		has_trait_rank = {
+			trait = beauty_bad
+			rank > 0
+		}
+
+		has_trait_rank = {
+			trait = physique_bad
+			rank > 0
+		}
+
+		has_trait = infertile
+		has_trait = weak
+	}
+}
+
+has_major_defiency = {
+	OR = {
+		has_trait_rank = {
+			trait = intellect_bad
+			rank > 2
+		}
+
+		has_trait_rank = {
+			trait = beauty_bad
+			rank > 2
+		}
+
+		has_trait_rank = {
+			trait = physique_bad
+			rank > 2
+		}
+	}
+}
+
+in_bad_war = {
+	is_at_war = yes
+	OR = {
+		total_enemy_side_strength > total_ally_side_strength
+		save_scope_as = scope:candidate 
+		any_character_war = {
+			OR = {
+				AND = {
+					is_defender = candidate
+					attacker_war_score > 10
+				}
+				AND = {
+					is_attacker = candidate
+					defender_war_score > 10
+				}
+			}
+		}
+	}
+}
+
+has_need = {
+	OR = {
+		is_at_war = yes
+		has_health_problems = yes
+		gold <= { value = minor_gold_value multiply = -1 }
+		AND = {
+			fertility < 0.4
+			NOT = {
+				any_child = {
+				always = yes	
+				}
+			}								
+		}
+		has_defiency = yes
+		AND = {
+			age > 60
+			NOT = { any_immortal_trait = yes }
+			has_trait = ambitious
+		}
+	}
+}
+
+has_grave_need = {
+	OR = {
+		in_bad_war = yes
+		AND = {
+			has_health_problems = yes
+			health < 3
+		}
+		
+		gold <= { value = major_gold_value multiply = -1 }
+		AND = {
+			fertility < 0.1
+			NOT = {
+				any_child = {
+				always = yes	
+				}
+			}								
+		}
+		has_major_defiency = yes
+	}
+}

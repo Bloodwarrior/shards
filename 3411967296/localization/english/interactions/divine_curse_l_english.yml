@@ -1,0 +1,10 @@
+﻿l_english:
+ curse_interaction: "Curse"
+ curse_interaction_desc: "Cast down a terrible curse on [recipient.GetShortUINameNoTooltip], binding their fate to a misery of your choice."
+ curse_of_defeat_option: "Curse of Defeat"
+ curse_of_loss_option: "Curse of Loss"
+ curse_of_deceit_option: "Curse of Deceit"
+ curse_of_hate_option: "Curse of Hate"
+ curse_of_sand_option: "Curse of Sand"
+ curse_of_battle_option: "Curse of Battle"
+ curse_of_mind_option: "Curse of Mind"

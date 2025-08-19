@@ -1,0 +1,75 @@
+
+on_piety_level_gain = {
+	on_actions = {
+		piety_level_change_on_action
+	}
+}
+
+on_piety_level_loss = {
+	on_actions = {
+		piety_level_change_on_action
+	}
+}
+
+on_army_monthly = {
+	on_actions = {
+		perpendicularity_move_back_army
+	}
+}
+
+on_county_occupied = {
+	on_actions = {
+		perpendicularity_conquer_injury
+	}
+}
+
+on_army_enter_province = {
+	on_actions = {
+		perpendicularity_move_back_army
+	}
+}
+
+on_death = {
+	on_actions = {
+		rebirth
+		inherit_prophet_trait
+	}
+}
+
+on_imprison = {
+	on_actions = {
+		perpendicularity_prison_escape
+		debug_force_prayer
+	}
+}
+
+on_title_lost = {
+	on_actions = {
+		perpendicularity_loss
+	}
+}
+
+on_travel_plan_movement = {
+	on_actions = {
+		perpendicularity_move_back_travel
+	}
+}
+
+yearly_global_pulse = {
+	on_actions = {
+		update_god_list
+		update_faith_county_modifiers
+		choose_manifestation
+		ai_god_powers_use
+		yearly_prayers
+		delay = { days = { 100 200 } }
+		ai_god_powers_use
+
+	}
+}
+
+on_game_start = {
+	on_actions = {
+		create_gods
+	}
+}

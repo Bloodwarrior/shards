@@ -1,0 +1,32 @@
+﻿l_english:
+
+ trait_divinity_trait:0 "Divinity"
+ trait_divinity_trait_desc:0 "This character is a divine being - a God or Godess, imbued with the great powers of creation, destruction and manipulation."
+
+ trait_eternal_trait:0 "Eternal"
+ trait_eternal_trait_desc:0 "This character is an eternal - a recipient of [eternity|E]. They will never grow old or wither, serving their Divinity until they die by violence, sickness, or the ravages of fate."
+
+ trait_reborn_trait:0 "Reborn"
+ trait_reborn_trait_desc:0 "This character has the blessing of [rebirth|E], and numbers amongst the ranks of the reborn - elite servants of their Divinity, who return to life each time they die to serve once more. Unfortunately, each time they die, it bears a cost to their mind, and some things are lost - memories, their relations with others, and more.\nThe reborn suffer from one great curse - age. They age and die like any mortal over time, each time hurting their psyche further."
+
+ trait_true_immortal_trait:0 "True Immortal"
+ trait_true_immortal_trait_desc:0 "This character is a True Immortal - a rare and powerful being. They combine the blessings of [rebirth|E] and [eternity|E] to create an immortal who doesn't age - and also returns each time they die."
+
+ trait_avatar_1: "[avatar|E]: Depleted"
+ trait_avatar_1_desc: "A body made from divine essence, tethered to an infinite [divinity|E]. The Avatar is very weak, on the edge of fully dissipating - it is no longer immortal, and the next death will finish it for good."
+ trait_avatar_2: "[avatar|E]: Stable"
+ trait_avatar_2_desc: "A body made from divine essence, tethered to an infinite [divinity|E]. The Avatar is stable, but not unusally powerful - as the divinity gains power, it shall grow in strength."
+ trait_avatar_3: "[avatar|E]: Ebbing"
+ trait_avatar_3_desc: "A body made from divine essence, tethered to an infinite [divinity|E]. The Avatar is growing in strength, representing the might of a deity on the rise."
+ trait_avatar_4: "[avatar|E]: Potent"
+ trait_avatar_4_desc: "A body made from divine essence, tethered to an infinite [divinity|E]. The Avatar is a potent one, having superhuman powers."
+ trait_avatar_5: "[avatar|E]: Majestic"
+ trait_avatar_5_desc: "A body made from divine essence, tethered to an infinite [divinity|E]. The Avatar shines with barely contained power."
+ trait_avatar_6: "[avatar|E]: Ascendant"
+ trait_avatar_6_desc: "A body made from divine essence, tethered to an infinite [divinity|E]. The Avatar is a true manifestation of divinity, a terrible and terrifying creature."
+
+ trait_perpendicularity_avatar: "Perpendicularity Avatar"
+ trait_perpendicularity_avatar_desc: "The human avatar of a [perpendicularity|E] - while immortal, cannot ever leave the county."
+
+ trait_prophet_manifestation: "Divine Prophet"
+ trait_prophet_manifestation_desc: "This mortal is a [prophet|E], the personal chosen of a [divinity|E]."

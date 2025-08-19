@@ -1,0 +1,15 @@
+﻿l_english:
+ #MaA types
+ monster: "[monster|E]"
+
+ divine_bowmen: "Blessed Bowmen"
+ divine_bowmen_flavor: "Men blessed by a divinity to wield the bow, they fire with supernatural precision to earn the favor of their God."
+
+ divine_armored_footmen: "Providants"
+ divine_armored_footmen_flavor: "Divine protectors created when a Divnity blesses a mortal with the blessing of war - granting them superhuman skill and toughness. Deployed in the many battlegrounds of the divine, they serve faithfully."
+ 
+ divine_armored_horsemen: "Boon-Riders"
+ divine_armored_horsemen_flavor: "These sacred horsemen ride at the beckoning of the divine, sitting astride perfect and intellegent horses."
+
+ divine_titan: "Titans"
+ divine_titan_flavor: "The epitome of a Divinity's wrath, personefied. The form differs for each Divinity, but each is a large, powerful menace that can ruin cities."

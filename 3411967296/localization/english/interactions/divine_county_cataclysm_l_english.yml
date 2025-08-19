@@ -1,0 +1,13 @@
+﻿l_english:
+ county_cataclysm_interaction: "Cataclysm"
+ county_cataclysm_interaction_desc: "Bring divine desolation to [recipient.GetShortUINameNoTooltip]'s land, destroying and killing anything that stands in your path."
+ county_cataclysm_minor_option: "Minor Cataclysm"
+ county_cataclysm_major_option: "Major Cataclysm"
+ county_cataclysm_apocalyptic_option: "Apocalyptic Cataclysm"
+ HURT_OR_KILL: "Characters in the county are at risk of being hurt or even dying - the more severe the Cataclysm, the more people will perish. Higher ranked characters and [invested|E] ones are safer from harm."
+ HURT_ARMIES: "Armies in the location will suffer casualties."
+ RANDOM_HOLDING_DESTROYED: "A random holding (if one is available) will be destroyed."
+ ALL_HOLDINGS_DESTROYED: "All non-captial holdings will be destroyed."
+ GENERAL_MINOR_DESC: "Wreak minor destruction on a county."
+ GENERAL_MAJOR_DESC: "Wreak major destruction on a county, and to a minor extent the one's surrounding it."
+ GENERAL_APOCALYPTIC_DESC: "Unleash the wrath of the divine upon the county, rendering it completly unusable. Surrounding counties will be hit hard, and the ones surrounding them minorly."

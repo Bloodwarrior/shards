@@ -1,0 +1,179 @@
+heal_harm_interaction = {
+	category = interaction_category_religion
+	icon = heal_harm
+
+	interface_priority = 100
+	desc = heal_harm_interaction_desc
+	
+	is_shown = {
+		scope:actor = { is_a_divinity = yes }
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			OR = {
+				NOT = {
+					is_a_divinity = yes
+				}
+				scope:actor = scope:recipient
+			}
+		}
+	}
+
+	send_options_exclusive = yes
+	send_option = {
+		is_valid = {
+			scope:recipient =  {
+				has_health_problems = yes
+			}
+		}
+		flag = heal
+		localization = heal_option
+	}
+
+	send_option = {
+		is_valid = {
+			scope:recipient =  {
+				NOT = { scope:actor = scope:recipient }
+			}
+		}
+		flag = illness
+		localization = illness_option
+	}
+
+	send_option = {
+		is_valid = {
+			scope:recipient =  {
+				NOT = { scope:actor = scope:recipient }
+			}
+		}
+		flag = injure
+		localization = injure_option
+	}
+
+	send_option = {
+		is_valid = {
+			scope:recipient =  {
+				NOT = { scope:actor = scope:recipient }
+			}
+		}
+		flag = severly_injure
+		localization = severly_injure_option
+	}
+
+	send_option = {
+		is_valid = {
+			scope:recipient =  {
+				NOT = { scope:actor = scope:recipient }
+			}
+		}
+		flag = smite
+		localization = smite_option
+	}
+
+	on_accept = {
+		if = {
+			limit = {
+				scope:heal = yes
+			}
+			scope:recipient = {
+				heal_effect = yes
+				add_opinion = {
+					target = scope:actor
+					modifier = blessed_me_opinion
+				}
+				
+			}
+		}
+
+		if = {
+			limit = {
+				scope:illness = yes
+			}
+			scope:recipient = {
+				give_random_illness_effect = yes
+				add_opinion = {
+					target = scope:actor
+					modifier = cursed_me_opinion
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				scope:injure = yes
+			}
+			scope:recipient = {
+				increase_wounds_effect = { REASON = death_sacrificed_to_gods }
+				add_opinion = {
+					target = scope:actor
+					modifier = cursed_me_opinion
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				scope:severly_injure = yes
+			}
+			scope:recipient = {
+				hidden_effect = {
+					increase_wounds_effect = { REASON = death_sacrificed_to_gods }
+				    increase_wounds_effect = { REASON = death_sacrificed_to_gods }
+				}
+				custom_tooltip = "GAIN_TWO_WOUNDS"
+				add_opinion = {
+					target = scope:actor
+					modifier = cursed_me_opinion
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				scope:smite = yes
+			}
+			scope:recipient = {
+				custom_tooltip = WILL_NOT_RETURN
+				add_character_flag = no_ressurection
+				death = { killer = scope:actor death_reason = death_sacrificed_to_gods }
+			}
+		}
+		
+	}
+
+	auto_accept = yes
+
+	cost = {
+		piety = {
+			if = {
+				limit = {
+					scope:severly_injure = yes
+				}
+				value = severly_injure_cost
+			}
+			else_if = {
+				limit = {
+					scope:smite = yes
+				}
+				value = smite_cost
+			}
+			else = {
+				value = heal_injure_cost
+			}
+
+		}
+	}
+	
+	# AI
+	# ai_targets = {
+	# }
+	# ai_frequency = 12
+
+	# ai_potential = {
+	# }
+
+	# ai_will_do = {
+	# 	base = 0
+	# }
+}

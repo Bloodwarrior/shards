@@ -1,0 +1,1460 @@
+namespace = divine_prayer
+
+# Template
+# divine_prayer.0000 = {
+# 	title = divine_prayer.0001.title
+# 	desc = divine_prayer.0001.desc
+# 	theme = faith
+
+# 	left_portrait = root
+	
+# 	right_portrait = scope:petitioner
+
+# 	immediate = {
+# 		save_scope_as = divinity
+# 		save_scope_as = actor
+# 		scope:petitioner = {
+# 			save_scope_as = recipient
+# 		}
+# 	}
+	
+# 	# minor boon
+# 	option = {
+# 		name = divine_prayer.0001.a
+# 		trigger = {
+# 			piety >= power_cost
+# 		}
+# 		show_as_unavailable = {always = yes}
+# 		gave_minor_boon = yes
+# 	}
+
+# 	# Medium boon
+# 	option = {
+# 		name = divine_prayer.0001.b
+# 		trigger = {
+# 			piety >= power_cost
+# 		}
+# 		show_as_unavailable = {always = yes}
+# 		gave_medium_boon = yes
+# 	}
+
+# 	# Major boon
+# 	option = {
+# 		name = divine_prayer.0001.c
+# 		trigger = {
+# 			piety >= power_cost
+# 		}
+# 		show_as_unavailable = {always = yes}
+# 		gave_major_boon = yes
+# 	}
+	
+# 	option = {
+# 		name = divine_prayer.0001.d
+        ai_chance = { base = 0 }
+# 		scope:petitioner = {
+# 			if = {
+# 				limit = { scope:petitioner.faith = scope:divnity.faith }
+# 				check_for_heresy = yes
+# 			}			
+# 		}
+		
+# 	}
+# }
+
+divine_prayer.9000 = {
+	hidden = yes
+
+	immediate = {
+		save_scope_as = divinity
+		scope:divinity.faith = {
+			random_faith_ruler = {
+				limit = {
+					is_a_divinity = no
+					highest_held_title_tier > 1
+					is_adult = yes
+					is_landed = yes
+				}
+				weight = {
+					base = 0
+					modifier = {
+						add = { value = ai_greed divide = 10}
+						always = yes
+					}
+					modifier = {
+						add = { value = ai_zeal divide = 10}
+						always = yes
+					}
+					modifier = {
+						add = 25
+						has_trait = ambitious
+					}
+					# Has a need
+					modifier = {
+						add = 40
+						has_need = yes
+					}
+
+					# Has a grave need
+					modifier = {
+						add = 60
+						has_grave_need = yes
+					}
+
+					modifier = {
+						factor = { value = highest_held_title_tier multiply = highest_held_title_tier }
+						always = yes
+					}
+				}
+				save_scope_as = petitioner
+				if = {
+					limit = {
+						scope:divinity = {
+							has_character_flag = refusing_prayers
+						}
+					}
+					if = {
+						limit = { scope:petitioner.faith = root.faith }
+						check_for_heresy = yes
+					}
+					add_opinion = {
+						target = scope:divinity
+						modifier = refused_boon
+					}
+					
+				}
+				else = {
+					choose_prayer_effect = yes
+				}
+				
+			}
+		}
+	}
+}
+
+divine_prayer.9001 = {
+	hidden = yes
+
+	immediate = {
+		save_scope_as = divinity
+		random_ruler = {
+			limit = {
+				is_a_divinity = no
+				highest_held_title_tier > 1
+				is_adult = yes
+				NOT = {
+					has_faith = scope:divinity.faith
+				}
+				is_landed = yes
+			}
+			weight = {
+				base = 0
+
+				modifier = {
+					add = { value = ai_greed divide = 5}
+					always = yes
+				}
+				modifier = {
+					add = { value = ai_zeal divide = -10}
+					always = yes
+				}
+				modifier = {
+					add = 25
+					has_trait = ambitious
+				}
+				# Has a need
+				modifier = {
+					add = 40
+					has_need = yes
+				}
+
+				# Has a grave need
+				modifier = {
+					add = 60
+					has_grave_need = yes
+				}
+				modifier = {
+					factor = 5
+					highest_held_title_tier = 4
+				}
+				modifier = {
+					factor = 6
+					highest_held_title_tier = 3
+				}
+				modifier = {
+					factor = 0.5
+					faith = {
+						faith_hostility_level = {
+							target = scope:divinity.faith
+							value >= faith_hostile_level
+						}
+					}
+					
+				}
+				modifier = {
+					factor = 0.1
+					faith = {
+						faith_hostility_level = {
+							target = scope:divinity.faith
+							value >= faith_evil_level
+						}
+					}
+					
+				}
+				
+			}
+			save_scope_as = petitioner
+				if = {
+					limit = {
+						scope:divinity = {
+							has_character_flag = refusing_prayers
+						}
+					}
+					if = {
+						limit = { scope:petitioner.faith = root.faith }
+						check_for_heresy = yes
+					}
+					add_opinion = {
+						target = scope:divinity
+						modifier = refused_boon
+					}
+					
+				}
+				else = {
+					choose_prayer_effect = yes
+				}
+		}
+		
+	}
+}
+
+
+# Petiotioner asking for blessing of war
+divine_prayer.0001 = {
+	title = divine_prayer.0001.title
+	desc = divine_prayer.0001.desc
+	theme = faith
+
+	left_portrait = root
+	
+	right_portrait = scope:petitioner
+
+	immediate = {
+		save_scope_as = divinity
+		save_scope_as = actor
+		scope:petitioner = {
+			save_scope_as = recipient
+		}
+	}
+	
+	# minor boon
+	option = {
+		name = divine_prayer.0001.a
+		trigger = {
+			piety >= bless_cost
+		}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -1}
+		}
+		scope:petitioner = {
+			add_blessing = { BLESSING = war }
+		}
+		show_as_unavailable = {always = yes}
+		gave_minor_boon = yes
+	}
+
+	# Medium boon
+	option = {
+		name = divine_prayer.0001.b
+		trigger = {
+			piety >= {value = bless_cost multiply = 3}
+		}
+		show_as_unavailable = {always = yes}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -3}
+		}
+		scope:petitioner = {
+			custom_tooltip = blessing_trice_tooltip
+			custom_description = {
+				text = increase_investment_text
+				object = this
+				value = 6
+				add_blessing = { BLESSING = war }
+				add_blessing = { BLESSING = war }
+				add_blessing = { BLESSING = war }
+			}
+		}
+		gave_medium_boon = yes
+	}
+
+	# # Major boon
+	# option = {
+	# 	name = divine_prayer.0001.c
+	# 	gave_major_boon = yes
+	# }
+	
+	option = {
+		name = divine_prayer.0001.d
+        ai_chance = { base = 0 }
+		scope:petitioner = {
+			if = {
+				limit = { scope:petitioner.faith = root.faith }
+				check_for_heresy = yes
+			}
+			add_opinion = {
+				target = scope:divinity
+				modifier = refused_boon
+			}			
+		}
+		
+	}
+}
+
+# Petiotioner asking for blessing of gold
+divine_prayer.0002 = {
+	title = divine_prayer.0002.title
+	desc = divine_prayer.0002.desc
+	theme = faith
+
+	left_portrait = root
+	
+	right_portrait = scope:petitioner
+
+	immediate = {
+		save_scope_as = divinity
+		save_scope_as = actor
+		scope:petitioner = {
+			save_scope_as = recipient
+		}
+	}
+	
+	# minor boon
+	option = {
+		name = divine_prayer.0001.a
+		trigger = {
+			piety >= bless_cost
+		}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -1}
+		}
+		scope:petitioner = {
+			add_blessing = { BLESSING = gold }
+		}
+		show_as_unavailable = {always = yes}
+		gave_minor_boon = yes
+	}
+
+	# Medium boon
+	option = {
+		name = divine_prayer.0001.b
+		trigger = {
+			piety >= {value = bless_cost multiply = 3}
+		}
+		show_as_unavailable = {always = yes}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -3}
+		}
+		scope:petitioner = {
+			custom_tooltip = blessing_trice_tooltip
+			custom_description = {
+				text = increase_investment_text
+				object = this
+				value = 6
+				add_blessing = { BLESSING = gold }
+				add_blessing = { BLESSING = gold }
+				add_blessing = { BLESSING = gold }
+			}
+		}
+		gave_medium_boon = yes
+	}
+
+	# # Major boon
+	# option = {
+	# 	name = divine_prayer.0001.c
+	# 	gave_major_boon = yes
+	# }
+	
+	option = {
+		name = divine_prayer.0001.d
+        ai_chance = { base = 0 }
+		scope:petitioner = {
+			if = {
+				limit = { scope:petitioner.faith = root.faith }
+				check_for_heresy = yes
+			}
+			add_opinion = {
+				target = scope:divinity
+				modifier = refused_boon
+			}			
+		}
+		
+	}
+}
+
+# Petiotioner asking for blessing of deceit
+divine_prayer.0003 = {
+	title = divine_prayer.0003.title
+	desc = divine_prayer.0003.desc
+	theme = faith
+
+	left_portrait = root
+	
+	right_portrait = scope:petitioner
+
+	immediate = {
+		save_scope_as = divinity
+		save_scope_as = actor
+		scope:petitioner = {
+			save_scope_as = recipient
+		}
+	}
+	
+	# minor boon
+	option = {
+		name = divine_prayer.0001.a
+		trigger = {
+			piety >= bless_cost
+		}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -1}
+		}
+		scope:petitioner = {
+			add_blessing = { BLESSING = deceit }
+		}
+		show_as_unavailable = {always = yes}
+		gave_minor_boon = yes
+	}
+
+	# Medium boon
+	option = {
+		name = divine_prayer.0001.b
+		trigger = {
+			piety >= {value = bless_cost multiply = 3}
+		}
+		show_as_unavailable = {always = yes}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -3}
+		}
+		scope:petitioner = {
+			custom_tooltip = blessing_trice_tooltip
+			custom_description = {
+				text = increase_investment_text
+				object = this
+				value = 6
+				add_blessing = { BLESSING = deceit }
+				add_blessing = { BLESSING = deceit }
+				add_blessing = { BLESSING = deceit }
+			}
+		}
+		gave_medium_boon = yes
+	}
+
+	# # Major boon
+	# option = {
+	# 	name = divine_prayer.0001.c
+	# 	gave_major_boon = yes
+	# }
+	
+	option = {
+		name = divine_prayer.0001.d
+        ai_chance = { base = 0 }
+		scope:petitioner = {
+			if = {
+				limit = { scope:petitioner.faith = root.faith }
+				check_for_heresy = yes
+			}
+			add_opinion = {
+				target = scope:divinity
+				modifier = refused_boon
+			}			
+		}
+		
+	}
+}
+
+# Petiotioner asking for blessing of love
+divine_prayer.0004 = {
+	title = divine_prayer.0004.title
+	desc = divine_prayer.0004.desc
+	theme = faith
+
+	left_portrait = root
+	
+	right_portrait = scope:petitioner
+
+	immediate = {
+		save_scope_as = divinity
+		save_scope_as = actor
+		scope:petitioner = {
+			save_scope_as = recipient
+		}
+	}
+	
+	# minor boon
+	option = {
+		name = divine_prayer.0001.a
+		trigger = {
+			piety >= bless_cost
+		}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -1}
+		}
+		scope:petitioner = {
+			add_blessing = { BLESSING = love }
+		}
+		show_as_unavailable = {always = yes}
+		gave_minor_boon = yes
+	}
+
+	# Medium boon
+	option = {
+		name = divine_prayer.0001.b
+		trigger = {
+			piety >= {value = bless_cost multiply = 3}
+		}
+		show_as_unavailable = {always = yes}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -3}
+		}
+		scope:petitioner = {
+			custom_tooltip = blessing_trice_tooltip
+			custom_description = {
+				text = increase_investment_text
+				object = this
+				value = 6
+				add_blessing = { BLESSING = love }
+				add_blessing = { BLESSING = love }
+				add_blessing = { BLESSING = love }
+			}
+		}
+		gave_medium_boon = yes
+	}
+
+	# # Major boon
+	# option = {
+	# 	name = divine_prayer.0001.c
+	# 	gave_major_boon = yes
+	# }
+	
+	option = {
+		name = divine_prayer.0001.d
+        ai_chance = { base = 0 }
+		scope:petitioner = {
+			if = {
+				limit = { scope:petitioner.faith = root.faith }
+				check_for_heresy = yes
+			}
+			add_opinion = {
+				target = scope:divinity
+				modifier = refused_boon
+			}			
+		}
+		
+	}
+}
+
+# Petiotioner asking for blessing of speed
+divine_prayer.0005 = {
+	title = divine_prayer.0005.title
+	desc = divine_prayer.0005.desc
+	theme = faith
+
+	left_portrait = root
+	
+	right_portrait = scope:petitioner
+
+	immediate = {
+		save_scope_as = divinity
+		save_scope_as = actor
+		scope:petitioner = {
+			save_scope_as = recipient
+		}
+	}
+	
+	# minor boon
+	option = {
+		name = divine_prayer.0001.a
+		trigger = {
+			piety >= bless_cost
+		}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -1}
+		}
+		scope:petitioner = {
+			add_blessing = { BLESSING = speed }
+		}
+		show_as_unavailable = {always = yes}
+		gave_minor_boon = yes
+	}
+
+	# Medium boon
+	option = {
+		name = divine_prayer.0001.b
+		trigger = {
+			piety >= {value = bless_cost multiply = 3}
+		}
+		show_as_unavailable = {always = yes}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -3}
+		}
+		scope:petitioner = {
+			custom_tooltip = blessing_trice_tooltip
+			custom_description = {
+				text = increase_investment_text
+				object = this
+				value = 6
+				add_blessing = { BLESSING = speed }
+				add_blessing = { BLESSING = speed }
+				add_blessing = { BLESSING = speed }
+			}
+		}
+		gave_medium_boon = yes
+	}
+
+	# # Major boon
+	# option = {
+	# 	name = divine_prayer.0001.c
+	# 	gave_major_boon = yes
+	# }
+	
+	option = {
+		name = divine_prayer.0001.d
+        ai_chance = { base = 0 }
+		scope:petitioner = {
+			if = {
+				limit = { scope:petitioner.faith = root.faith }
+				check_for_heresy = yes
+			}
+			add_opinion = {
+				target = scope:divinity
+				modifier = refused_boon
+			}			
+		}
+		
+	}
+}
+
+# Petiotioner asking for blessing of battle
+divine_prayer.0006 = {
+	title = divine_prayer.0006.title
+	desc = divine_prayer.0006.desc
+	theme = faith
+
+	left_portrait = root
+	
+	right_portrait = scope:petitioner
+
+	immediate = {
+		save_scope_as = divinity
+		save_scope_as = actor
+		scope:petitioner = {
+			save_scope_as = recipient
+		}
+	}
+	
+	# minor boon
+	option = {
+		name = divine_prayer.0001.a
+		trigger = {
+			piety >= bless_cost
+		}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -1}
+		}
+		scope:petitioner = {
+			add_blessing = { BLESSING = battle }
+		}
+		show_as_unavailable = {always = yes}
+		gave_minor_boon = yes
+	}
+
+	# Medium boon
+	option = {
+		name = divine_prayer.0001.b
+		trigger = {
+			piety >= {value = bless_cost multiply = 3}
+		}
+		show_as_unavailable = {always = yes}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -3}
+		}
+		scope:petitioner = {
+			custom_tooltip = blessing_trice_tooltip
+			custom_description = {
+				text = increase_investment_text
+				object = this
+				value = 6
+				add_blessing = { BLESSING = battle }
+				add_blessing = { BLESSING = battle }
+				add_blessing = { BLESSING = battle }
+			}
+		}
+		gave_medium_boon = yes
+	}
+
+	# # Major boon
+	# option = {
+	# 	name = divine_prayer.0001.c
+	# 	gave_major_boon = yes
+	# }
+	
+	option = {
+		name = divine_prayer.0001.d
+        ai_chance = { base = 0 }
+		scope:petitioner = {
+			if = {
+				limit = { scope:petitioner.faith = root.faith }
+				check_for_heresy = yes
+			}
+			add_opinion = {
+				target = scope:divinity
+				modifier = refused_boon
+			}			
+		}
+		
+	}
+}
+
+
+# Petiotioner asking for blessing of mind
+divine_prayer.0007 = {
+	title = divine_prayer.0007.title
+	desc = divine_prayer.0007.desc
+	theme = faith
+
+	left_portrait = root
+	
+	right_portrait = scope:petitioner
+
+	immediate = {
+		save_scope_as = divinity
+		save_scope_as = actor
+		scope:petitioner = {
+			save_scope_as = recipient
+		}
+	}
+	
+	# minor boon
+	option = {
+		name = divine_prayer.0001.a
+		trigger = {
+			piety >= bless_cost
+		}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -1}
+		}
+		scope:petitioner = {
+			add_blessing = { BLESSING = mind }
+		}
+		show_as_unavailable = {always = yes}
+		gave_minor_boon = yes
+	}
+
+	# Medium boon
+	option = {
+		name = divine_prayer.0001.b
+		trigger = {
+			piety >= {value = bless_cost multiply = 3}
+		}
+		show_as_unavailable = {always = yes}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -3}
+		}
+		scope:petitioner = {
+			custom_tooltip = blessing_trice_tooltip
+			custom_description = {
+				text = increase_investment_text
+				object = this
+				value = 6
+				add_blessing = { BLESSING = mind }
+				add_blessing = { BLESSING = mind }
+				add_blessing = { BLESSING = mind }
+			}
+		}
+		gave_medium_boon = yes
+	}
+
+	# # Major boon
+	# option = {
+	# 	name = divine_prayer.0001.c
+	# 	gave_major_boon = yes
+	# }
+	
+	option = {
+		name = divine_prayer.0001.d
+        ai_chance = { base = 0 }
+		scope:petitioner = {
+			if = {
+				limit = { scope:petitioner.faith = root.faith }
+				check_for_heresy = yes
+			}
+			add_opinion = {
+				target = scope:divinity
+				modifier = refused_boon
+			}			
+		}
+		
+	}
+}
+
+
+# Petiotioner asking for immortality
+divine_prayer.1000 = {
+	title = divine_prayer.1000.title
+	desc = divine_prayer.1000.desc
+	theme = faith
+
+	left_portrait = root
+	
+	right_portrait = scope:petitioner
+
+	immediate = {
+		save_scope_as = divinity
+		save_scope_as = actor
+		scope:petitioner = {
+			save_scope_as = recipient
+		}
+	}
+	
+	# Reborn
+	option = {
+		name = divine_prayer.1000.a
+		trigger = {
+			piety >= normal_immortality_cost
+			scope:petitioner = {
+				NOR = {
+					has_trait = reborn_trait
+					has_trait = eternal_trait
+				}
+			}
+		}
+		scope:divinity = {
+			add_piety =  {value = normal_immortality_cost multiply = -1}
+		}
+		scope:petitioner = {
+			make_immortal_effect = { IMMORTALITY_TRAIT = reborn_trait INVESTMENT = 5 }
+		}
+		show_as_unavailable = {always = yes}
+		gave_medium_boon = yes
+	}
+
+	# Eternal
+	option = {
+		name = divine_prayer.1000.b
+		trigger = {
+			piety >= normal_immortality_cost
+			scope:petitioner = {
+				NOR = {
+					has_trait = reborn_trait
+					has_trait = eternal_trait
+				}
+			}
+		}
+		scope:divinity = {
+			add_piety =  {value = normal_immortality_cost multiply = -1}
+		}
+		scope:petitioner = {
+			make_immortal_effect = { IMMORTALITY_TRAIT = eternal_trait INVESTMENT = 5}
+		}
+		show_as_unavailable = {always = yes}
+		gave_medium_boon = yes
+	}
+
+	# True Immortal
+	option = {
+		name = divine_prayer.1000.c
+		trigger = {
+			piety >= true_immortality_cost
+		}
+		scope:divinity = {
+			add_piety =  {value = true_immortality_cost multiply = -1}
+		}
+		scope:petitioner = {
+			make_true_immortal_effect = yes
+		}
+		show_as_unavailable = {always = yes}
+		gave_major_boon = yes
+	}
+	
+	option = {
+		name = divine_prayer.0001.d
+        ai_chance = { base = 0 }
+		scope:petitioner = {
+			if = {
+				limit = { scope:petitioner.faith = root.faith }
+				check_for_heresy = yes
+			}
+			add_opinion = {
+				target = scope:divinity
+				modifier = refused_boon
+			}			
+		}
+		
+	}
+}
+
+
+# Petiotioner asking for intelligence
+divine_prayer.2000 = {
+	title = divine_prayer.2000.title
+	desc = divine_prayer.2000.desc
+	theme = faith
+
+	left_portrait = root
+	
+	right_portrait = scope:petitioner
+
+	immediate = {
+		save_scope_as = divinity
+		save_scope_as = actor
+		scope:petitioner = {
+			save_scope_as = recipient
+		}
+	}
+	
+	# minor boon
+	option = {
+		name = divine_prayer.2000.a
+		trigger = {
+			piety >= bless_cost
+		}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -1}
+		}
+		scope:petitioner = {
+			increase_intellect_rank_investment = { AMOUNT = 1 }
+		}
+		show_as_unavailable = {always = yes}
+		gave_minor_boon = yes
+	}
+
+	# Medium boon
+	option = {
+		name = divine_prayer.2000.b
+		trigger = {
+			piety >= {value = bless_cost multiply = 2}
+			scope:recipient = {
+				can_increase_trait_by = { AMOUNT = 2 TRAIT = intellect}
+			}
+			
+		}
+		show_as_unavailable = {always = yes}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -2}
+		}
+		scope:petitioner = {
+			increase_intellect_rank_investment = { AMOUNT = 2 }
+		}
+		gave_medium_boon = yes
+	}
+
+	# Major boon
+	option = {
+		name = divine_prayer.2000.c
+		trigger = {
+			piety >= {value = bless_cost multiply = 3}
+			scope:recipient = {
+				can_increase_trait_by = { AMOUNT = 3 TRAIT = intellect}
+			}
+			
+		}
+		show_as_unavailable = {always = yes}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -3}
+		}
+		scope:petitioner = {
+			increase_intellect_rank_investment = { AMOUNT = 3 }
+		}
+		gave_major_boon = yes
+	}
+	
+	option = {
+		name = divine_prayer.0001.d
+        ai_chance = { base = 0 }
+		scope:petitioner = {
+			if = {
+				limit = { scope:petitioner.faith = root.faith }
+				check_for_heresy = yes
+			}
+			add_opinion = {
+				target = scope:divinity
+				modifier = refused_boon
+			}			
+		}
+		
+	}
+}
+
+
+
+# Petiotioner asking for beauty
+divine_prayer.2001 = {
+	title = divine_prayer.2001.title
+	desc = divine_prayer.2001.desc
+	theme = faith
+
+	left_portrait = root
+	
+	right_portrait = scope:petitioner
+
+	immediate = {
+		save_scope_as = divinity
+		save_scope_as = actor
+		scope:petitioner = {
+			save_scope_as = recipient
+		}
+	}
+	
+	# minor boon
+	option = {
+		name = divine_prayer.2001.a
+		trigger = {
+			piety >= bless_cost
+		}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -1}
+		}
+		scope:petitioner = {
+			increase_beauty_rank_investment = { AMOUNT = 1 }
+		}
+		show_as_unavailable = {always = yes}
+		gave_minor_boon = yes
+	}
+
+	# Medium boon
+	option = {
+		name = divine_prayer.2001.b
+		trigger = {
+			piety >= {value = bless_cost multiply = 2}
+			scope:recipient = {
+				can_increase_trait_by = { AMOUNT = 2 TRAIT = beauty}
+			}
+			
+		}
+		show_as_unavailable = {always = yes}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -2}
+		}
+		scope:petitioner = {
+			increase_beauty_rank_investment = { AMOUNT = 2 }
+		}
+		gave_medium_boon = yes
+	}
+
+	# Major boon
+	option = {
+		name = divine_prayer.2001.c
+		trigger = {
+			piety >= {value = bless_cost multiply = 3}
+			scope:recipient = {
+				can_increase_trait_by = { AMOUNT = 3 TRAIT = beauty}
+			}
+			
+		}
+		show_as_unavailable = {always = yes}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -3}
+		}
+		scope:petitioner = {
+			increase_beauty_rank_investment = { AMOUNT = 3 }
+		}
+		gave_major_boon = yes
+	}
+	
+	option = {
+		name = divine_prayer.0001.d
+        ai_chance = { base = 0 }
+		scope:petitioner = {
+			if = {
+				limit = { scope:petitioner.faith = root.faith }
+				check_for_heresy = yes
+			}
+			add_opinion = {
+				target = scope:divinity
+				modifier = refused_boon
+			}			
+		}
+		
+	}
+}
+
+
+# Petiotioner asking for physique
+divine_prayer.2002 = {
+	title = divine_prayer.2002.title
+	desc = divine_prayer.2002.desc
+	theme = faith
+
+	left_portrait = root
+	
+	right_portrait = scope:petitioner
+
+	immediate = {
+		save_scope_as = divinity
+		save_scope_as = actor
+		scope:petitioner = {
+			save_scope_as = recipient
+		}
+	}
+	
+	# minor boon
+	option = {
+		name = divine_prayer.2002.a
+		trigger = {
+			piety >= bless_cost
+		}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -1}
+		}
+		scope:petitioner = {
+			increase_physique_rank_investment = { AMOUNT = 1 }
+		}
+		show_as_unavailable = {always = yes}
+		gave_minor_boon = yes
+	}
+
+	# Medium boon
+	option = {
+		name = divine_prayer.2002.b
+		trigger = {
+			piety >= {value = bless_cost multiply = 2}
+			scope:recipient = {
+				can_increase_trait_by = { AMOUNT = 2 TRAIT = physique}
+			}
+			
+		}
+		show_as_unavailable = {always = yes}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -2}
+		}
+		scope:petitioner = {
+			increase_physique_rank_investment = { AMOUNT = 2 }
+		}
+		gave_medium_boon = yes
+	}
+
+	# Major boon
+	option = {
+		name = divine_prayer.2002.c
+		trigger = {
+			piety >= {value = bless_cost multiply = 3}
+			scope:recipient = {
+				can_increase_trait_by = { AMOUNT = 3 TRAIT = physique}
+			}
+			
+		}
+		show_as_unavailable = {always = yes}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -3}
+		}
+		scope:petitioner = {
+			increase_physique_rank_investment = { AMOUNT = 3 }
+		}
+		gave_major_boon = yes
+	}
+	
+	option = {
+		name = divine_prayer.0001.d
+        ai_chance = { base = 0 }
+		scope:petitioner = {
+			if = {
+				limit = { scope:petitioner.faith = root.faith }
+				check_for_heresy = yes
+			}
+			add_opinion = {
+				target = scope:divinity
+				modifier = refused_boon
+			}			
+		}
+		
+	}
+}
+
+
+# Petiotioner asking for strength
+divine_prayer.2003 = {
+	title = divine_prayer.2003.title
+	desc = divine_prayer.2003.desc
+	theme = faith
+
+	left_portrait = root
+	
+	right_portrait = scope:petitioner
+
+	immediate = {
+		save_scope_as = divinity
+		save_scope_as = actor
+		scope:petitioner = {
+			save_scope_as = recipient
+		}
+	}
+	
+	# minor boon
+	option = {
+		name = divine_prayer.2003.a
+		trigger = {
+			piety >= bless_cost
+		}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -1}
+		}
+		scope:petitioner = {
+			strength_blessing_effect = yes
+		}
+		show_as_unavailable = {always = yes}
+		gave_minor_boon = yes
+	}
+
+	
+	option = {
+		name = divine_prayer.0001.d
+        ai_chance = { base = 0 }
+		scope:petitioner = {
+			if = {
+				limit = { scope:petitioner.faith = root.faith }
+				check_for_heresy = yes
+			}
+			add_opinion = {
+				target = scope:divinity
+				modifier = refused_boon
+			}			
+		}
+		
+	}
+}
+
+
+# Petiotioner asking for fecund
+divine_prayer.2004 = {
+	title = divine_prayer.2004.title
+	desc = divine_prayer.2004.desc
+	theme = faith
+
+	left_portrait = root
+	
+	right_portrait = scope:petitioner
+
+	immediate = {
+		save_scope_as = divinity
+		save_scope_as = actor
+		scope:petitioner = {
+			save_scope_as = recipient
+		}
+	}
+	
+	# minor boon
+	option = {
+		name = divine_prayer.2004.a
+		trigger = {
+			piety >= bless_cost
+		}
+		scope:divinity = {
+			add_piety =  {value = bless_cost multiply = -1}
+		}
+		scope:petitioner = {
+			fecund_blessing_effect = yes
+		}
+		show_as_unavailable = {always = yes}
+		gave_minor_boon = yes
+	}
+
+	
+	option = {
+		name = divine_prayer.0001.d
+        ai_chance = { base = 0 }
+		scope:petitioner = {
+			if = {
+				limit = { scope:petitioner.faith = root.faith }
+				check_for_heresy = yes
+			}
+			add_opinion = {
+				target = scope:divinity
+				modifier = refused_boon
+			}			
+		}
+		
+	}
+}
+
+# Petiotioner asking for cure health conditions
+divine_prayer.2005 = {
+	title = divine_prayer.2005.title
+	desc = divine_prayer.2005.desc
+	theme = faith
+
+	left_portrait = root
+	
+	right_portrait = scope:petitioner
+
+	immediate = {
+		save_scope_as = divinity
+		save_scope_as = actor
+		scope:petitioner = {
+			save_scope_as = recipient
+		}
+	}
+	
+	# minor boon
+	option = {
+		name = divine_prayer.2005.a
+		trigger = {
+			piety >= heal_injure_cost
+		}
+		scope:divinity = {
+			add_piety =  { value = heal_injure_cost multiply = -1 }
+		}
+		scope:petitioner = {
+			heal_effect = yes
+		}
+		show_as_unavailable = {always = yes}
+		gave_minor_boon = yes
+	}
+
+	
+	option = {
+		name = divine_prayer.0001.d
+        ai_chance = { base = 0 }
+		scope:petitioner = {
+			if = {
+				limit = { scope:petitioner.faith = root.faith }
+				check_for_heresy = yes
+			}
+			add_opinion = {
+				target = scope:divinity
+				modifier = refused_boon
+			}			
+		}
+		
+	}
+}
+
+
+# Petiotioner asking for soliders
+divine_prayer.3000 = {
+	title = divine_prayer.3000.title
+	desc = divine_prayer.3000.desc
+	theme = faith
+
+	left_portrait = root
+	
+	right_portrait = scope:petitioner
+
+	immediate = {
+		save_scope_as = divinity
+		save_scope_as = actor
+		scope:petitioner = {
+			save_scope_as = recipient
+		}
+	}
+	
+	# Medium boon
+	option = {
+		name = divine_prayer.3000.a
+		trigger = {
+			piety >= create_army_big_regiment_cost
+		}
+		scope:divinity = {
+			add_piety =  {value = create_army_big_regiment_cost multiply = -1}
+		}
+		scope:petitioner = {
+			spawn_army = {
+				inheritable = no
+				men_at_arms = {
+					type = divine_armored_footmen
+					stacks = 5
+				} 
+				location = location
+				name = DIVINE_ARMY
+			}
+		}
+		show_as_unavailable = {always = yes}
+		gave_medium_boon = yes
+	}
+
+	# Medium boon
+	option = {
+		name = divine_prayer.3000.b
+		trigger = {
+			piety >= create_army_big_regiment_cost
+		}
+		scope:divinity = {
+			add_piety =  {value = create_army_big_regiment_cost multiply = -1}
+		}
+		scope:petitioner = {
+			spawn_army = {
+				inheritable = no
+				men_at_arms = {
+					type = divine_bowmen
+					stacks = 5
+				} 
+				location = location
+				name = DIVINE_ARMY
+			}
+		}
+		show_as_unavailable = {always = yes}
+		gave_medium_boon = yes
+	}
+
+	# Medium boon
+	option = {
+		name = divine_prayer.3000.c
+		trigger = {
+			piety >= create_army_big_regiment_cost
+		}
+		scope:divinity = {
+			add_piety =  {value = create_army_big_regiment_cost multiply = -1}
+		}
+		scope:petitioner = {
+			spawn_army = {
+				inheritable = no
+				men_at_arms = {
+					type = divine_armored_horsemen
+					stacks = 5
+				} 
+				location = location
+				name = DIVINE_ARMY
+			}
+		}
+		show_as_unavailable = {always = yes}
+		gave_medium_boon = yes
+	}
+
+	# Major boon
+	option = {
+		name = divine_prayer.3000.d
+		trigger = {
+			piety >= create_army_titan_cost
+		}
+		scope:divinity = {
+			add_piety =  {value = create_army_titan_cost multiply = -1}
+		}
+		scope:petitioner = {
+			spawn_army = {
+				inheritable = no
+				men_at_arms = {
+					type = divine_titan
+					stacks = 1
+				} 
+				location = location
+				name = DIVINE_ARMY
+			}
+		}
+		show_as_unavailable = {always = yes}
+		gave_major_boon = yes
+	}
+	
+	option = {
+		name = divine_prayer.0001.d
+        ai_chance = { base = 0 }
+		scope:petitioner = {
+			if = {
+				limit = { scope:petitioner.faith = root.faith }
+				check_for_heresy = yes
+			}
+			add_opinion = {
+				target = scope:divinity
+				modifier = refused_boon
+			}			
+		}
+		
+	}
+}

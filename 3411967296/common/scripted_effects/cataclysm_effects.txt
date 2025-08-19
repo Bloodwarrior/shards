@@ -1,0 +1,194 @@
+﻿minor_cataclysm_effect = {
+	scope:$target_title$ = {
+		custom_description_no_bullet = {
+			text = title_effects_text
+			object = scope:$target_title$
+		}
+		add_county_modifier = {
+			modifier = county_cataclysm_minor
+			years = 10
+		}
+		custom_tooltip = HURT_OR_KILL
+		custom_tooltip = HURT_ARMIES
+		every_county_province = {
+			every_character_in_location = {
+				trigger_event = cataclysm_events.0001
+			}
+			every_army_in_location = {
+				deplete_army_by_percentage = 0.1
+			}
+		}
+		change_development_level = -2
+		change_county_control = -50
+	}
+}
+
+major_cataclysm_effect_single_county = {
+	scope:$target_title$ = {
+		custom_description_no_bullet = {
+			text = title_effects_text
+			object = scope:$target_title$
+		}
+		add_county_modifier = {
+			modifier = county_cataclysm_major
+			years = 50
+		}
+		custom_tooltip = HURT_OR_KILL
+		custom_tooltip = HURT_ARMIES
+		custom_tooltip = RANDOM_HOLDING_DESTROYED
+		every_county_province = {
+			every_character_in_location = {
+				trigger_event = cataclysm_events.0002
+			}
+			every_army_in_location = {
+				deplete_army_by_percentage = 0.5
+			}
+		}
+		hidden_effect = {
+			random_county_province = {
+				limit = {
+					is_county_capital = no
+					has_holding = yes
+				}
+				remove_holding = yes
+			}
+		}	
+		change_development_level = -5
+		change_county_control = -100
+	}
+}
+
+major_cataclysm_effect = {
+	major_cataclysm_effect_single_county = { target_title = $target_title$ }
+	scope:$target_title$ = {
+		every_neighboring_county = {
+			save_scope_as = new_county
+			minor_cataclysm_effect = { target_title = new_county }
+		}
+	}
+}
+
+apocalyptic_cataclysm_effect_single_county = {
+	scope:$target_title$ = {
+		custom_description_no_bullet = {
+			text = title_effects_text
+			object = scope:$target_title$
+		}
+		add_county_modifier = {
+			modifier = county_cataclysm_apocalyptic
+			years = 100
+		}
+		custom_tooltip = HURT_OR_KILL
+		custom_tooltip = HURT_ARMIES
+		custom_tooltip = ALL_HOLDINGS_DESTROYED
+		every_county_province = {
+			every_character_in_location = {
+				trigger_event = { id = cataclysm_events.0003 days = 2 }
+			}
+			every_army_in_location = {
+				deplete_army_by_percentage = 0.9
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						is_county_capital = no
+					}
+					remove_holding = yes
+				}
+			}
+		}
+		change_development_level = -100
+		change_county_control = -100
+	}
+}
+
+apocalyptic_cataclysm_effect = {
+	apocalyptic_cataclysm_effect_single_county = { target_title = $target_title$ }
+	scope:$target_title$ = {
+		every_neighboring_county = {
+			add_to_temporary_list = major_counties
+			save_scope_as = new_county
+			major_cataclysm_effect_single_county = { target_title = new_county }
+		}
+		every_in_list = {
+			list = major_counties
+			every_neighboring_county = {
+				limit = {
+					NOT = {
+						is_in_list = major_counties
+					}
+				}
+				if = {
+					limit = {
+						NOT = {is_in_list = minor_counties}
+					}
+					add_to_temporary_list = minor_counties
+					
+				}
+			}
+		}
+		every_in_list = {
+			list = minor_counties
+			every_neighboring_county = {
+				limit = {
+					NOT = {
+						is_in_list = major_counties
+					}
+				}
+				if = {
+					limit = {
+						NOT = {is_in_list = minor_counties}
+					}
+					add_to_temporary_list = minor_counties
+					
+				}
+			}
+		}
+		every_in_list = {
+			list = minor_counties
+			save_scope_as = new_county
+			minor_cataclysm_effect = { target_title = new_county }
+		}
+		
+	}
+}
+
+hurt_badly = {
+	random_list = {
+		1 = {
+			trigger = {
+				NOT = { has_trait = maimed }
+			}
+			add_trait = maimed
+		}
+
+		1 = {
+			trigger = {
+				NOT = { has_trait = one_legged }
+			}
+			add_trait = one_legged
+		}
+
+		1 = {
+			trigger = {
+				NOT = { has_trait = disfigured }
+			}
+			add_trait = disfigured
+		}
+
+		1 = {
+			trigger = {
+				NOT = { has_trait = blind }
+			}
+			add_trait = blind
+		}
+
+		1 = {
+			trigger = {
+				NOT = { has_trait = blind }
+			}
+			add_trait = blind
+		}
+		
+	}
+}

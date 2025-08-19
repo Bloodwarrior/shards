@@ -1,0 +1,9 @@
+﻿l_english:
+ grant_immortality_interaction: "Grant Immortality"
+ grant_immortality_interaction_desc: "Bestow upon this mortal a great gift - immortality. Bind them to your divine power, and either let them return anew after each death, or make them eternal and neveraging - or both!"
+ eternal_option: "[eternity|E]"
+ reborn_option: "[rebirth|E]"
+ true_immortal_option: "True Immortality - combining [eternity|E] and [rebirth|E]"
+ TRUE_IMMORTAL: "True Immortality costs more!"
+
+ interaction_category_divine: "Divine Interactions"

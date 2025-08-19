@@ -1,0 +1,361 @@
+blessing_of_war_modifier = {
+	icon = martial_positive
+	martial = 10
+	advantage = 10
+	hard_casualty_modifier = -0.25
+	enemy_hard_casualty_modifier = 0.25
+}
+blessing_of_gold_modifier = {
+	icon = stewardship_positive
+	stewardship = 10
+	monthly_income_mult = 0.25
+	build_gold_cost = -0.3
+	build_speed = -0.5
+	supply_duration = 0.5
+}
+blessing_of_deceit_modifier = {
+	icon = intrigue_positive
+	intrigue = 10
+	owned_hostile_scheme_success_chance_add = 20
+	intrigue_scheme_resistance = 20
+	max_hostile_schemes_add = 1
+}
+blessing_of_love_modifier = {
+	icon = diplomacy_positive
+	diplomacy = 10
+	general_opinion = 25
+	owned_personal_scheme_success_chance_add = 20
+	max_personal_schemes_add = 1
+}
+blessing_of_speed_modifier = {
+	icon = martial_positive
+	prowess = 10
+	character_travel_speed = 10
+	movement_speed = 0.5
+	siege_phase_time = -0.25
+}
+blessing_of_battle_modifier = {
+	icon = prowess_positive
+	prowess = 25
+	knight_effectiveness_mult = 0.75
+	knight_limit = 3
+}
+blessing_of_mind_modifier = {
+	icon = learning_positive
+	learning = 10
+	stress_loss_mult = 0.5
+	stress_gain_mult = -0.5
+	domain_limit = 3
+}
+lesser_blessing_of_war_modifier = {
+	icon = martial_positive
+	martial = 3
+	advantage = 2
+	hard_casualty_modifier = -0.05
+	enemy_hard_casualty_modifier = 0.05
+	stacking = yes
+}
+lesser_blessing_of_gold_modifier = {
+	icon = stewardship_positive
+	stewardship = 3
+	monthly_income_mult = 0.05
+	build_gold_cost = -0.01
+	build_speed = -0.01
+	supply_duration = 0.05
+	stacking = yes
+}
+lesser_blessing_of_deceit_modifier = {
+	icon = intrigue_positive
+	intrigue = 3
+	owned_hostile_scheme_success_chance_add = 2
+	intrigue_scheme_resistance = 2
+	stacking = yes
+}
+lesser_blessing_of_love_modifier = {
+	icon = diplomacy_positive
+	diplomacy = 3
+	general_opinion = 5
+	owned_personal_scheme_success_chance_add = 5
+	stacking = yes
+}
+lesser_blessing_of_speed_modifier = {
+	icon = martial_positive
+	prowess = 3
+	character_travel_speed = 1
+	movement_speed = 0.1
+	siege_phase_time = -0.05
+	stacking = yes
+}
+lesser_blessing_of_battle_modifier = {
+	icon = prowess_positive
+	prowess = 7
+	knight_effectiveness_mult = 0.05
+	stacking = yes
+}
+lesser_blessing_of_mind_modifier = {
+	icon = learning_positive
+	learning = 3
+	stress_loss_mult = 0.05
+	stress_gain_mult = -0.05
+}
+curse_of_defeat_modifier = {
+	icon = martial_negative
+	martial = -10
+	advantage = -10
+	hard_casualty_modifier = 0.25
+	enemy_hard_casualty_modifier = -0.25
+}
+curse_of_loss_modifier = {
+	icon = stewardship_negative
+	stewardship = -10
+	monthly_income_mult = -0.25
+	build_gold_cost = 0.3
+	build_speed = 0.5
+	supply_duration = -0.5
+}
+curse_of_deceit_modifier = {
+	icon = intrigue_negative
+	intrigue = -10
+	owned_hostile_scheme_success_chance_add = -20
+	intrigue_scheme_resistance = -20
+}
+curse_of_hate_modifier = {
+	icon = diplomacy_negative
+	diplomacy = -10
+	general_opinion = -25
+	owned_personal_scheme_success_chance_add = -20
+}
+curse_of_sand_modifier = {
+	icon = martial_negative
+	prowess = -10
+	character_travel_speed = -10
+	movement_speed = -0.5
+	siege_phase_time = 0.25
+}
+curse_of_battle_modifier = {
+	icon = prowess_negative
+	prowess = -25
+	knight_effectiveness_mult = -0.75
+	knight_limit = -3
+}
+curse_of_mind_modifier = {
+	icon = learning_negative
+	learning = -10
+	stress_loss_mult = -0.5
+	stress_gain_mult = 0.5
+	domain_limit = -3
+}
+lesser_curse_of_defeat_modifier = {
+	icon = martial_negative
+	martial = -3
+	advantage = -2
+	hard_casualty_modifier = 0.05
+	enemy_hard_casualty_modifier = -0.05
+	stacking = yes
+}
+lesser_curse_of_loss_modifier = {
+	icon = stewardship_negative
+	stewardship = -3
+	monthly_income_mult = -0.05
+	build_gold_cost = 0.01
+	build_speed = 0.01
+	supply_duration = -0.05
+	stacking = yes
+}
+lesser_curse_of_deceit_modifier = {
+	icon = intrigue_negative
+	intrigue = -3
+	owned_hostile_scheme_success_chance_add = -2
+	intrigue_scheme_resistance = -2
+	stacking = yes
+}
+lesser_curse_of_hate_modifier = {
+	icon = diplomacy_negative
+	diplomacy = -3
+	general_opinion = -5
+	owned_personal_scheme_success_chance_add = -2
+	stacking = yes
+}
+lesser_curse_of_sand_modifier = {
+	icon = martial_negative
+	prowess = -3
+	character_travel_speed = -2
+	movement_speed = -0.05
+	siege_phase_time = 0.05
+	stacking = yes
+}
+lesser_curse_of_battle_modifier = {
+	icon = prowess_negative
+	prowess = -7
+	knight_effectiveness_mult = -0.05
+	knight_limit = -1
+	stacking = yes
+}
+lesser_curse_of_mind_modifier = {
+	icon = learning_negative
+	learning = -3
+	stress_loss_mult = -0.05
+	stress_gain_mult = 0.05
+	stacking = yes
+}
+
+county_blessing_of_prosperity_modifier = {
+	icon = stewardship_positive
+	build_gold_cost = -0.2
+	build_prestige_cost = -0.2
+	supply_limit_mult = 0.5
+	tax_mult = 0.5
+	stacking = yes
+}
+
+county_blessing_of_growth_modifier = {
+	icon = stewardship_positive
+	build_speed = -0.3
+	development_growth = 2
+	epidemic_resistance = 5
+	building_slot_add = 1
+	stacking = yes
+}
+
+county_blessing_of_defiance_modifier = {
+	icon = martial_positive
+	fort_level = 3
+	garrison_size = 1
+	monthly_county_control_growth_add = 2
+	stacking = yes
+}
+
+county_blessing_of_force_modifier = {
+	icon = martial_positive
+	levy_size = 1
+	levy_reinforcement_rate = 1
+	stacking = yes
+}
+
+county_curse_of_destitution_modifier = {
+	icon = stewardship_negative
+	build_gold_cost = 0.2
+	build_prestige_cost = 0.2
+	supply_limit_mult = -0.5
+	tax_mult = -0.5
+	stacking = yes
+}
+county_curse_of_ruin_modifier = {
+	icon = stewardship_negative
+	build_speed = 0.3
+	development_decline = -3
+	epidemic_resistance = -5
+	building_slot_add = -1
+	stacking = yes
+}
+
+county_curse_of_death_modifier = {
+	icon = martial_negative
+	fort_level = -3
+	garrison_size = -0.5
+	monthly_county_control_growth_add = -2
+	stacking = yes
+}
+
+county_curse_of_weakness_modifier = {
+	icon = martial_negative
+	levy_size = -0.5
+	levy_reinforcement_rate = -0.5
+	stacking = yes
+}
+
+county_cataclysm_minor = {
+	icon = magic_negative
+	levy_size = -0.3
+	levy_reinforcement_rate = -0.5
+	fort_level = -3
+	garrison_size = -0.5
+	build_gold_cost = 0.2
+	build_prestige_cost = 0.2
+	supply_limit_mult = -0.5
+	tax_mult = -0.3
+}
+
+county_cataclysm_major = {
+	icon = magic_negative
+	levy_size = -0.7
+	levy_reinforcement_rate = -0.8
+	fort_level = -5
+	garrison_size = -0.8
+	build_gold_cost = 0.5
+	build_prestige_cost = 0.5
+	supply_limit_mult = -0.7
+	tax_mult = -0.6
+}
+
+county_cataclysm_apocalyptic = {
+	icon = magic_negative
+	levy_size = -1
+	levy_reinforcement_rate = -1
+	fort_level = -8
+	garrison_size = -1
+	build_gold_cost = 1
+	build_prestige_cost = 1
+	supply_limit_mult = -1
+	tax_mult = -1
+}
+
+faithful_counties_5 = {
+	icon = piety_positive
+	monthly_piety = 5
+}
+
+faithful_counties_10 = {
+	icon = piety_positive
+	monthly_piety = 10
+}
+
+faithful_counties_20 = {
+	icon = piety_positive
+	monthly_piety = 12
+}
+
+faithful_counties_50 = {
+	icon = piety_positive
+	monthly_piety = 15
+}
+
+faithful_counties_75 = {
+	icon = piety_positive
+	monthly_piety = 20
+}
+
+faithful_counties_100 = {
+	icon = piety_positive
+	monthly_piety = 30
+}
+
+faithful_counties_200 = {
+	icon = piety_positive
+	monthly_piety = 40
+}
+
+faithful_counties_400 = {
+	icon = piety_positive
+	monthly_piety = 50
+}
+
+faithful_counties_750 = {
+	icon = piety_positive
+	monthly_piety = 70
+}
+
+faithful_counties_1000 = {
+	icon = piety_positive
+	monthly_piety = 100
+}
+
+mortals_happy_from_prayers = {
+	icon = piety_positive
+	monthly_piety_gain_mult = 0.1
+}
+
+mortals_unhappy_from_prayers = {
+	icon = piety_negative
+	monthly_piety_gain_mult = -0.2
+}

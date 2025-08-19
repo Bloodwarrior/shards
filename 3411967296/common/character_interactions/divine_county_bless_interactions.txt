@@ -1,0 +1,167 @@
+county_bless_interaction = {
+	category = interaction_category_religion
+	icon = bless_county
+
+	interface_priority = 50
+	desc = county_bless_interaction_desc
+
+	target_type = title
+	target_filter = recipient_domain_titles
+	
+	is_shown = {
+		scope:actor = { is_a_divinity = yes }
+		scope:recipient = {is_landed = yes}
+	}
+
+	can_be_picked = {
+		scope:target = {
+			tier = 2
+		}	
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			OR = {
+				NOT = {
+					is_a_divinity = yes
+				}
+				has_trait = prophet_manifestation
+				scope:recipient = scope:actor
+			}
+			
+		}
+	}
+
+	send_options_exclusive = yes
+
+	send_option = {
+		is_valid = {
+			exists = scope:target 
+			NOT = {
+				scope:target = {
+					has_county_modifier = county_blessing_of_prosperity_modifier
+				}
+			}
+		}
+		flag = county_blessing_of_prosperity
+		localization = county_blessing_of_prosperity_option
+	}
+
+	send_option = {
+		is_valid = {
+			exists = scope:target 
+			NOT = {
+				scope:target = {
+					has_county_modifier = county_blessing_of_growth_modifier
+				}
+			}
+		}
+		flag = county_blessing_of_growth
+		localization = county_blessing_of_growth_option
+	}
+
+	send_option = {
+		is_valid = {
+			exists = scope:target  
+			NOT = {
+				scope:target = {
+					has_county_modifier = county_blessing_of_defiance_modifier
+				}
+			}
+		}
+		flag = county_blessing_of_defiance
+		localization = county_blessing_of_defiance_option
+	}
+
+	send_option = {
+		is_valid = {
+			exists = scope:target 
+			NOT = {
+				scope:target = {
+					has_county_modifier = county_blessing_of_force_modifier
+				}
+			}
+		}
+		flag = county_blessing_of_force
+		localization = county_blessing_of_force_option
+	}
+ 
+
+	on_accept = {
+		scope:recipient = {
+			add_opinion = {
+				target = scope:actor
+				modifier = blessed_me_opinion
+			}
+		}
+		custom_description_no_bullet = {
+			text = title_effects_text
+			object = scope:target
+		}
+		scope:target = {
+			custom_description = {
+				text = increase_investment_text
+				object = scope:target
+				value = 5
+				increase_investment_level = { amount = 5 }
+			}
+		}
+
+		scope:target = {
+			if = {
+				limit = {
+					scope:county_blessing_of_prosperity = yes					
+				}
+				scope:target = {
+					add_county_modifier = county_blessing_of_prosperity_modifier
+				}
+			}
+
+			if = {
+				limit = {
+					scope:county_blessing_of_growth = yes					
+				}
+				scope:target = {
+					add_county_modifier = county_blessing_of_growth_modifier
+				}
+			}
+
+			if = {
+				limit = {
+					scope:county_blessing_of_defiance = yes					
+				}
+				scope:target = {
+					add_county_modifier = county_blessing_of_defiance_modifier
+				}
+			}
+
+			if = {
+				limit = {
+					scope:county_blessing_of_force = yes					
+				}
+				scope:target = {
+					add_county_modifier = county_blessing_of_force_modifier
+				}
+			}
+		}
+	
+	}
+
+	auto_accept = yes
+
+	cost = {
+		piety = county_bless_cost
+	}
+	
+	# AI
+	# ai_targets = {
+	# }
+	# ai_frequency = 12
+
+	# ai_potential = {
+	# }
+
+	# ai_will_do = {
+	# 	base = 0
+	# }
+}

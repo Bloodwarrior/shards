@@ -1,0 +1,93 @@
+dominion_value = {
+	value = 0
+	scope:recipient = {
+
+		if = {
+			limit = {
+				num_virtuous_traits = {
+					value >= 1
+					faith = scope:actor.faith
+				}
+			}
+			add = 1
+		}
+		
+		if = {
+			limit = {
+				num_virtuous_traits = {
+					value >= 3
+					faith = scope:actor.faith
+				}
+			}
+			add = 2
+		}
+		
+		if = {
+			limit = {
+				NOT = { has_faith = scope:actor.faith }
+			}
+			subtract = highest_held_title_tier
+		}
+
+		if = {
+			limit = {
+				scope:actor.faith = { faith_hostility_level = { target = scope:recipient.faith value > 1 } }
+			}
+			add = -2
+		}
+
+		if = {
+			limit = {
+				scope:actor.faith = { faith_hostility_level = { target = scope:recipient.faith value > 2 } }
+			}
+			add = -2
+		}
+
+		if = {
+			limit = {
+				is_at_war_with = scope:actor
+			}
+			add = -2
+		}
+
+		if = {
+			limit = {
+				OR = {
+					location.province_owner = scope:actor
+					location.province_owner = { is_vassal_or_below_of = scope:actor }
+				}
+			}
+			add = 2
+		}
+
+		if = {
+			limit = {
+				is_vassal_or_below_of = scope:actor
+			}
+			add = 2
+		}
+	}
+	
+}
+
+dominion_multiplier = {
+	value = 1
+	if = {
+		limit = {
+			dominion_value < 0
+		}
+		subtract = { value = dominion_value divide = 4 }
+	}
+	if = {
+		limit = {
+			dominion_value >= 3
+		}
+		subtract = 0.25
+	}
+	if = {
+		limit = {
+			dominion_value >= 5
+		}
+		subtract = 0.25
+	}
+}

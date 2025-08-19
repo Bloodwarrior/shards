@@ -1,0 +1,167 @@
+county_curse_interaction = {
+	category = interaction_category_religion
+	icon = curse_county
+	interface_priority = 40
+
+	desc = county_curse_interaction_desc
+
+	target_type = title
+	target_filter = recipient_domain_titles
+	
+	is_shown = {
+		scope:actor = { is_a_divinity = yes }
+		scope:recipient = {is_landed = yes}
+	}
+
+	can_be_picked = {
+		scope:target = {
+			tier = 2
+		}	
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			OR = {
+				NOT = {
+					is_a_divinity = yes
+				}
+				has_trait = prophet_manifestation
+				scope:recipient = scope:actor
+			}
+			
+		}
+	}
+
+	send_options_exclusive = yes
+
+	send_option = {
+		is_valid = {
+			exists = scope:target 
+			NOT = {
+				scope:target = {
+					has_county_modifier = county_curse_of_ruin_modifier
+				}
+			}
+		}
+		flag = county_curse_of_ruin
+		localization = county_curse_of_ruin_option
+	}
+
+	send_option = {
+		is_valid = {
+			exists = scope:target  
+			NOT = {
+				scope:target = {
+					has_county_modifier = county_curse_of_destitution_modifier
+				}
+			}
+		}
+		flag = county_curse_of_destitution
+		localization = county_curse_of_destitution_option
+	}
+
+	send_option = {
+		is_valid = {
+			exists = scope:target  
+			NOT = {
+				scope:target = {
+					has_county_modifier = county_curse_of_death_modifier
+				}
+			}
+		}
+		flag = county_curse_of_death
+		localization = county_curse_of_death_option
+	}
+
+	send_option = {
+		is_valid = {
+			exists = scope:target 
+			NOT = {
+				scope:target = {
+					has_county_modifier = county_curse_of_weakness_modifier
+				}
+			}
+		}
+		flag = county_curse_of_weakness
+		localization = county_curse_of_weakness_option
+	}
+ 
+
+	on_accept = {
+		scope:recipient = {
+			add_opinion = {
+				target = scope:actor
+				modifier = cursed_me_opinion
+			}
+		}
+		custom_description_no_bullet = {
+			text = title_effects_text
+			object = scope:target
+		}
+		scope:target = {
+			custom_description = {
+				text = increase_investment_text
+				object = scope:target
+				value = 5
+				increase_investment_level = { amount = 5 }
+			}
+		}
+
+		scope:target = {
+			if = {
+				limit = {
+					scope:county_curse_of_destitution = yes					
+				}
+				scope:target = {
+					add_county_modifier = county_curse_of_destitution_modifier
+				}
+			}
+
+			if = {
+				limit = {
+					scope:county_curse_of_ruin = yes					
+				}
+				scope:target = {
+					add_county_modifier = county_curse_of_ruin_modifier
+				}
+			}
+
+			if = {
+				limit = {
+					scope:county_curse_of_death = yes					
+				}
+				scope:target = {
+					add_county_modifier = county_curse_of_death_modifier
+				}
+			}
+
+			if = {
+				limit = {
+					scope:county_curse_of_weakness = yes					
+				}
+				scope:target = {
+					add_county_modifier = county_curse_of_weakness_modifier
+				}
+			}
+		}
+	
+	}
+
+	auto_accept = yes
+
+	cost = {
+		piety = county_curse
+	}
+	
+	# AI
+	# ai_targets = {
+	# }
+	# ai_frequency = 12
+
+	# ai_potential = {
+	# }
+
+	# ai_will_do = {
+	# 	base = 0
+	# }
+}

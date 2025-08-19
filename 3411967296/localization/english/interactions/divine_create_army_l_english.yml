@@ -1,0 +1,16 @@
+﻿l_english:
+ create_army_interaction: "Create Army"
+ create_army_interaction_desc: "Grant [recipient.GetShortUINameNoTooltip] An army of divine warrios to support them in their wars."
+ levies_500_option: "Levies - 500"
+ levies_2500_option: "Levies - 2500"
+ divine_footmen_option: "Providants - 1 stack"
+ divine_footmen_large_option: "Providants - 5 stacks"
+ divine_bowmen_option: "Blessed Bowmen - 1 stack"
+ divine_bowmen_large_option: "Blessed Bowmen - 5 stacks"
+ divine_knights_option: "Boon-Riders - 1 stack"
+ divine_knights_large_option: "Boon-Riders - 5 stacks"
+ divine_titan_option: "Titan"
+ DIVINE_ARMY: "Divine Army"
+ BIG_REGIMENT: "Large Army"
+ TITAN: "Titan"
+ 

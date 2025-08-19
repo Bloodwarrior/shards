@@ -1,0 +1,529 @@
+summon_army_ai = {
+	random_list = {
+		1 = {
+			spawn_army = {
+				inheritable = no
+				men_at_arms = {
+					type = divine_armored_horsemen
+					stacks = 5
+				} 
+				location = location
+				name = DIVINE_ARMY
+			}
+		}
+		1 = {
+			spawn_army = {
+				inheritable = no
+				men_at_arms = {
+					type = divine_bowmen
+					stacks = 5
+				} 
+				location = location
+				name = DIVINE_ARMY
+			}
+		}
+		1 = {
+			spawn_army = {
+				inheritable = no
+				men_at_arms = {
+					type = divine_armored_footmen
+					stacks = 5
+				} 
+				location = location
+				name = DIVINE_ARMY
+			}
+		}
+	}
+	
+	add_piety = -500
+}
+
+summon_titan_ai = {
+	spawn_army = {
+		inheritable = no
+		men_at_arms = {
+			type = divine_titan
+			stacks = 1
+		} 
+		location = location
+		name = DIVINE_ARMY
+	}
+	add_piety = -1000
+}
+
+empower_random_knight = {
+	save_scope_as = divinity
+	random_knight = {
+		weight = {
+			base = { value = prowess }
+		}
+		limit = {
+			NAND = {
+				has_character_modifier = blessing_of_war_modifier
+				has_character_modifier = blessing_of_battle_modifier
+				has_character_modifier = blessing_of_speed_modifier
+			}
+		}
+		if = {
+			limit = {
+				NOT = {any_immortal_trait = yes}
+				prowess > 30
+			}
+			random_list = {
+				1 = {
+					add_trait = eternal_trait
+					increase_investment_level = { amount = 5 }
+				}
+				1 = {
+					add_trait = reborn_trait
+					increase_investment_level = { amount = 5 }
+				}
+				1 = {
+					trigger = {
+						scope:divinity.piety > 1000
+					}
+					add_trait = true_immortal_trait
+					increase_investment_level = { amount = 10 }
+					scope:divinity = {
+						add_piety = -500
+					}
+				}
+			}
+			scope:divnity = {
+				add_piety = -500
+			}
+		}
+		else = {
+			random_list = {
+				1 = {
+					trigger = {
+						NOT = {
+							has_character_modifier = blessing_of_war_modifier
+						}
+					}
+					add_character_modifier = blessing_of_war_modifier
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							has_character_modifier = blessing_of_battle_modifier
+						}
+					}
+					add_character_modifier = blessing_of_battle_modifier
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							has_character_modifier = blessing_of_speed_modifier
+						}
+					}
+					add_character_modifier = blessing_of_speed_modifier
+				}
+			}
+			increase_investment_level = { amount = 2 }
+			scope:divinity = {
+				add_piety = -250
+			}
+		}
+		
+	}
+}
+
+empower_council_ai = {
+	save_scope_as = divinity
+	random_list = {
+		1 = {
+			trigger = {
+				any_learning_councillor = {
+					NOT = { has_character_modifier = blessing_of_mind_modifier }
+				}
+			}
+			random_learning_councillor = {
+				limit = { NOT = { has_character_modifier = blessing_of_mind_modifier } }
+				add_character_modifier = {
+					modifier = blessing_of_mind_modifier
+				}
+				increase_investment_level = { amount = 2 }
+				scope:divinity = {
+					add_piety = -250
+				}
+			}
+		}
+		1 = {
+			trigger = {
+				any_diplomacy_councillor = {
+					NOT = { has_character_modifier = blessing_of_love_modifier }
+				}
+			}
+			random_diplomacy_councillor = {
+				limit = { NOT = { has_character_modifier = blessing_of_love_modifier } }
+				add_character_modifier = {
+					modifier = blessing_of_love_modifier
+				}
+				increase_investment_level = { amount = 2 }
+				scope:divinity = {
+					add_piety = -250
+				}
+			}
+		}
+		1 = {
+			trigger = {
+				any_intrigue_councillor = {
+					NOT = { has_character_modifier = blessing_of_deceit_modifier }
+				}
+			}
+			random_intrigue_councillor = {
+				limit = { NOT = { has_character_modifier = blessing_of_deceit_modifier } }
+				add_character_modifier = {
+					modifier = blessing_of_deceit_modifier
+				}
+				increase_investment_level = { amount = 2 }
+				scope:divinity = {
+					add_piety = -250
+				}
+			}
+		}
+		1 = {
+			trigger = {
+				any_martial_councillor = {
+					NOT = { has_character_modifier = blessing_of_war_modifier }
+				}
+			}
+			random_martial_councillor = {
+				limit = { NOT = { has_character_modifier = blessing_of_war_modifier } }
+				add_character_modifier = {
+					modifier = blessing_of_war_modifier
+				}
+				increase_investment_level = { amount = 2 }
+				scope:divinity = {
+					add_piety = -250
+				}
+			}
+		}
+		1 = {
+			trigger = {
+				any_stewardship_councillor = {
+					NOT = { has_character_modifier = blessing_of_gold_modifier }
+				}
+			}
+			random_stewardship_councillor = {
+				limit = { NOT = { has_character_modifier = blessing_of_gold_modifier } }
+				add_character_modifier = {
+					modifier = blessing_of_gold_modifier
+				}
+				increase_investment_level = { amount = 2 }
+				scope:divinity = {
+					add_piety = -250
+				}
+			}
+		}
+		1 = {
+			trigger = {
+				any_stewardship_councillor = {
+					NOT = { any_immortal_trait = yes }
+					stewardship > 20
+				}
+			}
+			random_stewardship_councillor = {
+				limit = { stewardship > 20 }
+				if = {
+					limit = {
+						scope:divinity = { piety > 1000 }
+					}
+					add_trait = true_immortal_trait
+					increase_investment_level = { amount = 10 }
+					scope:divinity = {
+						 add_piety = -1000
+					}
+				}
+				else = {
+					add_trait = eternal_trait
+					increase_investment_level = { amount = 5 }
+					scope:divinity = {
+						add_piety = -500
+					}
+				}
+			}
+		}
+		1 = {
+			trigger = {
+				any_martial_councillor = {
+					NOT = { any_immortal_trait = yes }
+					stewardship > 20
+				}
+			}
+			random_martial_councillor = {
+				limit = { martial > 20 }
+				if = {
+					limit = {
+						scope:divinity = { piety > 1000 }
+					}
+					add_trait = true_immortal_trait
+					increase_investment_level = { amount = 10 }
+					scope:divinity = {
+						 add_piety = -1000
+					}
+				}
+				else = {
+					add_trait = eternal_trait
+					increase_investment_level = { amount = 5 }
+					scope:divinity = {
+						add_piety = -500
+					}
+				}
+			}
+		}
+		1 = {
+			trigger = {
+				any_diplomacy_councillor = {
+					NOT = { any_immortal_trait = yes }
+					diplomacy > 20
+				}
+			}
+			random_diplomacy_councillor = {
+				limit = { diplomacy > 20 }
+				if = {
+					limit = {
+						scope:divinity = { piety > 1000 }
+					}
+					add_trait = true_immortal_trait
+					increase_investment_level = { amount = 10 }
+					scope:divinity = {
+						 add_piety = -1000
+					}
+				}
+				else = {
+					add_trait = eternal_trait
+					increase_investment_level = { amount = 5 }
+					scope:divinity = {
+						add_piety = -500
+					}
+				}
+			}
+		}
+		1 = {
+			trigger = {
+				any_intrigue_councillor = {
+					NOT = { any_immortal_trait = yes }
+					intrigue > 20
+				}
+			}
+			random_intrigue_councillor = {
+				limit = { intrigue > 20 }
+				if = {
+					limit = {
+						scope:divinity = { piety > 1000 }
+					}
+					add_trait = true_immortal_trait
+					increase_investment_level = { amount = 10 }
+					scope:divinity = {
+						 add_piety = -1000
+					}
+				}
+				else = {
+					add_trait = eternal_trait
+					increase_investment_level = { amount = 5 }
+					scope:divinity = {
+						add_piety = -500
+					}
+				}
+			}
+		}
+		1 = {
+			trigger = {
+				any_learning_councillor = {
+					NOT = { any_immortal_trait = yes }
+					learning > 20
+				}
+			}
+			random_learning_councillor = {
+				limit = { learning > 20 }
+				if = {
+					limit = {
+						scope:divinity = { piety > 1000 }
+					}
+					add_trait = true_immortal_trait
+					increase_investment_level = { amount = 10 }
+					scope:divinity = {
+						 add_piety = -1000
+					}
+				}
+				else = {
+					add_trait = eternal_trait
+					increase_investment_level = { amount = 5 }
+					scope:divinity = {
+						add_piety = -500
+					}
+				}
+			}
+		}
+	}
+}
+
+empower_random_vassal = {
+	save_scope_as = divinity
+	random_vassal = {
+		weight = {
+			base = {
+				value = 0
+				add = stewardship
+				add = intrigue
+				add = martial
+				add = stewardship
+				add = diplomacy
+				add = { value = current_military_strength divide = 500 }
+			}
+		}
+		limit = {
+			NAND = {
+				has_character_modifier = blessing_of_battle_modifier
+				has_character_modifier = blessing_of_war_modifier
+				has_character_modifier = blessing_of_speed_modifier
+				has_character_modifier = blessing_of_love_modifier
+				has_character_modifier = blessing_of_mind_modifier
+				has_character_modifier = blessing_of_gold_modifier
+				any_immortal_trait = yes
+			}
+		}
+			
+		random_list = {
+			1 = {
+				trigger = {
+					NOT = { has_character_modifier = blessing_of_battle_modifier }
+				}
+				add_character_modifier = blessing_of_battle_modifier
+				increase_investment_level = { amount = 2 }
+				scope:divinity = {
+					add_piety = -250
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = { has_character_modifier = blessing_of_war_modifier }
+				}
+				add_character_modifier = blessing_of_war_modifier
+				increase_investment_level = { amount = 2 }
+				scope:divinity = {
+					add_piety = -250
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = { has_character_modifier = blessing_of_speed_modifier }
+				}
+				add_character_modifier = blessing_of_speed_modifier
+				increase_investment_level = { amount = 2 }
+				scope:divinity = {
+					add_piety = -250
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = { has_character_modifier = blessing_of_love_modifier }
+				}
+				add_character_modifier = blessing_of_love_modifier
+				increase_investment_level = { amount = 2 }
+				scope:divinity = {
+					add_piety = -250
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = { has_character_modifier = blessing_of_gold_modifier }
+				}
+				add_character_modifier = blessing_of_gold_modifier
+				increase_investment_level = { amount = 2 }
+				scope:divinity = {
+					add_piety = -250
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = { has_character_modifier = blessing_of_mind_modifier }
+				}
+				add_character_modifier = blessing_of_mind_modifier
+				increase_investment_level = { amount = 2 }
+				scope:divinity = {
+					add_piety = -250
+				}
+			}
+			2 = {
+				trigger = {
+					NOT = { any_immortal_trait = yes }
+				}
+				add_trait = reborn_trait
+				increase_investment_level = { amount = 5 }
+				scope:divinity = {
+					add_piety = -500
+				}
+			}
+			2 = {
+				trigger = {
+					NOT = { any_immortal_trait = yes }
+				}
+				add_trait = eternal_trait
+				increase_investment_level = { amount = 5 }
+				scope:divinity = {
+					add_piety = -500
+				}
+			}
+			5 = {
+				trigger = {
+					NOT = { any_immortal_trait = yes }
+					scope:divinity = { piety > 1000 }
+				}
+				add_trait = true_immortal_trait
+				increase_investment_level = { amount = 10 }
+				scope:divinity = {
+					add_piety = -1000
+				}
+			}
+		}
+	}
+}
+
+empower_random_county = {
+	save_scope_as = divinity
+	random_realm_county = {
+		weight = {
+			value = 1
+			if = {
+				limit = {
+					holder = scope:divintiy
+				}
+				add = 9
+			}
+
+		}
+		limit = {
+			NAND = {
+				has_county_modifier = county_blessing_of_prosperity_modifier
+				has_county_modifier = county_blessing_of_growth_modifier
+				has_county_modifier = county_blessing_of_defiance_modifier
+				has_county_modifier = county_blessing_of_force_modifier
+			}
+		}
+		random_list = {
+			1 = {
+				trigger = { NOT = { has_county_modifier = county_blessing_of_prosperity_modifier } }
+				add_county_modifier = county_blessing_of_prosperity_modifier
+			}
+			1 = {
+				trigger = { NOT = { has_county_modifier = county_blessing_of_growth_modifier } }
+				add_county_modifier = county_blessing_of_growth_modifier
+			}
+			1 = {
+				trigger = { NOT = { has_county_modifier = county_blessing_of_defiance_modifier } }
+				add_county_modifier = county_blessing_of_defiance_modifier
+			}
+			1 = {
+				trigger = { NOT = { has_county_modifier = county_blessing_of_force_modifier } }
+				add_county_modifier = county_blessing_of_force_modifier
+			}
+		}
+		increase_investment_level = { amount = 5 }
+		scope:divinity = {
+			add_piety = -500
+		}
+	}
+}

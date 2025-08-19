@@ -1,0 +1,8 @@
+﻿l_english:
+ rule_ai_gods:0 "AI Gods"
+ setting_ai_gods_exist:1 "AI Gods Exist"
+ setting_ai_gods_exist_desc:0 "Some faiths in the world will be headed by a Divinity."
+ setting_ai_gods_dont_exist:1 "No other Divinities"
+ setting_ai_gods_dont_exist_desc:0 "No other gods - the world is your plaything."
+ setting_every_faith_has_god:0 "Every Faith God"
+ setting_every_faith_has_god_desc:0 "Every Faith will be headed by a Divinity. NOT RECOMMENDED"

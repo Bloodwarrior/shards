@@ -1,0 +1,30 @@
+increase_investment_text = {
+    first = increase_investment_loc
+	global = increase_investment_loc
+	third = increase_investment_loc
+	#first_neg = vision_truthwatcher_score_loc
+}
+
+title_effects_text = {
+	first = title_effects
+	global = title_effects
+	third = title_effects
+}
+
+change_beauty_trait_text = {
+	first = change_beauty_trait
+	global = change_beauty_trait
+	third = change_beauty_trait
+}
+
+change_physique_trait_text = {
+	first = change_physique_trait
+	global = change_physique_trait
+	third = change_physique_trait
+}
+
+change_intellect_trait_text = {
+	first = change_intellect_trait
+	global = change_intellect_trait
+	third = change_intellect_trait
+}

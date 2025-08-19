@@ -1,0 +1,123 @@
+﻿namespace = cataclysm_events
+
+cataclysm_events.0001 = {	
+	title = cataclysm_events.0001.title
+	desc = cataclysm_events.0001.desc
+	theme = faith
+
+	left_portrait = root
+
+	option = {
+		name = cataclysm_events.0001.a
+		random_list = {
+			6 = {
+				modifier = {
+					trigger = {
+						is_ruler = yes
+					}
+					add = highest_held_title_tier
+				}
+				modifier = {
+					add = investment_level
+				}
+
+			}
+			3 = {
+				increase_wounds_effect = { REASON = death_sacrificed_to_gods }
+			}
+			1 = {
+				custom_tooltip = "GAIN_TWO_WOUNDS"
+				hidden_effect = {
+					increase_wounds_effect = { REASON = death_sacrificed_to_gods }
+				    increase_wounds_effect = { REASON = death_sacrificed_to_gods }
+				}
+				hurt_badly = yes
+			}
+		}
+
+	}
+
+}
+
+cataclysm_events.0002 = {	
+	title = cataclysm_events.0002.title
+	desc = cataclysm_events.0002.desc
+	theme = faith
+
+	left_portrait = root
+
+	option = {
+		name = cataclysm_events.0002.a
+		random_list = {
+			3 = {
+				modifier = {
+					trigger = {
+						is_ruler = yes
+					}
+					add = highest_held_title_tier
+				}
+				modifier = {
+					add = investment_level
+				}
+
+			}
+			4 = {
+				increase_wounds_effect = { REASON = death_sacrificed_to_gods }
+				hurt_badly = yes
+			}
+			5 = {
+				death = { killer = scope:actor death_reason = death_sacrificed_to_gods }
+			}
+
+		}
+
+	}
+
+}
+
+cataclysm_events.0003 = {	
+	title = cataclysm_events.0003.title
+	desc = cataclysm_events.0003.desc
+	theme = faith
+
+	left_portrait = root
+
+	option = {
+		name = cataclysm_events.0003.a
+		random_list = {
+			2 = {
+				modifier = {
+					trigger = {
+						is_ruler = yes
+					}
+					add = highest_held_title_tier
+				}
+				modifier = {
+					add = investment_level
+				}
+				increase_wounds_effect = { REASON = death_sacrificed_to_gods }
+				hurt_badly = yes
+
+			}
+			8 = {
+				death = { killer = scope:actor death_reason = death_sacrificed_to_gods }
+			}
+
+		}
+
+	}
+
+}
+
+cataclysm_events.0004 = {	
+	title = cataclysm_events.0004.title
+	desc = cataclysm_events.0004.desc
+	theme = faith
+
+	left_portrait = root
+
+	option = {
+		name = cataclysm_events.0004.a
+	}
+
+}

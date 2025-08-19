@@ -1,0 +1,77 @@
+﻿l_english:
+ ruler_starts_heresy_tooltip: "[petitioner.GetShortUINameNoTooltip] will start a Heresy against your faith."
+ blessing_trice_tooltip: "[petitioner.GetShortUINameNoTooltip] will be blessed thrice."
+ divine_prayer.0001.title: "[prayer|e]: a petition for the blessing of war"
+ divine_prayer.0001.desc: "A call echoes in eternity - your name has been invoked. Your attention is drawn to the mortal world, to find [petitioner.GetName] partaking in ritual prayer. The mortal has successfuly caught your attention, but why?\n\nSoon, it becomes clear what they want - they desire your blessing. The blessing of war, to be more exact, the power to lead and win battles, to become a general worthy of legend."
+ divine_prayer.0001.a: "Grant [petitioner.GetShortUINameNoTooltip] their wish!"
+ divine_prayer.0001.b: "Give [petitioner.GetShortUINameNoTooltip] thrice the blessing they requested!"
+ divine_prayer.0001.d: "Refuse - your power is better spent elsewhere."
+
+ divine_prayer.0002.title: "[prayer|e]: a petition for the blessing of gold"
+ divine_prayer.0002.desc: "A call echoes in eternity - your name has been invoked. Your attention is drawn to the mortal world, to find [petitioner.GetName] partaking in ritual prayer. The mortal has successfuly caught your attention, but why?\n\nSoon, it becomes clear what they want - they desire your blessing. The blessing of gold, to be more exact, the power to manage and expand a kingdom, to become a steward worthy of legend."
+
+ divine_prayer.0003.title: "[prayer|e]: a petition for the blessing of deceit"
+ divine_prayer.0003.desc: "A call echoes in eternity - your name has been invoked. Your attention is drawn to the mortal world, to find [petitioner.GetName] partaking in ritual prayer. The mortal has successfuly caught your attention, but why?\n\nSoon, it becomes clear what they want - they desire your blessing. The blessing of deceit, to be more exact, the power to whisper and murder, to become a schemer worthy of legend."
+
+ divine_prayer.0004.title: "[prayer|e]: a petition for the blessing of love"
+ divine_prayer.0004.desc: "A call echoes in eternity - your name has been invoked. Your attention is drawn to the mortal world, to find [petitioner.GetName] partaking in ritual prayer. The mortal has successfuly caught your attention, but why?\n\nSoon, it becomes clear what they want - they desire your blessing. The blessing of love, to be more exact, the power to inspire and captivate, to become a leader worthy of legend."
+
+ divine_prayer.0005.title: "[prayer|e]: a petition for the blessing of speed"
+ divine_prayer.0005.desc: "A call echoes in eternity - your name has been invoked. Your attention is drawn to the mortal world, to find [petitioner.GetName] partaking in ritual prayer. The mortal has successfuly caught your attention, but why?\n\nSoon, it becomes clear what they want - they desire your blessing. The blessing of speed, to be more exact, the power to chase and outflank, to become a hunter worthy of legend - wheter of man or beasts."
+
+ divine_prayer.0006.title: "[prayer|e]: a petition for the blessing of battle"
+ divine_prayer.0006.desc: "A call echoes in eternity - your name has been invoked. Your attention is drawn to the mortal world, to find [petitioner.GetName] partaking in ritual prayer. The mortal has successfuly caught your attention, but why?\n\nSoon, it becomes clear what they want - they desire your blessing. The blessing of battle, to be more exact, the power to dominate and overcome the eneny, to become a warrior worthy of legend."
+
+ divine_prayer.0007.title: "[prayer|e]: a petition for the blessing of mind"
+ divine_prayer.0007.desc: "A call echoes in eternity - your name has been invoked. Your attention is drawn to the mortal world, to find [petitioner.GetName] partaking in ritual prayer. The mortal has successfuly caught your attention, but why?\n\nSoon, it becomes clear what they want - they desire your blessing. The blessing of mind, to be more exact, the power to control and grow oneself, to become a scholar worthy of legend."
+
+ divine_prayer.1000.title: "[prayer|e]: a petition for immortality"
+ divine_prayer.1000.desc: "A call echoes in eternity - your name has been invoked. Your attention is drawn to the mortal world, to find [petitioner.GetName] partaking in ritual prayer. The mortal has successfuly caught your attention, but why?\n\nSoon, it becomes clear what they want - this mortal wishes to stop being so - instead, [petitioner.GetName] wishes to become an immortal - one of your undying chosen ones. To transcend mortality, frality and death is no small thing, but it is within your power to do - should you choose."
+ divine_prayer.1000.a: "Reforge [petitioner.GetShortUINameNoTooltip]'s soul and grant [rebirth|e]"
+ divine_prayer.1000.b: "Make this mortal everlasting, granting [eternity|e]"
+ divine_prayer.1000.c: "Gift [petitioner.GetShortUINameNoTooltip] with the greatest gift - true immortality."
+ divine_prayer.1000.d: "Refuse - your power is better spent elsewhere."
+
+ divine_prayer.2000.title: "[prayer|e]: a petition for intellect"
+ divine_prayer.2000.desc: "A call echoes in eternity - your name has been invoked. Your attention is drawn to the mortal world, to find [petitioner.GetName] partaking in ritual prayer. The mortal has successfuly caught your attention, but why?\n\nSoon, it becomes clear what they want - this mortals wants to improve, to be better. They desire your help in growing their mind, making them more intellegent than their fellow man."
+ divine_prayer.2000.a: "Grant [petitioner.GetShortUINameNoTooltip] what they wish."
+ divine_prayer.2000.b: "Generously bestow more than the mortal asked for."
+ divine_prayer.2000.c: "Forge [petitioner.GetShortUINameNoTooltip] into an exemplar of intellect."
+ divine_prayer.2000.d: "Refuse - your power is better spent elsewhere."
+
+ divine_prayer.2001.title: "[prayer|e]: a petition for beauty"
+ divine_prayer.2001.desc: "A call echoes in eternity - your name has been invoked. Your attention is drawn to the mortal world, to find [petitioner.GetName] partaking in ritual prayer. The mortal has successfuly caught your attention, but why?\n\nSoon, it becomes clear what they want - this mortals wants to improve, to be better. They desire your help in becoming beautiful, attracting and controlling others."
+ divine_prayer.2001.a: "Grant [petitioner.GetShortUINameNoTooltip] what they wish."
+ divine_prayer.2001.b: "Generously bestow more than the mortal asked for."
+ divine_prayer.2001.c: "Forge [petitioner.GetShortUINameNoTooltip] into an exemplar of beauty."
+ divine_prayer.2001.d: "Refuse - your power is better spent elsewhere."
+
+ divine_prayer.2002.title: "[prayer|e]: a petition for physique"
+ divine_prayer.2002.desc: "A call echoes in eternity - your name has been invoked. Your attention is drawn to the mortal world, to find [petitioner.GetName] partaking in ritual prayer. The mortal has successfuly caught your attention, but why?\n\nSoon, it becomes clear what they want - this mortals wants to improve, to be better. They desire your help in evolving their body, becoming haler and greater."
+ divine_prayer.2002.a: "Grant [petitioner.GetShortUINameNoTooltip] what they wish."
+ divine_prayer.2002.b: "Generously bestow more than the mortal asked for."
+ divine_prayer.2002.c: "Forge [petitioner.GetShortUINameNoTooltip] into an exemplar of physique."
+ divine_prayer.2002.d: "Refuse - your power is better spent elsewhere."
+
+ divine_prayer.2003.title: "[prayer|e]: a petition for strength"
+ divine_prayer.2003.desc: "A call echoes in eternity - your name has been invoked. Your attention is drawn to the mortal world, to find [petitioner.GetName] partaking in ritual prayer. The mortal has successfuly caught your attention, but why?\n\nSoon, it becomes clear what they want - this mortals wants to improve, to be better. They desire your help in evolving their muscles, earning strength and potency."
+ divine_prayer.2003.a: "Grant [petitioner.GetShortUINameNoTooltip] what they wish."
+ divine_prayer.2003.d: "Refuse - your power is better spent elsewhere."
+
+ divine_prayer.2004.title: "[prayer|e]: a petition for fertility"
+ divine_prayer.2004.desc: "A call echoes in eternity - your name has been invoked. Your attention is drawn to the mortal world, to find [petitioner.GetName] partaking in ritual prayer. The mortal has successfuly caught your attention, but why?\n\nSoon, it becomes clear what they want - this mortals wants to improve, to be better. They desire your help in increasing their fertility, and bringing children."
+ divine_prayer.2004.a: "Grant [petitioner.GetShortUINameNoTooltip] what they wish."
+ divine_prayer.2004.d: "Refuse - your power is better spent elsewhere."
+
+ divine_prayer.2005.title: "[prayer|e]: a petition for healing"
+ divine_prayer.2005.desc: "A call echoes in eternity - your name has been invoked. Your attention is drawn to the mortal world, to find [petitioner.GetName] partaking in ritual prayer. The mortal has successfuly caught your attention, but why?\n\nSoon, it becomes clear what they want - this mortal suffers from a malady, wheter an injury or illness. They ask for your help to return to health - a feat you can accomplish, should you wish."
+ divine_prayer.2005.a: "Grant [petitioner.GetShortUINameNoTooltip] what they wish."
+ divine_prayer.2005.d: "Refuse - your power is better spent elsewhere."
+
+ divine_prayer.3000.title: "[prayer|e]: a petition for armies"
+ divine_prayer.3000.desc: "A call echoes in eternity - your name has been invoked. Your attention is drawn to the mortal world, to find [petitioner.GetName] partaking in ritual prayer. The mortal has successfuly caught your attention, but why?\n\nSoon, it becomes clear what they want - this immortals suffers from a malady, wheter an injury or illness. They ask for your help to return to health - a feat you can accomplish, should you wish."
+ divine_prayer.3000.a: "Send Providants, the unyielding warriros."
+ divine_prayer.3000.b: "Send Bowmen, the eagle eyed marksmen."
+ divine_prayer.3000.c: "Send Boon-Riders, the shining knights."
+ divine_prayer.3000.d: "Send the Titan, the terrible monster."
+ divine_prayer.3000.e: "Refuse - your power is better spent elsewhere."
