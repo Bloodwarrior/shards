@@ -1,3 +1,62 @@
+<<<<<< codex/add-additional-types-of-divine-power-fgve2p
+# Divine ascension and domain decisions
+# Ascension limited to non-divine characters, domain embraces grant permanent modifiers
+become_divinity_decision = { #by Linnéa Thimrén
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	}
+	desc = become_divinity_decision_desc
+	selection_tooltip = become_divinity_decision_tooltip
+
+	is_shown = {
+		NOT = { is_a_divinity = yes }
+	}
+	is_valid = {
+		NOT = { is_a_divinity = yes }
+	}
+
+	effect = {
+		become_divinity_effect = yes
+	}
+}
+
+embrace_plague_domain_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	}
+	desc = embrace_plague_domain_decision_desc
+	selection_tooltip = embrace_plague_domain_decision_tooltip
+
+	is_shown = {
+		is_a_divinity = yes
+	}
+	is_valid = {
+		NOT = { has_character_modifier = plague_domain_modifier }
+	}
+
+	effect = {
+		add_character_modifier = { name = plague_domain_modifier duration = -1 }
+	}
+}
+
+embrace_love_domain_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	}
+	desc = embrace_love_domain_decision_desc
+	selection_tooltip = embrace_love_domain_decision_tooltip
+
+	is_shown = {
+		is_a_divinity = yes
+	}
+	is_valid = {
+		NOT = { has_character_modifier = love_domain_modifier }
+	}
+
+	effect = {
+		add_character_modifier = { name = love_domain_modifier duration = -1 }
+	}
+=======
 become_divinity_decision = { #by Linnéa Thimrén
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
@@ -49,4 +108,5 @@ embrace_love_domain_decision = {
         effect = {
                 add_character_modifier = { name = love_domain_modifier duration = -1 }
         }
+>>>>>> main
 }
