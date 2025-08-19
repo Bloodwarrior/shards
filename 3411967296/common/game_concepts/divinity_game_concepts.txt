@@ -1,3 +1,4 @@
+<<<<<< codex/add-additional-types-of-divine-power-fgve2p
 rebirth = {
 
 }
@@ -49,3 +50,44 @@ prayer = {
 possession = {
 
 }
+=======
+rebirth = {
+
+}
+eternity = {
+	
+}
+investment = {
+	alias = { invested }
+}
+faith_harvesting = {
+
+}
+divinity = {
+
+}
+manifestation = {
+
+}
+avatar = {
+
+}
+perpendicularity = {
+
+}
+prophet = {
+	
+}
+monster = {
+	
+}
+dominion = {
+
+}
+prayer = {
+
+}
+possession = {
+
+}
+>>>>>> main
