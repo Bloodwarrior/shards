@@ -1,3 +1,4 @@
+# Divine ascension and domain decisions
 become_divinity_decision = { #by Linnéa Thimrén
         picture = {
                 reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
