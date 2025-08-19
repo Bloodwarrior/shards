@@ -2,10 +2,10 @@ rebirth = {
 
 }
 eternity = {
-	
+
 }
 investment = {
-	alias = { invested }
+        alias = { invested }
 }
 faith_harvesting = {
 
@@ -23,10 +23,10 @@ perpendicularity = {
 
 }
 prophet = {
-	
+
 }
 monster = {
-	
+
 }
 dominion = {
 
