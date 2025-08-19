@@ -1,0 +1,66 @@
+plague_eruption_interaction = {
+        category = interaction_category_religion
+        icon = cataclysm
+        interface_priority = 40
+
+        desc = plague_eruption_interaction_desc
+
+        target_type = title
+        target_filter = recipient_domain_titles
+
+        is_shown = {
+                scope:actor = {
+                        is_a_divinity = yes
+                        has_character_modifier = plague_domain_modifier
+                }
+                scope:recipient = { is_landed = yes }
+        }
+
+        can_be_picked = {
+                scope:target = { tier = 2 }
+        }
+
+        on_accept = {
+                scope:target = {
+                        add_county_modifier = {
+                                name = plague_outbreak_modifier
+                                duration = 10y
+                        }
+                }
+        }
+
+        auto_accept = yes
+        cost = { piety = 100 }
+}
+
+love_forsaken_interaction = {
+        category = interaction_category_religion
+        icon = curse
+        interface_priority = 80
+
+        desc = love_forsaken_interaction_desc
+
+        is_shown = {
+                scope:actor = {
+                        is_a_divinity = yes
+                        has_character_modifier = love_domain_modifier
+                }
+                NOT = { scope:actor = scope:recipient }
+        }
+
+        on_accept = {
+                scope:recipient = {
+                        add_character_modifier = {
+                                name = love_forsaken_modifier
+                                duration = 10y
+                        }
+                        add_opinion = {
+                                target = scope:actor
+                                modifier = cursed_me_opinion
+                        }
+                }
+        }
+
+        auto_accept = yes
+        cost = { piety = 100 }
+}
