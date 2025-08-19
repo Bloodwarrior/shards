@@ -1,39 +1,51 @@
 rebirth = {
 
 }
+
 eternity = {
 
 }
+
 investment = {
-        alias = { invested }
+	alias = { invested }
 }
+
 faith_harvesting = {
 
 }
+
 divinity = {
 
 }
+
 manifestation = {
 
 }
+
 avatar = {
 
 }
+
 perpendicularity = {
 
 }
+
 prophet = {
 
 }
+
 monster = {
 
 }
+
 dominion = {
 
 }
+
 prayer = {
 
 }
+
 possession = {
 
 }
