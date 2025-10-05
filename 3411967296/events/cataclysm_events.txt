@@ -1,6 +1,6 @@
-﻿namespace = cataclysm_events
+namespace = cataclysm_events
 
-cataclysm_events.0001 = {	
+cataclysm_events.0001 = {
 	title = cataclysm_events.0001.title
 	desc = cataclysm_events.0001.desc
 	theme = faith
@@ -39,7 +39,7 @@ cataclysm_events.0001 = {
 
 }
 
-cataclysm_events.0002 = {	
+cataclysm_events.0002 = {
 	title = cataclysm_events.0002.title
 	desc = cataclysm_events.0002.desc
 	theme = faith
@@ -75,7 +75,7 @@ cataclysm_events.0002 = {
 
 }
 
-cataclysm_events.0003 = {	
+cataclysm_events.0003 = {
 	title = cataclysm_events.0003.title
 	desc = cataclysm_events.0003.desc
 	theme = faith
@@ -109,7 +109,7 @@ cataclysm_events.0003 = {
 
 }
 
-cataclysm_events.0004 = {	
+cataclysm_events.0004 = {
 	title = cataclysm_events.0004.title
 	desc = cataclysm_events.0004.desc
 	theme = faith

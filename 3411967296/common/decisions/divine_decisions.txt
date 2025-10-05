@@ -1,9 +1,7 @@
 # Divine ascension and domain decisions
 # Ascension limited to non-divine characters, domain embraces grant permanent modifiers
 become_divinity_decision = { #by Linnéa Thimrén
-        picture = {
-                reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
-        }
+        picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
         desc = become_divinity_decision_desc
         selection_tooltip = become_divinity_decision_tooltip
 
@@ -20,9 +18,7 @@ become_divinity_decision = { #by Linnéa Thimrén
 }
 
 embrace_plague_domain_decision = {
-        picture = {
-                reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
-        }
+        picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
         desc = embrace_plague_domain_decision_desc
         selection_tooltip = embrace_plague_domain_decision_tooltip
 
@@ -39,9 +35,7 @@ embrace_plague_domain_decision = {
 }
 
 embrace_love_domain_decision = {
-        picture = {
-                reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
-        }
+        picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
         desc = embrace_love_domain_decision_desc
         selection_tooltip = embrace_love_domain_decision_tooltip
 

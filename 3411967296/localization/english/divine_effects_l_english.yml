@@ -1,4 +1,4 @@
-﻿l_english:
+l_english:
  increase_investment_loc: "Increases [investment|E] by $VALUE|0+$"
  INVESTMENT_COST_MULTIPLY: "[investment|E] cost multiplier"
  DOMINION_COST_MULTIPLY: "[dominion|E] cost multiplier"

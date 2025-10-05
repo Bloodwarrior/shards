@@ -7,7 +7,7 @@ namespace = divine_prayer
 # 	theme = faith
 
 # 	left_portrait = root
-	
+
 # 	right_portrait = scope:petitioner
 
 # 	immediate = {
@@ -17,7 +17,7 @@ namespace = divine_prayer
 # 			save_scope_as = recipient
 # 		}
 # 	}
-	
+
 # 	# minor boon
 # 	option = {
 # 		name = divine_prayer.0001.a
@@ -47,17 +47,17 @@ namespace = divine_prayer
 # 		show_as_unavailable = {always = yes}
 # 		gave_major_boon = yes
 # 	}
-	
+
 # 	option = {
 # 		name = divine_prayer.0001.d
-        ai_chance = { base = 0 }
+#         ai_chance = { base = 0 }
 # 		scope:petitioner = {
 # 			if = {
-# 				limit = { scope:petitioner.faith = scope:divnity.faith }
+# 				limit = { scope:petitioner.faith = scope:divinity.faith }
 # 				check_for_heresy = yes
-# 			}			
+# 			}
 # 		}
-		
+
 # 	}
 # }
 
@@ -113,19 +113,19 @@ divine_prayer.9000 = {
 						}
 					}
 					if = {
-						limit = { scope:petitioner.faith = root.faith }
+						limit = { scope:petitioner.faith = scope:divinity.faith }
 						check_for_heresy = yes
 					}
 					add_opinion = {
 						target = scope:divinity
 						modifier = refused_boon
 					}
-					
+
 				}
 				else = {
 					choose_prayer_effect = yes
 				}
-				
+
 			}
 		}
 	}
@@ -188,7 +188,7 @@ divine_prayer.9001 = {
 							value >= faith_hostile_level
 						}
 					}
-					
+
 				}
 				modifier = {
 					factor = 0.1
@@ -198,9 +198,9 @@ divine_prayer.9001 = {
 							value >= faith_evil_level
 						}
 					}
-					
+
 				}
-				
+
 			}
 			save_scope_as = petitioner
 				if = {
@@ -210,20 +210,20 @@ divine_prayer.9001 = {
 						}
 					}
 					if = {
-						limit = { scope:petitioner.faith = root.faith }
+						limit = { scope:petitioner.faith = scope:divinity.faith }
 						check_for_heresy = yes
 					}
 					add_opinion = {
 						target = scope:divinity
 						modifier = refused_boon
 					}
-					
+
 				}
 				else = {
 					choose_prayer_effect = yes
 				}
 		}
-		
+
 	}
 }
 
@@ -235,7 +235,7 @@ divine_prayer.0001 = {
 	theme = faith
 
 	left_portrait = root
-	
+
 	right_portrait = scope:petitioner
 
 	immediate = {
@@ -245,7 +245,7 @@ divine_prayer.0001 = {
 			save_scope_as = recipient
 		}
 	}
-	
+
 	# minor boon
 	option = {
 		name = divine_prayer.0001.a
@@ -291,21 +291,21 @@ divine_prayer.0001 = {
 	# 	name = divine_prayer.0001.c
 	# 	gave_major_boon = yes
 	# }
-	
+
 	option = {
 		name = divine_prayer.0001.d
         ai_chance = { base = 0 }
 		scope:petitioner = {
 			if = {
-				limit = { scope:petitioner.faith = root.faith }
+				limit = { scope:petitioner.faith = scope:divinity.faith }
 				check_for_heresy = yes
 			}
 			add_opinion = {
 				target = scope:divinity
 				modifier = refused_boon
-			}			
+			}
 		}
-		
+
 	}
 }
 
@@ -316,7 +316,7 @@ divine_prayer.0002 = {
 	theme = faith
 
 	left_portrait = root
-	
+
 	right_portrait = scope:petitioner
 
 	immediate = {
@@ -326,7 +326,7 @@ divine_prayer.0002 = {
 			save_scope_as = recipient
 		}
 	}
-	
+
 	# minor boon
 	option = {
 		name = divine_prayer.0001.a
@@ -372,21 +372,21 @@ divine_prayer.0002 = {
 	# 	name = divine_prayer.0001.c
 	# 	gave_major_boon = yes
 	# }
-	
+
 	option = {
 		name = divine_prayer.0001.d
         ai_chance = { base = 0 }
 		scope:petitioner = {
 			if = {
-				limit = { scope:petitioner.faith = root.faith }
+				limit = { scope:petitioner.faith = scope:divinity.faith }
 				check_for_heresy = yes
 			}
 			add_opinion = {
 				target = scope:divinity
 				modifier = refused_boon
-			}			
+			}
 		}
-		
+
 	}
 }
 
@@ -397,7 +397,7 @@ divine_prayer.0003 = {
 	theme = faith
 
 	left_portrait = root
-	
+
 	right_portrait = scope:petitioner
 
 	immediate = {
@@ -407,7 +407,7 @@ divine_prayer.0003 = {
 			save_scope_as = recipient
 		}
 	}
-	
+
 	# minor boon
 	option = {
 		name = divine_prayer.0001.a
@@ -453,21 +453,21 @@ divine_prayer.0003 = {
 	# 	name = divine_prayer.0001.c
 	# 	gave_major_boon = yes
 	# }
-	
+
 	option = {
 		name = divine_prayer.0001.d
         ai_chance = { base = 0 }
 		scope:petitioner = {
 			if = {
-				limit = { scope:petitioner.faith = root.faith }
+				limit = { scope:petitioner.faith = scope:divinity.faith }
 				check_for_heresy = yes
 			}
 			add_opinion = {
 				target = scope:divinity
 				modifier = refused_boon
-			}			
+			}
 		}
-		
+
 	}
 }
 
@@ -478,7 +478,7 @@ divine_prayer.0004 = {
 	theme = faith
 
 	left_portrait = root
-	
+
 	right_portrait = scope:petitioner
 
 	immediate = {
@@ -488,7 +488,7 @@ divine_prayer.0004 = {
 			save_scope_as = recipient
 		}
 	}
-	
+
 	# minor boon
 	option = {
 		name = divine_prayer.0001.a
@@ -534,21 +534,21 @@ divine_prayer.0004 = {
 	# 	name = divine_prayer.0001.c
 	# 	gave_major_boon = yes
 	# }
-	
+
 	option = {
 		name = divine_prayer.0001.d
         ai_chance = { base = 0 }
 		scope:petitioner = {
 			if = {
-				limit = { scope:petitioner.faith = root.faith }
+				limit = { scope:petitioner.faith = scope:divinity.faith }
 				check_for_heresy = yes
 			}
 			add_opinion = {
 				target = scope:divinity
 				modifier = refused_boon
-			}			
+			}
 		}
-		
+
 	}
 }
 
@@ -559,7 +559,7 @@ divine_prayer.0005 = {
 	theme = faith
 
 	left_portrait = root
-	
+
 	right_portrait = scope:petitioner
 
 	immediate = {
@@ -569,7 +569,7 @@ divine_prayer.0005 = {
 			save_scope_as = recipient
 		}
 	}
-	
+
 	# minor boon
 	option = {
 		name = divine_prayer.0001.a
@@ -615,21 +615,21 @@ divine_prayer.0005 = {
 	# 	name = divine_prayer.0001.c
 	# 	gave_major_boon = yes
 	# }
-	
+
 	option = {
 		name = divine_prayer.0001.d
         ai_chance = { base = 0 }
 		scope:petitioner = {
 			if = {
-				limit = { scope:petitioner.faith = root.faith }
+				limit = { scope:petitioner.faith = scope:divinity.faith }
 				check_for_heresy = yes
 			}
 			add_opinion = {
 				target = scope:divinity
 				modifier = refused_boon
-			}			
+			}
 		}
-		
+
 	}
 }
 
@@ -640,7 +640,7 @@ divine_prayer.0006 = {
 	theme = faith
 
 	left_portrait = root
-	
+
 	right_portrait = scope:petitioner
 
 	immediate = {
@@ -650,7 +650,7 @@ divine_prayer.0006 = {
 			save_scope_as = recipient
 		}
 	}
-	
+
 	# minor boon
 	option = {
 		name = divine_prayer.0001.a
@@ -696,21 +696,21 @@ divine_prayer.0006 = {
 	# 	name = divine_prayer.0001.c
 	# 	gave_major_boon = yes
 	# }
-	
+
 	option = {
 		name = divine_prayer.0001.d
         ai_chance = { base = 0 }
 		scope:petitioner = {
 			if = {
-				limit = { scope:petitioner.faith = root.faith }
+				limit = { scope:petitioner.faith = scope:divinity.faith }
 				check_for_heresy = yes
 			}
 			add_opinion = {
 				target = scope:divinity
 				modifier = refused_boon
-			}			
+			}
 		}
-		
+
 	}
 }
 
@@ -722,7 +722,7 @@ divine_prayer.0007 = {
 	theme = faith
 
 	left_portrait = root
-	
+
 	right_portrait = scope:petitioner
 
 	immediate = {
@@ -732,7 +732,7 @@ divine_prayer.0007 = {
 			save_scope_as = recipient
 		}
 	}
-	
+
 	# minor boon
 	option = {
 		name = divine_prayer.0001.a
@@ -778,21 +778,21 @@ divine_prayer.0007 = {
 	# 	name = divine_prayer.0001.c
 	# 	gave_major_boon = yes
 	# }
-	
+
 	option = {
 		name = divine_prayer.0001.d
         ai_chance = { base = 0 }
 		scope:petitioner = {
 			if = {
-				limit = { scope:petitioner.faith = root.faith }
+				limit = { scope:petitioner.faith = scope:divinity.faith }
 				check_for_heresy = yes
 			}
 			add_opinion = {
 				target = scope:divinity
 				modifier = refused_boon
-			}			
+			}
 		}
-		
+
 	}
 }
 
@@ -804,7 +804,7 @@ divine_prayer.1000 = {
 	theme = faith
 
 	left_portrait = root
-	
+
 	right_portrait = scope:petitioner
 
 	immediate = {
@@ -814,7 +814,7 @@ divine_prayer.1000 = {
 			save_scope_as = recipient
 		}
 	}
-	
+
 	# Reborn
 	option = {
 		name = divine_prayer.1000.a
@@ -874,21 +874,21 @@ divine_prayer.1000 = {
 		show_as_unavailable = {always = yes}
 		gave_major_boon = yes
 	}
-	
+
 	option = {
 		name = divine_prayer.0001.d
         ai_chance = { base = 0 }
 		scope:petitioner = {
 			if = {
-				limit = { scope:petitioner.faith = root.faith }
+				limit = { scope:petitioner.faith = scope:divinity.faith }
 				check_for_heresy = yes
 			}
 			add_opinion = {
 				target = scope:divinity
 				modifier = refused_boon
-			}			
+			}
 		}
-		
+
 	}
 }
 
@@ -900,7 +900,7 @@ divine_prayer.2000 = {
 	theme = faith
 
 	left_portrait = root
-	
+
 	right_portrait = scope:petitioner
 
 	immediate = {
@@ -910,7 +910,7 @@ divine_prayer.2000 = {
 			save_scope_as = recipient
 		}
 	}
-	
+
 	# minor boon
 	option = {
 		name = divine_prayer.2000.a
@@ -935,7 +935,7 @@ divine_prayer.2000 = {
 			scope:recipient = {
 				can_increase_trait_by = { AMOUNT = 2 TRAIT = intellect}
 			}
-			
+
 		}
 		show_as_unavailable = {always = yes}
 		scope:divinity = {
@@ -955,7 +955,7 @@ divine_prayer.2000 = {
 			scope:recipient = {
 				can_increase_trait_by = { AMOUNT = 3 TRAIT = intellect}
 			}
-			
+
 		}
 		show_as_unavailable = {always = yes}
 		scope:divinity = {
@@ -966,21 +966,21 @@ divine_prayer.2000 = {
 		}
 		gave_major_boon = yes
 	}
-	
+
 	option = {
 		name = divine_prayer.0001.d
         ai_chance = { base = 0 }
 		scope:petitioner = {
 			if = {
-				limit = { scope:petitioner.faith = root.faith }
+				limit = { scope:petitioner.faith = scope:divinity.faith }
 				check_for_heresy = yes
 			}
 			add_opinion = {
 				target = scope:divinity
 				modifier = refused_boon
-			}			
+			}
 		}
-		
+
 	}
 }
 
@@ -993,7 +993,7 @@ divine_prayer.2001 = {
 	theme = faith
 
 	left_portrait = root
-	
+
 	right_portrait = scope:petitioner
 
 	immediate = {
@@ -1003,7 +1003,7 @@ divine_prayer.2001 = {
 			save_scope_as = recipient
 		}
 	}
-	
+
 	# minor boon
 	option = {
 		name = divine_prayer.2001.a
@@ -1028,7 +1028,7 @@ divine_prayer.2001 = {
 			scope:recipient = {
 				can_increase_trait_by = { AMOUNT = 2 TRAIT = beauty}
 			}
-			
+
 		}
 		show_as_unavailable = {always = yes}
 		scope:divinity = {
@@ -1048,7 +1048,7 @@ divine_prayer.2001 = {
 			scope:recipient = {
 				can_increase_trait_by = { AMOUNT = 3 TRAIT = beauty}
 			}
-			
+
 		}
 		show_as_unavailable = {always = yes}
 		scope:divinity = {
@@ -1059,21 +1059,21 @@ divine_prayer.2001 = {
 		}
 		gave_major_boon = yes
 	}
-	
+
 	option = {
 		name = divine_prayer.0001.d
         ai_chance = { base = 0 }
 		scope:petitioner = {
 			if = {
-				limit = { scope:petitioner.faith = root.faith }
+				limit = { scope:petitioner.faith = scope:divinity.faith }
 				check_for_heresy = yes
 			}
 			add_opinion = {
 				target = scope:divinity
 				modifier = refused_boon
-			}			
+			}
 		}
-		
+
 	}
 }
 
@@ -1085,7 +1085,7 @@ divine_prayer.2002 = {
 	theme = faith
 
 	left_portrait = root
-	
+
 	right_portrait = scope:petitioner
 
 	immediate = {
@@ -1095,7 +1095,7 @@ divine_prayer.2002 = {
 			save_scope_as = recipient
 		}
 	}
-	
+
 	# minor boon
 	option = {
 		name = divine_prayer.2002.a
@@ -1120,7 +1120,7 @@ divine_prayer.2002 = {
 			scope:recipient = {
 				can_increase_trait_by = { AMOUNT = 2 TRAIT = physique}
 			}
-			
+
 		}
 		show_as_unavailable = {always = yes}
 		scope:divinity = {
@@ -1140,7 +1140,7 @@ divine_prayer.2002 = {
 			scope:recipient = {
 				can_increase_trait_by = { AMOUNT = 3 TRAIT = physique}
 			}
-			
+
 		}
 		show_as_unavailable = {always = yes}
 		scope:divinity = {
@@ -1151,21 +1151,21 @@ divine_prayer.2002 = {
 		}
 		gave_major_boon = yes
 	}
-	
+
 	option = {
 		name = divine_prayer.0001.d
         ai_chance = { base = 0 }
 		scope:petitioner = {
 			if = {
-				limit = { scope:petitioner.faith = root.faith }
+				limit = { scope:petitioner.faith = scope:divinity.faith }
 				check_for_heresy = yes
 			}
 			add_opinion = {
 				target = scope:divinity
 				modifier = refused_boon
-			}			
+			}
 		}
-		
+
 	}
 }
 
@@ -1177,7 +1177,7 @@ divine_prayer.2003 = {
 	theme = faith
 
 	left_portrait = root
-	
+
 	right_portrait = scope:petitioner
 
 	immediate = {
@@ -1187,7 +1187,7 @@ divine_prayer.2003 = {
 			save_scope_as = recipient
 		}
 	}
-	
+
 	# minor boon
 	option = {
 		name = divine_prayer.2003.a
@@ -1204,21 +1204,21 @@ divine_prayer.2003 = {
 		gave_minor_boon = yes
 	}
 
-	
+
 	option = {
 		name = divine_prayer.0001.d
         ai_chance = { base = 0 }
 		scope:petitioner = {
 			if = {
-				limit = { scope:petitioner.faith = root.faith }
+				limit = { scope:petitioner.faith = scope:divinity.faith }
 				check_for_heresy = yes
 			}
 			add_opinion = {
 				target = scope:divinity
 				modifier = refused_boon
-			}			
+			}
 		}
-		
+
 	}
 }
 
@@ -1230,7 +1230,7 @@ divine_prayer.2004 = {
 	theme = faith
 
 	left_portrait = root
-	
+
 	right_portrait = scope:petitioner
 
 	immediate = {
@@ -1240,7 +1240,7 @@ divine_prayer.2004 = {
 			save_scope_as = recipient
 		}
 	}
-	
+
 	# minor boon
 	option = {
 		name = divine_prayer.2004.a
@@ -1257,21 +1257,21 @@ divine_prayer.2004 = {
 		gave_minor_boon = yes
 	}
 
-	
+
 	option = {
 		name = divine_prayer.0001.d
         ai_chance = { base = 0 }
 		scope:petitioner = {
 			if = {
-				limit = { scope:petitioner.faith = root.faith }
+				limit = { scope:petitioner.faith = scope:divinity.faith }
 				check_for_heresy = yes
 			}
 			add_opinion = {
 				target = scope:divinity
 				modifier = refused_boon
-			}			
+			}
 		}
-		
+
 	}
 }
 
@@ -1282,7 +1282,7 @@ divine_prayer.2005 = {
 	theme = faith
 
 	left_portrait = root
-	
+
 	right_portrait = scope:petitioner
 
 	immediate = {
@@ -1292,7 +1292,7 @@ divine_prayer.2005 = {
 			save_scope_as = recipient
 		}
 	}
-	
+
 	# minor boon
 	option = {
 		name = divine_prayer.2005.a
@@ -1309,21 +1309,21 @@ divine_prayer.2005 = {
 		gave_minor_boon = yes
 	}
 
-	
+
 	option = {
 		name = divine_prayer.0001.d
         ai_chance = { base = 0 }
 		scope:petitioner = {
 			if = {
-				limit = { scope:petitioner.faith = root.faith }
+				limit = { scope:petitioner.faith = scope:divinity.faith }
 				check_for_heresy = yes
 			}
 			add_opinion = {
 				target = scope:divinity
 				modifier = refused_boon
-			}			
+			}
 		}
-		
+
 	}
 }
 
@@ -1335,7 +1335,7 @@ divine_prayer.3000 = {
 	theme = faith
 
 	left_portrait = root
-	
+
 	right_portrait = scope:petitioner
 
 	immediate = {
@@ -1345,7 +1345,7 @@ divine_prayer.3000 = {
 			save_scope_as = recipient
 		}
 	}
-	
+
 	# Medium boon
 	option = {
 		name = divine_prayer.3000.a
@@ -1361,7 +1361,7 @@ divine_prayer.3000 = {
 				men_at_arms = {
 					type = divine_armored_footmen
 					stacks = 5
-				} 
+				}
 				location = location
 				name = DIVINE_ARMY
 			}
@@ -1385,7 +1385,7 @@ divine_prayer.3000 = {
 				men_at_arms = {
 					type = divine_bowmen
 					stacks = 5
-				} 
+				}
 				location = location
 				name = DIVINE_ARMY
 			}
@@ -1409,7 +1409,7 @@ divine_prayer.3000 = {
 				men_at_arms = {
 					type = divine_armored_horsemen
 					stacks = 5
-				} 
+				}
 				location = location
 				name = DIVINE_ARMY
 			}
@@ -1433,7 +1433,7 @@ divine_prayer.3000 = {
 				men_at_arms = {
 					type = divine_titan
 					stacks = 1
-				} 
+				}
 				location = location
 				name = DIVINE_ARMY
 			}
@@ -1441,20 +1441,20 @@ divine_prayer.3000 = {
 		show_as_unavailable = {always = yes}
 		gave_major_boon = yes
 	}
-	
+
 	option = {
 		name = divine_prayer.0001.d
         ai_chance = { base = 0 }
 		scope:petitioner = {
 			if = {
-				limit = { scope:petitioner.faith = root.faith }
+				limit = { scope:petitioner.faith = scope:divinity.faith }
 				check_for_heresy = yes
 			}
 			add_opinion = {
 				target = scope:divinity
 				modifier = refused_boon
-			}			
+			}
 		}
-		
+
 	}
 }

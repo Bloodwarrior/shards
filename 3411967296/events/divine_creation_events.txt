@@ -39,7 +39,7 @@ divine_creation.0001 = {
 			target = this
 			name = divinity_list
 		}
-		trigger_event = { on_action = update_faith_county_modifiers }
+		on_action = update_faith_county_modifiers
 	}
 	
 }
