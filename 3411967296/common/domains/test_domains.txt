@@ -1,34 +1,34 @@
 plague_domain = {
-    description = "Control over sickness and pestilence, including those who are sick."
-    devoted_criteria = "Has three or more illnesses, none of which can be granted directly by you."
-    devoted_effects = "Devoted gain a bonus for each illness they have."
-    follower_effects = "Plague's followers won't die of illness - they gain a health bonus to offset the illness. They otherwise suffer all effects as normal, and can never be cured of a disease by any natural means."
+    description = "A domain that revels in the grotesque dance of decay and rebirth. It is the creeping rot in the forgotten corner, the feverish sweat of a midnight illness, and the sudden, chilling silence in a once-bustling city. It is not merely about death, but about the teeming, vibrant life that feasts on corruption."
+    devoted_criteria = "To be truly devoted, one must become a living vessel of disease, a walking testament to the domain's power. They must carry at least three distinct maladies, each a testament to their unwavering faith, and none a direct gift from their patron."
+    devoted_effects = "The devoted are not weakened by their afflictions; they are empowered. Each illness they harbor strengthens their connection to the domain, granting them an unnatural resilience and a terrifying presence."
+    follower_effects = "Those who follow the path of plague are granted a grim immunity. They may sicken, they may suffer, but they will not perish from the very forces they worship. The diseases they carry become a part of them, a permanent mark of their allegiance that no mortal medicine can erase."
     special_powers = {
-        plague_eruption = "Start an outbreak of plague in a county, a subtype of cataclysm. Infected characters have a chance of converting to your religion to survive, and so does the county."
-        withering_touch = "Afflict a character with a debilitating, but non-lethal, sickness."
+        plague_eruption = "Unleash a torrent of contagion upon an unsuspecting county. The air thickens with miasma, and the healthy fall to their knees. In their desperation, the infected may turn to you for salvation, their pleas a symphony of supplication. The very land itself may be converted by the sheer weight of the suffering."
+        withering_touch = "Extend a hand and let the touch of decay pass to another. The target is struck down by a sickness that saps their strength and clouds their mind, a constant, nagging reminder of your power. It will not kill them, but it will make them wish for death's sweet release."
     }
-    other_features = "Deathly ill mortals might convert to you in order to survive.\nEvery so often, a plague starts wherever you are."
+    other_features = "When a mortal's life hangs by a thread, their body wracked with a fatal illness, they may cry out your name in a final, desperate plea for survival. Your very presence is a beacon of contagion; where you walk, plagues are sure to follow, a grim procession in your wake."
 }
 
 love_domain = {
-    description = "Control over love both in true love such as lovers and the more seductive side of intrigue. This love can even include self love as well. Also platonic love such as friendships are covered under this domain."
-    devoted_criteria = "Seeks the aid of their patron deity in their pursue of love either by genuine devotion, falling in love with their arranged marriage partner, or using seduction to acquire a lover."
-    devoted_effects = "Devoted gain a bonus with skills involving seduction (intrigue). Stacks with a decreased amount after a set number of scheme completions to avoid becoming OP."
-    follower_effects = "Followers of the God/Goddess of love find themselves having a much easier time in their mortal lives than others when it comes to romance or the bedside."
+    description = "The domain of Love is the gentle touch of a hand, the fiery passion of a stolen kiss, and the unbreakable bond of a lifelong friendship. It is the architect of dynasties and the destroyer of kingdoms, a force that can inspire the greatest works of art and the most terrible of wars. It encompasses the quiet devotion of a loyal heart, the intoxicating allure of seduction, and the serene contentment of self-worth."
+    devoted_criteria = "A mortal earns your favor by embracing the full spectrum of love. Whether through the pure-hearted quest for a soulmate, the artful dance of seduction to win a lover, or the quiet miracle of finding love within the confines of an arranged marriage, their dedication to matters of the heart marks them as one of your own."
+    devoted_effects = "Your devoted find their words honeyed, their gestures captivating. They move through the world with an irresistible charm, making them masters of the seductive arts. To prevent their power from becoming too great, their influence wanes slightly with each conquest, a gentle reminder that love is not a game to be won, but a journey to be experienced."
+    follower_effects = "Those who walk in your light find the path of love smoothed before them. Romances blossom with ease, and the bonds of friendship are forged in the fires of unwavering loyalty. They are blessed with a charm that opens doors and hearts in equal measure."
     special_powers = {
-        love_forsaken = "A character has so offended you that they are going to find the path of love fruitless. Their name scorned, despised, and hated. They will have an option to pursue a quest and rectify their offense to you or else go down in history as a legend. The end conclusion results in the character becoming destitute not just of land, but of sound mind being driven insane by the curse."
-        cupids_arrow = "Cause two characters to fall in love."
+        love_forsaken = "To offend the domain of Love is to invite a terrible curse. The offender will find themselves utterly alone, their name a byword for heartbreak and betrayal. They will be given a single chance to atone for their sins, a desperate quest to win back your favor. Should they fail, they will be remembered as a cautionary tale, a specter of loneliness driven to madness by the love they can never have."
+        cupids_arrow = "With a gentle nudge, you can ignite the spark of love between two unsuspecting souls. Your arrow, once loosed, finds its mark, and a love story for the ages begins. Whether it ends in triumph or tragedy is a tale for the mortals to write."
     }
-    other_features = "Devotees can organize a festival to honor their patron.\nLove can be divided into four fields: Self Love (a path to decrease stress and focus on self care), Romantic Love, Platonic Love (friendship), and Hedonistic Love (seduction for the sake of pleasure)"
+    other_features = "Your devotees may hold grand festivals in your honor, celebrations of love in all its forms. You have also gifted them with the understanding that love is a multifaceted jewel, with four distinct facets: Self Love, a sanctuary from the stresses of the world; Romantic Love, the passionate dance of two souls entwined; Platonic Love, the steady warmth of a true friend; and Hedonistic Love, the pursuit of pleasure for its own sake."
 }
 
 knowledge_domain = {
-    description = "Control over knowledge, learning, and secrets. This includes scholarly pursuits, uncovering hidden truths, and the application of wisdom."
-    devoted_criteria = "A character becomes devoted by making a significant discovery, such as inventing a new technology, uncovering a major secret, or writing a masterful book."
-    devoted_effects = "Devoted characters gain a bonus to their Learning and Stewardship skills. They also have a higher chance of successfully completing learning-related schemes."
-    follower_effects = "Followers of the God/Goddess of Knowledge find themselves more adept at learning and are more likely to have positive education outcomes for their children."
+    description = "This is the domain of the whispered secret, the dusty tome, and the star-charted sky. It is the relentless pursuit of truth, the thrill of discovery, and the quiet satisfaction of a puzzle solved. It governs the scholar's lamp-lit study, the inventor's chaotic workshop, and the spy's network of whispered words. It is the power of knowing, and the wisdom to use that knowledge."
+    devoted_criteria = "To truly capture your attention, a mortal must contribute a new verse to the grand poem of knowledge. This can be through a groundbreaking discovery, the unearthing of a long-lost secret, the creation of a masterful piece of literature, or the invention of a new technology that will change the world."
+    devoted_effects = "Your devoted are blessed with minds as sharp as a razor's edge. They possess a keen intellect that allows them to excel in matters of learning and stewardship. Their schemes, when they are of a scholarly nature, are more likely to succeed, as if guided by an unseen hand."
+    follower_effects = "Those who pledge themselves to your cause find their minds opened to new possibilities. They are quick to learn, and their children show a remarkable aptitude for their studies, ensuring that the torch of knowledge is passed down through the generations."
     special_powers = {
-        moment_of_clarity = "Grant a character a temporary, but significant, boost to their Stewardship or Learning skill, allowing them to overcome a difficult challenge."
+        moment_of_clarity = "You can bestow upon a chosen individual a flash of divine inspiration, a 'moment of clarity' that cuts through the fog of confusion. For a brief time, their mind is alight with a brilliance that allows them to solve the most intractable of problems, be it a matter of statecraft or scholarly pursuit."
     }
-    other_features = "Characters may petition for insights into specific problems, and there's a chance of random breakthroughs in technology or culture in realms where the deity is worshipped."
+    other_features = "Mortals may come to you in their hour of need, seeking your guidance on a particularly vexing problem. In realms where you are revered, your influence can be felt in the very air, leading to sudden and unexpected breakthroughs in technology and culture."
 }
