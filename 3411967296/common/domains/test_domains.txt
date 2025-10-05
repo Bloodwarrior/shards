@@ -19,3 +19,15 @@ love_domain = {
     }
     other_features = "Devotees can organize a festival to honor their patron.\nLove can be divided into four fields: Self Love (a path to decrease stress and focus on self care), Romantic Love, Platonic Love (friendship), and Hedonistic Love (seduction for the sake of pleasure)"
 }
+
+fate_domain = {
+    description = "Decide the fate of any mortal. You can forge a heroic destiny, or unravel it to leave them with nothing."
+    devoted_criteria = "A character that has a high prowess or stewardship skill and has a ambition."
+    devoted_effects = "Devoted followers will have a higher chance of succeeding in their ambitions."
+    follower_effects = "Followers of the god of fate will find that they are more likely to have positive outcomes in random events."
+    special_powers = {
+        forge_destiny = "Forge a heroic destiny for a character, giving them a series of events that will lead them to greatness."
+        unravel_destiny = "Unravel a character's destiny, causing them to fail at their ambitions and lose their titles and claims."
+    }
+    other_features = "Can view the destinies of any character."
+}
