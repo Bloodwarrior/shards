@@ -5,6 +5,7 @@ plague_domain = {
     follower_effects = "Plague's followers won't die of illness - they gain a health bonus to offset the illness. They otherwise suffer all effects as normal, and can never be cured of a disease by any natural means."
     special_powers = {
         plague_eruption = "Start an outbreak of plague in a county, a subtype of cataclysm. Infected characters have a chance of converting to your religion to survive, and so does the county."
+        withering_touch = "Afflict a character with a debilitating, but non-lethal, sickness."
     }
     other_features = "Deathly ill mortals might convert to you in order to survive.\nEvery so often, a plague starts wherever you are."
 }
@@ -16,6 +17,18 @@ love_domain = {
     follower_effects = "Followers of the God/Goddess of love find themselves having a much easier time in their mortal lives than others when it comes to romance or the bedside."
     special_powers = {
         love_forsaken = "A character has so offended you that they are going to find the path of love fruitless. Their name scorned, despised, and hated. They will have an option to pursue a quest and rectify their offense to you or else go down in history as a legend. The end conclusion results in the character becoming destitute not just of land, but of sound mind being driven insane by the curse."
+        cupids_arrow = "Cause two characters to fall in love."
     }
     other_features = "Devotees can organize a festival to honor their patron.\nLove can be divided into four fields: Self Love (a path to decrease stress and focus on self care), Romantic Love, Platonic Love (friendship), and Hedonistic Love (seduction for the sake of pleasure)"
+}
+
+knowledge_domain = {
+    description = "Control over knowledge, learning, and secrets. This includes scholarly pursuits, uncovering hidden truths, and the application of wisdom."
+    devoted_criteria = "A character becomes devoted by making a significant discovery, such as inventing a new technology, uncovering a major secret, or writing a masterful book."
+    devoted_effects = "Devoted characters gain a bonus to their Learning and Stewardship skills. They also have a higher chance of successfully completing learning-related schemes."
+    follower_effects = "Followers of the God/Goddess of Knowledge find themselves more adept at learning and are more likely to have positive education outcomes for their children."
+    special_powers = {
+        moment_of_clarity = "Grant a character a temporary, but significant, boost to their Stewardship or Learning skill, allowing them to overcome a difficult challenge."
+    }
+    other_features = "Characters may petition for insights into specific problems, and there's a chance of random breakthroughs in technology or culture in realms where the deity is worshipped."
 }
