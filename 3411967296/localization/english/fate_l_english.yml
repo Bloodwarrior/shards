@@ -1,0 +1,66 @@
+l_english:
+ forge_destiny_interaction: "Forge Destiny"
+ forge_destiny_interaction_desc: "Forge a heroic destiny for [recipient.GetName], setting them on a path to greatness."
+
+ fate_events.0001.title: "A Fateful Encounter"
+ fate_events.0001.desc: "You feel a sudden shift in the winds of fate. An unseen force seems to be guiding your hand, opening doors you never knew existed. This is the beginning of a new chapter in your life, one that promises great things."
+ fate_events.0001.a: "I embrace my destiny."
+
+ fate_events.0002.title: "An Unexpected Opportunity"
+ fate_events.0002.desc: "A messenger arrives, bearing news of a rare opportunity. A neighboring ruler has fallen into disgrace, and their vassals are looking for a new leader. This is your chance to expand your influence."
+ fate_events.0002.a: "I will seize this opportunity for glory!"
+ fate_events.0002.b: "I will press my claim on their lands!"
+
+ fate_events.0003.title: "The Trial of a Leader"
+ fate_events.0003.desc: "Your growing power has not gone unnoticed. A rival has challenged you, and you must now prove your worth as a leader. How you handle this trial will determine your future."
+ fate_events.0003.a: "I will meet this challenge with strength and honor."
+ fate_events.0003.b: "I will outsmart my rival and secure my position."
+
+ fate_events.0004.title: "A Legend is Born"
+ fate_events.0004.desc: "You have overcome every obstacle in your path, and your name is now spoken with reverence throughout the land. You are no longer just a ruler; you are a living legend, and your destiny is now your own to command."
+ fate_events.0004.a: "My journey is just beginning."
+
+ forged_destiny_modifier: "Forged Destiny"
+ forged_destiny_modifier_desc: "This character's destiny has been forged by a higher power. They are destined for greatness."
+
+ unravel_destiny_interaction: "Unravel Destiny"
+ unravel_destiny_interaction_desc: "Unravel the destiny of [recipient.GetName], cursing them to a life of failure and misfortune."
+
+ unraveled_destiny_modifier: "Unraveled Destiny"
+ unraveled_destiny_modifier_desc: "This character's destiny has been unraveled by a higher power. They are cursed to a life of failure and misfortune."
+
+ twist_fate_interaction: "Twist Fate"
+ twist_fate_interaction_desc: "Introduce a challenging event into the life of [recipient.GetName], testing their resolve."
+
+ fate_events.0005.title: "A Twist of Fate"
+ fate_events.0005.desc: "A sudden and unexpected challenge has presented itself. Your path forward is no longer clear, and you must make a difficult choice that will shape your future."
+ fate_events.0005.a: "I will face this challenge head-on."
+ fate_events.0005.b: "I will find another way."
+
+ tested_by_fate_modifier: "Tested by Fate"
+ tested_by_fate_modifier_desc: "This character has been tested by fate and has emerged stronger for it."
+
+ bless_with_luck_interaction: "Bless with Luck"
+ bless_with_luck_interaction_desc: "Bless [recipient.GetName] with a stroke of good fortune."
+
+ blessed_by_fate_modifier: "Blessed by Fate"
+ blessed_by_fate_modifier_desc: "This character has been blessed by fate and is more likely to succeed in their endeavors."
+
+ sever_lover_thread_interaction: "Sever Lover Thread"
+ sever_lover_thread_interaction_desc: "Sever the bond of love between [recipient.GetName] and their lover."
+
+ encourage_relationships_interaction: "Weave a Thread of Fate"
+ encourage_relationships_interaction_desc: "Weave a thread of fate to encourage new relationships for [recipient.GetName]."
+
+ open_heart_modifier: "Open Heart"
+ open_heart_modifier_desc: "This character's heart is open to new relationships."
+
+ heroic_reputation_modifier: "Heroic Reputation"
+ heroic_reputation_modifier_desc: "This character has a reputation for heroism, which inspires loyalty and admiration."
+
+ living_legend_modifier: "Living Legend"
+ living_legend_modifier_desc: "This character has become a living legend, their name synonymous with greatness."
+
+ fate_events.0006.title: "Destiny Unraveled"
+ fate_events.0006.desc: "The threads of your destiny have been severed by a cruel and powerful force. Your ambitions turn to ash in your mouth, your claims on the world fade into nothingness, and your future is a barren wasteland. You have been forsaken."
+ fate_events.0006.a: "How could this happen to me?"

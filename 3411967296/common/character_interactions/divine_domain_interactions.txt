@@ -33,6 +33,175 @@ plague_eruption_interaction = {
         cost = { piety = 100 }
 }
 
+forge_destiny_interaction = {
+        category = interaction_category_religion
+        icon = artifact
+        interface_priority = 80
+
+        desc = forge_destiny_interaction_desc
+
+        is_shown = {
+                scope:actor = {
+                        is_a_divinity = yes
+                        has_character_modifier = fate_domain_modifier
+                }
+                NOT = { scope:actor = scope:recipient }
+        }
+
+        on_accept = {
+                scope:recipient = {
+                        trigger_event = {
+                                id = fate_events.0001
+                        }
+                }
+        }
+
+        auto_accept = yes
+        cost = { piety = 500 }
+}
+
+unravel_destiny_interaction = {
+        category = interaction_category_religion
+        icon = curse
+        interface_priority = 80
+
+        desc = unravel_destiny_interaction_desc
+
+        is_shown = {
+                scope:actor = {
+                        is_a_divinity = yes
+                        has_character_modifier = fate_domain_modifier
+                }
+                NOT = { scope:actor = scope:recipient }
+        }
+
+        on_accept = {
+                save_scope_as = {
+                        name = deity_scope
+                        scope = actor
+                }
+                scope:recipient = {
+                        trigger_event = {
+                                id = fate_events.0006
+                        }
+                }
+        }
+
+        auto_accept = yes
+        cost = { piety = 500 }
+}
+
+twist_fate_interaction = {
+        category = interaction_category_religion
+        icon = intrigue
+        interface_priority = 80
+
+        desc = twist_fate_interaction_desc
+
+        is_shown = {
+                scope:actor = {
+                        is_a_divinity = yes
+                        has_character_modifier = fate_domain_modifier
+                }
+                NOT = { scope:actor = scope:recipient }
+        }
+
+        on_accept = {
+                scope:recipient = {
+                        trigger_event = {
+                                id = fate_events.0005
+                        }
+                }
+        }
+
+        auto_accept = yes
+        cost = { piety = 250 }
+}
+
+bless_with_luck_interaction = {
+        category = interaction_category_religion
+        icon = piety
+        interface_priority = 80
+
+        desc = bless_with_luck_interaction_desc
+
+        is_shown = {
+                scope:actor = {
+                        is_a_divinity = yes
+                        has_character_modifier = fate_domain_modifier
+                }
+                NOT = { scope:actor = scope:recipient }
+        }
+
+        on_accept = {
+                scope:recipient = {
+                        add_character_modifier = {
+                                name = blessed_by_fate_modifier
+                                duration = 1825 # 5 years
+                        }
+                }
+        }
+
+        auto_accept = yes
+        cost = { piety = 100 }
+}
+
+sever_lover_thread_interaction = {
+        category = interaction_category_religion
+        icon = intrigue
+        interface_priority = 80
+
+        desc = sever_lover_thread_interaction_desc
+
+        is_shown = {
+                scope:actor = {
+                        is_a_divinity = yes
+                        has_character_modifier = fate_domain_modifier
+                }
+                NOT = { scope:actor = scope:recipient }
+                scope:recipient = {
+                        exists = primary_lover
+                }
+        }
+
+        on_accept = {
+                scope:recipient = {
+                        remove_lover = primary_lover
+                }
+        }
+
+        auto_accept = yes
+        cost = { piety = 150 }
+}
+
+encourage_relationships_interaction = {
+        category = interaction_category_religion
+        icon = romance
+        interface_priority = 80
+
+        desc = encourage_relationships_interaction_desc
+
+        is_shown = {
+                scope:actor = {
+                        is_a_divinity = yes
+                        has_character_modifier = fate_domain_modifier
+                }
+                NOT = { scope:actor = scope:recipient }
+        }
+
+        on_accept = {
+                scope:recipient = {
+                        add_character_modifier = {
+                                name = open_heart_modifier
+                                duration = 1825 # 5 years
+                        }
+                }
+        }
+
+        auto_accept = yes
+        cost = { piety = 150 }
+}
+
 love_forsaken_interaction = {
         category = interaction_category_religion
         icon = curse

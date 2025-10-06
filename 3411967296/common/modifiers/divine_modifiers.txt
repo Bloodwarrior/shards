@@ -387,3 +387,57 @@ love_forsaken_modifier = {
         attraction_opinion = -50
         fertility = -0.5
 }
+
+fate_domain_modifier = {
+	icon = magic_positive
+}
+
+forged_destiny_modifier = {
+	icon = stewardship_positive
+	stewardship = 5
+	diplomacy = 5
+	prestige_gain_mult = 0.25
+}
+
+unraveled_destiny_modifier = {
+	icon = stewardship_negative
+	stewardship = -5
+	diplomacy = -5
+	prestige_gain_mult = -0.25
+	general_opinion = -10
+}
+
+tested_by_fate_modifier = {
+	icon = prowess_positive
+	prowess = 5
+	martial = 2
+}
+
+blessed_by_fate_modifier = {
+	icon = piety_positive
+	owned_personal_scheme_success_chance_add = 10
+	owned_hostile_scheme_success_chance_add = 10
+}
+
+open_heart_modifier = {
+	icon = diplomacy_positive
+	attraction_opinion = 30
+	personal_scheme_power_mult = 0.25
+}
+
+heroic_reputation_modifier = {
+    icon = prestige_positive
+    prestige_gain_mult = 0.5
+    general_opinion = 15
+}
+
+living_legend_modifier = {
+    icon = piety_positive
+    prestige_gain_mult = 1.0
+    general_opinion = 30
+    diplomacy = 2
+    martial = 2
+    stewardship = 2
+    intrigue = 2
+    learning = 2
+}

@@ -1,0 +1,183 @@
+namespace = fate_events
+
+# Forge Destiny Event Chain
+# Triggered by the forge_destiny_interaction
+fate_events.0001 = {
+	title = fate_events.0001.title
+	desc = fate_events.0001.desc
+	theme = intrigue
+
+	left_portrait = root
+
+	option = {
+		name = fate_events.0001.a
+		add_character_modifier = {
+			name = forged_destiny_modifier
+			duration = 7300 # 20 years
+		}
+		hidden_effect = {
+			trigger_event = {
+				id = fate_events.0002
+				days = { 730 1095 } # 2-3 years
+			}
+		}
+	}
+}
+
+# Forge Destiny - Part 2: The Opportunity
+fate_events.0002 = {
+	title = fate_events.0002.title
+	desc = fate_events.0002.desc
+	theme = intrigue
+
+	left_portrait = root
+
+	option = {
+		name = fate_events.0002.a
+		add_prestige = 1000
+		hidden_effect = {
+			trigger_event = {
+				id = fate_events.0003
+				days = { 1095 1460 } # 3-4 years
+			}
+		}
+	}
+
+	option = {
+		name = fate_events.0002.b
+		random_neighboring_ruler = {
+			limit = {
+				tier = root.tier
+			}
+			root = {
+				add_claim = {
+					title = prev.primary_title
+					type = pressed_claim
+				}
+			}
+		}
+		hidden_effect = {
+			trigger_event = {
+				id = fate_events.0003
+				days = { 1095 1460 } # 3-4 years
+			}
+		}
+	}
+}
+
+# Forge Destiny - Part 3: The Trial
+fate_events.0003 = {
+	title = fate_events.0003.title
+	desc = fate_events.0003.desc
+	theme = martial
+
+	left_portrait = root
+
+	option = {
+		name = fate_events.0003.a
+		add_character_modifier = {
+			name = heroic_reputation_modifier
+			duration = 7300 # 20 years
+		}
+		add_martial = 2
+		hidden_effect = {
+			trigger_event = {
+				id = fate_events.0004
+				days = { 1825 2190 } # 5-6 years
+			}
+		}
+	}
+	option = {
+		name = fate_events.0003.b
+		add_stewardship = 2
+		add_gold = 500
+		hidden_effect = {
+			trigger_event = {
+				id = fate_events.0004
+				days = { 1825 2190 } # 5-6 years
+			}
+		}
+	}
+}
+
+# Forge Destiny - Part 4: The Climax
+fate_events.0004 = {
+	title = fate_events.0004.title
+	desc = fate_events.0004.desc
+	theme = faith
+
+	left_portrait = root
+
+	option = {
+		name = fate_events.0004.a
+		add_character_modifier = {
+			name = living_legend_modifier
+		}
+		remove_character_modifier = forged_destiny_modifier
+	}
+}
+
+# Twist of Fate Event
+# This is now fate_events.0005 to avoid conflict with the expanded chain
+fate_events.0005 = {
+	title = fate_events.0005.title
+	desc = fate_events.0005.desc
+	theme = intrigue
+
+	left_portrait = root
+
+	option = {
+		name = fate_events.0005.a
+		add_stress = 20
+		add_character_modifier = {
+			name = tested_by_fate_modifier
+			duration = 1825 # 5 years
+		}
+	}
+
+	option = {
+		name = fate_events.0005.b
+		add_gold = -100
+		add_prestige = 50
+	}
+}
+
+# Unravel Destiny Event
+fate_events.0006 = {
+	title = fate_events.0006.title
+	desc = fate_events.0006.desc
+	theme = intrigue
+
+	left_portrait = root
+	right_portrait = scope:deity_scope
+
+	option = {
+		name = fate_events.0006.a
+		add_character_modifier = {
+			name = unraveled_destiny_modifier
+			duration = 7300 # 20 years
+		}
+		add_opinion = {
+			target = scope:deity_scope
+			modifier = cursed_me_opinion
+		}
+		every_held_title = {
+			root = {
+				remove_claim = prev
+			}
+		}
+		if = {
+			limit = {
+				is_ruler = yes
+			}
+			primary_title = {
+				if = {
+					limit = {
+						tier > 1 # Don't want to make them unlanded if they are just a count
+					}
+					destroy_title = yes
+				}
+			}
+		}
+	}
+}
