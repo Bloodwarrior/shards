@@ -28,6 +28,8 @@ fate_domain = {
     special_powers = {
         forge_destiny = "Forge a heroic destiny for a character, giving them a series of events that will lead them to greatness."
         unravel_destiny = "Unravel a character's destiny, causing them to fail at their ambitions and lose their titles and claims."
+        twist_fate = "Introduce a challenging event in a character's life, testing their resolve and potentially leading to new opportunities."
+        bless_with_luck = "Grant a character a temporary boost, increasing their chances of success in their endeavors."
     }
-    other_features = "Can view the destinies of any character."
+    other_features = "Can view the destinies of any character.\nGlimpse into the future to get hints about upcoming events.\nSever a thread of fate to remove a relationship.\nWeave a thread of fate to encourage a new one."
 }
