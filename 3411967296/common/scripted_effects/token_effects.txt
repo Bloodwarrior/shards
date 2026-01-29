@@ -1,0 +1,130 @@
+create_token_effect = {
+    # Binds the token to the current primary empire
+    primary_title = {
+        set_variable = {
+            name = is_token_empire
+            value = yes
+        }
+    }
+
+    # Initialize charge on the character
+    set_variable = {
+        name = token_charge
+        value = 100
+    }
+
+    add_trait = token_bearer
+    add_trait = token_pseudo_divine
+
+    # Trigger event
+    trigger_event = token.0001
+}
+
+check_token_region_effect = {
+    # Run on each pseudo-divine character
+
+    # Check if they are inside the bound empire
+    if = {
+        limit = {
+            exists = current_location
+            current_location = {
+                title_province = {
+                    empire = {
+                        has_variable = is_token_empire
+                    }
+                }
+            }
+        }
+        # Is inside
+        remove_modifier = token_withered_modifier
+
+        # Restore immortality if withered
+        if = {
+            limit = { has_trait = token_pseudo_divine_withered }
+            remove_trait = token_pseudo_divine_withered
+            add_trait = token_pseudo_divine
+        }
+    }
+    else = {
+        # Is outside
+        if = {
+            limit = {
+                NOT = { has_character_modifier = token_withered_modifier }
+            }
+            trigger_event = token.1001 # Warning
+        }
+        add_modifier = {
+            modifier = token_withered_modifier
+            years = 1
+        }
+
+        # Remove immortality logic
+        if = {
+            limit = { has_trait = token_pseudo_divine }
+            remove_trait = token_pseudo_divine
+            add_trait = token_pseudo_divine_withered
+        }
+
+        # Rapid aging logic
+        change_current_age = 5
+        add_stress = 20
+    }
+}
+
+update_token_charge_effect = {
+    # Run on the Token Bearer
+    if = {
+        limit = {
+            has_variable = token_charge
+        }
+        change_variable = {
+            name = token_charge
+            add = -5 # Decay
+        }
+
+        # Check thresholds
+        if = {
+            limit = {
+                var:token_charge <= 20
+            }
+            add_modifier = {
+                modifier = token_drained_modifier
+                years = 1
+            }
+        }
+        else = {
+            remove_modifier = token_drained_modifier
+        }
+
+        if = {
+            limit = {
+                var:token_charge >= 80
+            }
+            add_modifier = {
+                modifier = token_empowered_modifier
+                years = 1
+            }
+        }
+        else = {
+            remove_modifier = token_empowered_modifier
+        }
+    }
+}
+
+grant_pseudo_divinity_effect = {
+    # Check cap
+    if = {
+        limit = {
+            scope:actor.dynasty = {
+                any_dynasty_member = {
+                    count < 10
+                    OR = {
+                        has_trait = token_pseudo_divine
+                        has_trait = token_pseudo_divine_withered
+                    }
+                }
+            }
+        }
+        add_trait = token_pseudo_divine
+    }
+}

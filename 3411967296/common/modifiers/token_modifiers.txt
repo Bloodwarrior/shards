@@ -1,0 +1,26 @@
+token_empowered_modifier = {
+    icon = "advantage"
+    monthly_prestige = 2
+    monthly_piety = 2
+    levy_reinforcement_rate = 0.2
+}
+
+token_drained_modifier = {
+    icon = "decline"
+    monthly_prestige = -5
+    monthly_piety = -5
+    health = -2
+    stress_gain_mult = 0.5
+}
+
+token_withered_modifier = {
+    icon = "death"
+    health = -10
+    prowess = -20
+    diplomacy = -10
+    stewardship = -10
+    martial = -10
+    intrigue = -10
+    learning = -10
+    fertility = -10.0
+}

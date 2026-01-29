@@ -1,0 +1,11 @@
+yearly_global_pulse = {
+    on_actions = {
+        token_yearly_pulse
+    }
+}
+
+token_yearly_pulse = {
+    events = {
+        token.1000
+    }
+}
