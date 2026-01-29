@@ -1,0 +1,501 @@
+namespace = divine_flavor
+
+divine_flavor.0001 = {
+	hidden = yes
+	trigger = {
+		is_a_divinity = yes
+	}
+	immediate = {
+		random_list = {
+			10 = {
+				trigger_event = divine_flavor.1001
+			}
+			10 = {
+				trigger_event = divine_flavor.1002
+			}
+			10 = {
+				trigger_event = divine_flavor.1003
+			}
+			10 = {
+				trigger_event = divine_flavor.1004
+			}
+			5 = {
+				trigger_event = divine_flavor.1005
+			}
+			10 = {
+				trigger_event = divine_flavor.1006
+			}
+			10 = {
+				trigger_event = divine_flavor.1007
+			}
+			10 = {
+				trigger_event = divine_flavor.1008
+			}
+			5 = {
+				trigger_event = divine_flavor.1009
+			}
+			5 = {
+				trigger_event = divine_flavor.1010
+			}
+			100 = {
+				# Nothing happens
+			}
+		}
+	}
+}
+
+# Child's Prayer
+divine_flavor.1001 = {
+	title = divine_flavor.1001.t
+	desc = divine_flavor.1001.desc
+	theme = faith
+	left_portrait = root
+
+	trigger = {
+		any_living_character = {
+			faith = root.faith
+			is_adult = no
+			is_ruler = yes
+		}
+	}
+
+	immediate = {
+		random_living_character = {
+			limit = {
+				faith = root.faith
+				is_adult = no
+				is_ruler = yes
+			}
+			save_scope_as = petitioner
+		}
+	}
+
+	right_portrait = scope:petitioner
+
+	option = {
+		name = divine_flavor.1001.a # Grant request
+		trigger = { piety >= 50 }
+		add_piety = -50
+		scope:petitioner = {
+			add_opinion = {
+				target = root
+				modifier = minor_boon
+				opinion = 20
+			}
+			add_prestige = 50
+		}
+	}
+
+	option = {
+		name = divine_flavor.1001.b # Ignore
+	}
+}
+
+# The Zealot's Fury
+divine_flavor.1002 = {
+	title = divine_flavor.1002.t
+	desc = divine_flavor.1002.desc
+	theme = faith
+	left_portrait = root
+
+	trigger = {
+		any_ruler = {
+			faith = root.faith
+			has_trait = zealous
+		}
+	}
+
+	immediate = {
+		random_ruler = {
+			limit = {
+				faith = root.faith
+				has_trait = zealous
+			}
+			save_scope_as = zealot
+		}
+	}
+
+	right_portrait = scope:zealot
+
+	option = {
+		name = divine_flavor.1002.a # Praise
+		trigger = { piety >= 100 }
+		add_piety = -100
+		scope:zealot = {
+			add_piety = 100
+			add_opinion = {
+				target = root
+				modifier = minor_boon
+				opinion = 30
+			}
+		}
+	}
+
+	option = {
+		name = divine_flavor.1002.b # Rebuke
+		trigger = { piety >= 50 }
+		add_piety = -50
+		scope:zealot = {
+			remove_trait = zealous
+			add_stress = 50
+		}
+	}
+
+	option = {
+		name = divine_flavor.1002.c # Ignore
+	}
+}
+
+# The Doubting Scholar
+divine_flavor.1003 = {
+	title = divine_flavor.1003.t
+	desc = divine_flavor.1003.desc
+	theme = learning
+	left_portrait = root
+
+	trigger = {
+		any_ruler = {
+			faith = root.faith
+			has_trait = cynical
+		}
+	}
+
+	immediate = {
+		random_ruler = {
+			limit = {
+				faith = root.faith
+				has_trait = cynical
+			}
+			save_scope_as = skeptic
+		}
+	}
+
+	right_portrait = scope:skeptic
+
+	option = {
+		name = divine_flavor.1003.a # Smite
+		trigger = { piety >= 200 }
+		add_piety = -200
+		scope:skeptic = {
+			death = {
+				death_reason = death_sacrificed_to_gods
+			}
+		}
+	}
+
+	option = {
+		name = divine_flavor.1003.b # Enlighten
+		trigger = { piety >= 100 }
+		add_piety = -100
+		scope:skeptic = {
+			remove_trait = cynical
+			add_trait = zealous
+		}
+	}
+
+	option = {
+		name = divine_flavor.1003.c # Ignore
+	}
+}
+
+# Bountiful Harvest
+divine_flavor.1004 = {
+	title = divine_flavor.1004.t
+	desc = divine_flavor.1004.desc
+	theme = stewardship
+	left_portrait = root
+
+	trigger = {
+		any_sub_realm_county = {
+			faith = root.faith
+		}
+	}
+
+	immediate = {
+		random_sub_realm_county = {
+			limit = {
+				faith = root.faith
+			}
+			save_scope_as = target_county
+		}
+	}
+
+	option = {
+		name = divine_flavor.1004.a # Bless
+		trigger = { piety >= 100 }
+		add_piety = -100
+		scope:target_county = {
+			add_county_modifier = {
+				modifier = county_blessing_of_prosperity_modifier
+				years = 5
+			}
+		}
+	}
+
+	option = {
+		name = divine_flavor.1004.b # Ignore
+	}
+}
+
+# The Plague
+divine_flavor.1005 = {
+	title = divine_flavor.1005.t
+	desc = divine_flavor.1005.desc
+	theme = health
+	left_portrait = root
+
+	trigger = {
+		any_sub_realm_county = {
+			faith = root.faith
+		}
+	}
+
+	immediate = {
+		random_sub_realm_county = {
+			limit = {
+				faith = root.faith
+			}
+			save_scope_as = target_county
+		}
+	}
+
+	option = {
+		name = divine_flavor.1005.a # Cure
+		trigger = { piety >= 300 }
+		add_piety = -300
+		scope:target_county = {
+			add_county_modifier = {
+				modifier = plague_domain_modifier
+				years = 10
+			}
+		}
+	}
+
+	option = {
+		name = divine_flavor.1005.b # Ignore
+		scope:target_county = {
+			add_county_modifier = {
+				modifier = plague_outbreak_modifier
+				years = 2
+			}
+		}
+	}
+}
+
+# Temple Dedication
+divine_flavor.1006 = {
+	title = divine_flavor.1006.t
+	desc = divine_flavor.1006.desc
+	theme = faith
+	left_portrait = root
+
+	trigger = {
+		any_ruler = {
+			faith = root.faith
+			has_holding_type = church_holding
+		}
+	}
+
+	immediate = {
+		random_ruler = {
+			limit = {
+				faith = root.faith
+				has_holding_type = church_holding
+			}
+			save_scope_as = dedicator
+		}
+	}
+
+	right_portrait = scope:dedicator
+
+	option = {
+		name = divine_flavor.1006.a # Bless
+		trigger = { piety >= 100 }
+		add_piety = -100
+		scope:dedicator = {
+			add_piety = 200
+			add_opinion = {
+				target = root
+				modifier = minor_boon
+				opinion = 20
+			}
+		}
+	}
+
+	option = {
+		name = divine_flavor.1006.b # Ignore
+	}
+}
+
+# Sacrificial Offering
+divine_flavor.1007 = {
+	title = divine_flavor.1007.t
+	desc = divine_flavor.1007.desc
+	theme = martial
+	left_portrait = root
+
+	trigger = {
+		any_ruler = {
+			faith = root.faith
+			any_prisoner = {
+				is_alive = yes
+			}
+		}
+	}
+
+	immediate = {
+		random_ruler = {
+			limit = {
+				faith = root.faith
+				any_prisoner = {
+					is_alive = yes
+				}
+			}
+			save_scope_as = offerer
+			random_prisoner = {
+				limit = { is_alive = yes }
+				save_scope_as = sacrifice
+			}
+		}
+	}
+
+	right_portrait = scope:offerer
+	lower_right_portrait = scope:sacrifice
+
+	option = {
+		name = divine_flavor.1007.a # Accept
+		add_piety = 100
+		scope:sacrifice = {
+			death = {
+				death_reason = death_sacrificed_to_gods
+				killer = root
+			}
+		}
+		scope:offerer = {
+			add_opinion = {
+				target = root
+				modifier = minor_boon
+				opinion = 10
+			}
+		}
+	}
+
+	option = {
+		name = divine_flavor.1007.b # Reject
+		scope:offerer = {
+			add_opinion = {
+				target = root
+				modifier = refused_boon
+				opinion = -10
+			}
+		}
+	}
+}
+
+# Lost in Prayer
+divine_flavor.1008 = {
+	title = divine_flavor.1008.t
+	desc = divine_flavor.1008.desc
+	theme = learning
+	left_portrait = root
+
+	trigger = {
+		any_ruler = {
+			faith = root.faith
+			piety_level >= 3
+		}
+	}
+
+	immediate = {
+		random_ruler = {
+			limit = {
+				faith = root.faith
+				piety_level >= 3
+			}
+			save_scope_as = pray_er
+		}
+	}
+
+	right_portrait = scope:pray_er
+
+	option = {
+		name = divine_flavor.1008.a # Grant Vision
+		trigger = { piety >= 100 }
+		add_piety = -100
+		scope:pray_er = {
+			add_trait = mystic_1
+		}
+	}
+
+	option = {
+		name = divine_flavor.1008.b # Ignore
+	}
+}
+
+# The False Prophet
+divine_flavor.1009 = {
+	title = divine_flavor.1009.t
+	desc = divine_flavor.1009.desc
+	theme = intrigue
+	left_portrait = root
+
+	trigger = {
+		any_ruler = {
+			faith = root.faith
+			has_trait = deceitful
+		}
+	}
+
+	immediate = {
+		random_ruler = {
+			limit = {
+				faith = root.faith
+				has_trait = deceitful
+			}
+			save_scope_as = false_prophet
+		}
+	}
+
+	right_portrait = scope:false_prophet
+
+	option = {
+		name = divine_flavor.1009.a # Expose
+		trigger = { piety >= 150 }
+		add_piety = -150
+		scope:false_prophet = {
+			add_trait = excommunicated
+			add_prestige = -350
+			add_stress = 50
+		}
+	}
+
+	option = {
+		name = divine_flavor.1009.b # Ignore
+	}
+}
+
+# Divine Boredom
+divine_flavor.1010 = {
+	title = divine_flavor.1010.t
+	desc = divine_flavor.1010.desc
+	theme = faith
+	left_portrait = root
+
+	option = {
+		name = divine_flavor.1010.a # Summon Storm
+		trigger = { piety >= 50 }
+		add_piety = -50
+		random_sub_realm_county = {
+			limit = { faith = root.faith }
+			add_county_modifier = {
+				modifier = county_cataclysm_minor
+				years = 2
+			}
+		}
+	}
+
+	option = {
+		name = divine_flavor.1010.b # Meditate
+		add_stress = -20
+	}
+}
