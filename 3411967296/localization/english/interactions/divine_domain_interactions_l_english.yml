@@ -7,3 +7,7 @@ l_english:
  temporal_stasis_interaction_desc: "Freeze time in the target county, bringing all activity to a halt."
  chronos_boon_interaction: "Chronos' Boon"
  chronos_boon_interaction_desc: "Grant [recipient.GetShortUIName] the blessing of time, accelerating their growth."
+ overgrowth_interaction: "Overgrowth"
+ overgrowth_interaction_desc: "Summon rapid plant growth in [target.GetName], reclaiming it for nature."
+ natures_vigor_interaction: "Nature's Vigor"
+ natures_vigor_interaction_desc: "Grant [recipient.GetShortUIName] the strength of the wild."
