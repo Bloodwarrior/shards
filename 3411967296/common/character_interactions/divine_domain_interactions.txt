@@ -23,8 +23,8 @@ plague_eruption_interaction = {
         on_accept = {
                 scope:target = {
                         add_county_modifier = {
-                                name = plague_outbreak_modifier
-                                duration = 10y
+                                modifier = plague_outbreak_modifier
+                                years = 10
                         }
                 }
         }
@@ -51,8 +51,8 @@ love_forsaken_interaction = {
         on_accept = {
                 scope:recipient = {
                         add_character_modifier = {
-                                name = love_forsaken_modifier
-                                duration = 10y
+                                modifier = love_forsaken_modifier
+                                years = 10
                         }
                         add_opinion = {
                                 target = scope:actor
