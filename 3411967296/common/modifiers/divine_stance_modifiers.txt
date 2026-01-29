@@ -1,0 +1,13 @@
+divine_stance_pantheon_modifier = {
+    icon = diplomacy_positive
+    diplomacy = 2
+    learning = 2
+    general_opinion = 5
+}
+
+divine_stance_monotheist_modifier = {
+    icon = stewardship_positive
+    stewardship = 2
+    martial = 2
+    monthly_piety = 1
+}

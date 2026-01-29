@@ -41,7 +41,36 @@
 
 gave_minor_boon = {
 	if = {
-		limit = { NOT = { scope:petitioner.faith = scope:divinity.faith } }
+		limit = {
+			NOT = { scope:petitioner.faith = scope:divinity.faith }
+			OR = {
+				# Monotheist: Always convert
+				scope:divinity = { has_character_flag = divine_is_monotheist }
+
+				# Pantheon: Convert if Evil
+				AND = {
+					scope:divinity = { has_character_flag = divine_is_pantheon }
+					scope:divinity.faith = {
+						faith_hostility_level = {
+							target = scope:petitioner.faith
+							value >= faith_evil_level
+						}
+					}
+				}
+
+				# Default: Convert if Hostile or Evil
+				AND = {
+					NOT = { scope:divinity = { has_character_flag = divine_is_monotheist } }
+					NOT = { scope:divinity = { has_character_flag = divine_is_pantheon } }
+					scope:divinity.faith = {
+						faith_hostility_level = {
+							target = scope:petitioner.faith
+							value >= faith_hostile_level
+						}
+					}
+				}
+			}
+		}
 		scope:petitioner = {
 			set_character_faith_with_conversion = scope:divinity.faith
 		}
@@ -56,7 +85,36 @@ gave_minor_boon = {
 
 gave_medium_boon = {
 	if = {
-		limit = { NOT = { scope:petitioner.faith = scope:divinity.faith } }
+		limit = {
+			NOT = { scope:petitioner.faith = scope:divinity.faith }
+			OR = {
+				# Monotheist: Always convert
+				scope:divinity = { has_character_flag = divine_is_monotheist }
+
+				# Pantheon: Convert if Evil
+				AND = {
+					scope:divinity = { has_character_flag = divine_is_pantheon }
+					scope:divinity.faith = {
+						faith_hostility_level = {
+							target = scope:petitioner.faith
+							value >= faith_evil_level
+						}
+					}
+				}
+
+				# Default: Convert if Hostile or Evil
+				AND = {
+					NOT = { scope:divinity = { has_character_flag = divine_is_monotheist } }
+					NOT = { scope:divinity = { has_character_flag = divine_is_pantheon } }
+					scope:divinity.faith = {
+						faith_hostility_level = {
+							target = scope:petitioner.faith
+							value >= faith_hostile_level
+						}
+					}
+				}
+			}
+		}
 		scope:petitioner = {
 			set_character_faith_with_conversion = scope:divinity.faith
 		}
@@ -75,7 +133,36 @@ gave_medium_boon = {
 
 gave_major_boon = {
 	if = {
-		limit = { NOT = { scope:petitioner.faith = scope:divinity.faith } }
+		limit = {
+			NOT = { scope:petitioner.faith = scope:divinity.faith }
+			OR = {
+				# Monotheist: Always convert
+				scope:divinity = { has_character_flag = divine_is_monotheist }
+
+				# Pantheon: Convert if Evil
+				AND = {
+					scope:divinity = { has_character_flag = divine_is_pantheon }
+					scope:divinity.faith = {
+						faith_hostility_level = {
+							target = scope:petitioner.faith
+							value >= faith_evil_level
+						}
+					}
+				}
+
+				# Default: Convert if Hostile or Evil
+				AND = {
+					NOT = { scope:divinity = { has_character_flag = divine_is_monotheist } }
+					NOT = { scope:divinity = { has_character_flag = divine_is_pantheon } }
+					scope:divinity.faith = {
+						faith_hostility_level = {
+							target = scope:petitioner.faith
+							value >= faith_hostile_level
+						}
+					}
+				}
+			}
+		}
 		scope:petitioner = {
 			set_character_faith_with_conversion = scope:divinity.faith
 		}
