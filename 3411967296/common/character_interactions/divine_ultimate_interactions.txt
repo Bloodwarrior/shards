@@ -1,0 +1,141 @@
+plague_apocalypse_interaction = {
+	category = interaction_category_religion
+	icon = cataclysm
+	interface_priority = 90
+
+	desc = plague_apocalypse_interaction_desc
+
+	target_type = title
+	target_filter = recipient_domain_titles
+
+	is_shown = {
+		scope:actor = {
+			is_a_divinity = yes
+			has_character_modifier = plague_domain_modifier
+		}
+		scope:recipient = { is_landed = yes }
+	}
+
+	can_be_picked = {
+		scope:target = { tier = tier_county }
+	}
+
+	on_accept = {
+		scope:target = {
+			add_county_modifier = {
+				modifier = plague_apocalypse_modifier
+				years = 50
+			}
+			change_development_level = -50
+		}
+		scope:target.holder = {
+			if = {
+				limit = { NOT = { has_trait = bubonic_plague } }
+				add_trait = bubonic_plague
+			}
+		}
+	}
+
+	auto_accept = yes
+	cost = { piety = 500 }
+}
+
+love_obsession_interaction = {
+	category = interaction_category_religion
+	icon = magic_positive
+	interface_priority = 90
+
+	desc = love_obsession_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			is_a_divinity = yes
+			has_character_modifier = love_domain_modifier
+		}
+		NOT = { scope:actor = scope:recipient }
+	}
+
+	on_accept = {
+		scope:recipient = {
+			set_character_faith = scope:actor.faith
+			add_character_modifier = {
+				modifier = divine_obsession_modifier
+				years = 50
+			}
+			add_opinion = {
+				target = scope:actor
+				modifier = divine_obsession_opinion
+			}
+		}
+	}
+
+	auto_accept = yes
+	cost = { piety = 500 }
+}
+
+time_collapse_interaction = {
+	category = interaction_category_religion
+	icon = curse
+	interface_priority = 90
+
+	desc = time_collapse_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			is_a_divinity = yes
+			has_character_modifier = time_domain_modifier
+		}
+		NOT = { scope:actor = scope:recipient }
+	}
+
+	on_accept = {
+		scope:recipient = {
+			add_trait = infirm
+			add_stress = 300
+			add_character_modifier = {
+				modifier = time_collapse_modifier
+				years = 10
+			}
+		}
+	}
+
+	auto_accept = yes
+	cost = { piety = 500 }
+}
+
+nature_reclamation_interaction = {
+	category = interaction_category_religion
+	icon = cataclysm
+	interface_priority = 90
+
+	desc = nature_reclamation_interaction_desc
+
+	target_type = title
+	target_filter = recipient_domain_titles
+
+	is_shown = {
+		scope:actor = {
+			is_a_divinity = yes
+			has_character_modifier = nature_domain_modifier
+		}
+		scope:recipient = { is_landed = yes }
+	}
+
+	can_be_picked = {
+		scope:target = { tier = tier_county }
+	}
+
+	on_accept = {
+		scope:target = {
+			add_county_modifier = {
+				modifier = wild_reclamation_modifier
+				years = 50
+			}
+			change_county_control = -100
+			change_development_level = -20
+		}
+	}
+
+	auto_accept = yes
+	cost = { piety = 500 }
+}

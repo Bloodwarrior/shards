@@ -1,0 +1,4 @@
+divine_obsession_opinion = {
+	opinion = 100
+	decaying = no
+}

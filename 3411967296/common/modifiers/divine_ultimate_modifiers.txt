@@ -1,0 +1,34 @@
+plague_apocalypse_modifier = {
+	icon = magic_negative
+	levy_size = -1
+	tax_mult = -1
+	development_growth = -10
+	supply_limit_mult = -0.9
+	epidemic_resistance = -50
+	stacking = yes
+}
+
+divine_obsession_modifier = {
+	icon = diplomacy_positive
+	fertility = 2.0
+	diplomacy = 10
+	stewardship = -5
+	attraction_opinion = 50
+	stacking = yes
+}
+
+wild_reclamation_modifier = {
+	icon = martial_negative
+	monthly_county_control_growth = -5
+	tax_mult = -1
+	levy_size = -1
+	fort_level = 5
+	hostile_county_attrition = 20
+	stacking = yes
+}
+
+time_collapse_modifier = {
+	icon = health_negative
+	health = -5
+	stacking = yes
+}

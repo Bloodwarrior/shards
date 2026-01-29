@@ -1,0 +1,21 @@
+l_english:
+ plague_apocalypse_interaction: "Unleash Apocalyptic Plague"
+ plague_apocalypse_interaction_desc: "Unleash a plague so vile it will decimate the county, killing its population and leaving it a ruin for decades."
+ plague_apocalypse_modifier: "Apocalyptic Plague"
+ plague_apocalypse_modifier_desc: "This county is suffering from a divinely ordained plague. Few survive."
+
+ love_obsession_interaction: "Induce Divine Obsession"
+ love_obsession_interaction_desc: "Force the target into a state of divine obsession, making them your devoted soulmate and converting them to your faith."
+ divine_obsession_modifier: "Divine Obsession"
+ divine_obsession_modifier_desc: "This character is divinely obsessed with their deity."
+ divine_obsession_opinion: "Divinely Obsessed"
+
+ time_collapse_interaction: "Inflict Time Collapse"
+ time_collapse_interaction_desc: "Accelerate the target's aging process instantly, bringing them to the brink of death."
+ time_collapse_modifier: "Time Collapse"
+ time_collapse_modifier_desc: "This character's timeline has been shattered, resulting in rapid aging and failing health."
+
+ nature_reclamation_interaction: "Reclaim for Nature"
+ nature_reclamation_interaction_desc: "Command nature to reclaim this county, destroying infrastructure and making it hostile to civilization."
+ wild_reclamation_modifier: "Wild Reclamation"
+ wild_reclamation_modifier_desc: "Nature has reclaimed this land. It is wild, overgrown, and hostile to civilization."
