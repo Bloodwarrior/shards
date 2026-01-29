@@ -2,7 +2,6 @@ cure_bad_condition_for_return = {
     heal_effect = yes
 }
 
-#TODO
 copy_divine_hooks = {
     if = {
         limit = { 
@@ -214,6 +213,7 @@ basic_return = {
             }
             copy_blessings = yes
             copy_curses = yes
+            copy_divine_hooks = yes
             copy_prayer_management = yes				 
             
             if = {
