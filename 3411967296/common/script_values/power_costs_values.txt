@@ -103,45 +103,42 @@ curse_cost = {
 }
 
 health_powers_cost = {
-	{
+	add = {
+		desc = "BASE_VALUE"
+		value = 200
+		format = "BASE_VALUE_FORMAT"
+	}
+
+	if = {
+		limit = {
+			scope:severly_injure = yes
+		}
 		add = {
-			desc = "BASE_VALUE"
-			value = 200
-			format = "BASE_VALUE_FORMAT"
+			desc = "severly_injure_option"
+			value = 150
+			# format = "BASE_VALUE_FORMAT"
 		}
-
-		if = {
-			limit = {
-				scope:severly_injure = yes
-			}
-			add = {
-				desc = "severly_injure_option"
-				value = 150
-				# format = "BASE_VALUE_FORMAT"
-			}
+	}
+	if = {
+		limit = {
+			scope:smite = yes
 		}
-		if = {
-			limit = {
-				scope:smite = yes
-			}
-			add = {
-				desc = "smite_option"
-				value = 300
-				# format = "BASE_VALUE_FORMAT"
-			}
+		add = {
+			desc = "smite_option"
+			value = 300
+			# format = "BASE_VALUE_FORMAT"
 		}
-		scope:recipient = {
-			multiply = {
-				desc = "INVESTMENT_COST_MULTIPLY"
-				value = investment_level_multiplier
-			}
-		}
-
+	}
+	scope:recipient = {
 		multiply = {
-			desc = "DOMINION_COST_MULTIPLY"
-			value = dominion_multiplier
+			desc = "INVESTMENT_COST_MULTIPLY"
+			value = investment_level_multiplier
 		}
+	}
 
+	multiply = {
+		desc = "DOMINION_COST_MULTIPLY"
+		value = dominion_multiplier
 	}
 }
 

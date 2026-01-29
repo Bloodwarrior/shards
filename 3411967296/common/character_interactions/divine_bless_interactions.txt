@@ -139,7 +139,6 @@ bless_interaction = {
 			}
 			scope:recipient = { 
 				increase_beauty_rank_investment = {AMOUNT = 1}
-				choose_prayer_effect = yes
 			}
 		}
 
