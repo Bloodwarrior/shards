@@ -31,3 +31,15 @@ time_domain = {
     }
     other_features = "Time flows differently for you."
 }
+
+nature_domain = {
+    description = "Control over the natural world, plants, and beasts. Those who master it can summon overgrowth to reclaim civilization or grant primal vigor to their champions."
+    devoted_criteria = "Lives in harmony with nature, often residing in forests or rural areas. Requires traits related to physical strength or connection to the land."
+    devoted_effects = "Devoted gain increased prowess and health, thriving in natural environments."
+    follower_effects = "Followers are resistant to harsh terrain and gain bonuses in forest and jungle warfare."
+    special_powers = {
+        overgrowth = "Summon rapid plant growth in a county, reclaiming it for nature. Increases development potential but hampers organized armies."
+        natures_vigor = "Grant a target character the strength of the wild, improving their health and combat prowess."
+    }
+    other_features = "Nature responds to your presence, with plants blooming and animals becoming docile."
+}

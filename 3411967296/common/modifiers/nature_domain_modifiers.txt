@@ -1,0 +1,23 @@
+nature_domain_modifier = {
+    icon = martial_positive
+    health = 1
+    prowess = 5
+    character_travel_speed = 10
+}
+
+overgrowth_modifier = {
+    icon = stewardship_positive
+    development_growth = 2.0
+    tax_mult = 0.5
+    levy_size = -0.5
+    fort_level = -2
+    stacking = yes
+}
+
+natures_vigor_modifier = {
+    icon = prowess_positive
+    health = 2
+    prowess = 10
+    stress_loss_mult = 0.2
+    stacking = yes
+}
