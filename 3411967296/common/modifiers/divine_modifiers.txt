@@ -387,3 +387,28 @@ love_forsaken_modifier = {
         attraction_opinion = -50
         fertility = -0.5
 }
+
+time_domain_modifier = {
+    icon = learning_positive
+    learning = 5
+    health = 1
+    movement_speed = 0.2
+}
+
+temporal_stasis_modifier = {
+    icon = magic_negative
+    levy_size = -0.9
+    tax_mult = -0.9
+    fort_level = -10
+    hostile_county_attrition = 100
+    stacking = yes
+}
+
+chronos_boon_modifier = {
+    icon = learning_positive
+    learning = 20
+    lifestyle_xp_gain_mult = 1.0
+    monthly_prestige = 5
+    monthly_piety = 5
+    stacking = yes
+}
