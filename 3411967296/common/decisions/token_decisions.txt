@@ -1,0 +1,133 @@
+found_token_decision = {
+    picture = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
+    title = found_token_decision_title
+    desc = found_token_decision_desc
+    selection_tooltip = found_token_decision_tooltip
+
+    is_shown = {
+        tier = tier_empire
+        NOT = { has_trait = token_bearer }
+        NOT = { has_global_variable = token_created }
+    }
+
+    is_valid = {
+        prestige_level >= 3
+        piety_level >= 3
+        gold >= 500
+    }
+
+    cost = {
+        gold = 500
+        prestige = 1000
+    }
+
+    effect = {
+        set_global_variable = {
+            name = token_created
+            value = yes
+        }
+        create_token_effect = yes
+    }
+}
+
+token_ritual_decision = {
+    picture = "gfx/interface/illustrations/decisions/decision_religious_experience.dds"
+    title = token_ritual_decision_title
+    desc = token_ritual_decision_desc
+    selection_tooltip = token_ritual_decision_tooltip
+
+    is_shown = {
+        has_trait = token_bearer
+    }
+
+    is_valid = {
+        gold >= 100
+    }
+
+    cost = {
+        gold = 100
+        piety = 200
+    }
+
+    effect = {
+        change_variable = {
+            name = token_charge
+            add = 50
+        }
+        trigger_event = token.0010
+    }
+
+    ai_check_interval = 12
+    ai_will_do = {
+        base = 100
+        modifier = {
+            trigger = { var:token_charge < 50 }
+            add = 100
+        }
+    }
+}
+
+token_sacrifice_decision = {
+    picture = "gfx/interface/illustrations/decisions/decision_execution.dds"
+    title = token_sacrifice_decision_title
+    desc = token_sacrifice_decision_desc
+    selection_tooltip = token_sacrifice_decision_tooltip
+
+    is_shown = {
+        has_trait = token_bearer
+    }
+
+    is_valid = {
+        any_prisoner = {
+            is_alive = yes
+        }
+    }
+
+    effect = {
+        random_prisoner = {
+            death = {
+                death_reason = death_execution
+                killer = scope:actor
+            }
+        }
+        change_variable = {
+            name = token_charge
+            add = 100
+        }
+        trigger_event = token.0020
+    }
+
+    ai_check_interval = 12
+    ai_will_do = {
+        base = 0
+        modifier = {
+            trigger = { var:token_charge < 20 }
+            add = 200
+        }
+    }
+}
+
+destroy_token_decision = {
+    picture = "gfx/interface/illustrations/decisions/decision_realm_stability.dds"
+    title = destroy_token_decision_title
+    desc = destroy_token_decision_desc
+    selection_tooltip = destroy_token_decision_tooltip
+
+    is_shown = {
+        has_trait = token_bearer
+    }
+
+    effect = {
+        remove_trait = token_bearer
+        remove_trait = token_pseudo_divine
+        remove_global_variable = token_created
+
+        # Remove from dynasty members
+        scope:actor.dynasty = {
+            every_dynasty_member = {
+                remove_trait = token_pseudo_divine
+                remove_modifier = token_withered_modifier
+            }
+        }
+    }
+}

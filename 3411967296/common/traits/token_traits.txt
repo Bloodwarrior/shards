@@ -1,0 +1,51 @@
+token_pseudo_divine = {
+    immortal = yes
+    no_prowess_loss_from_age = yes
+
+    diplomacy = 5
+    stewardship = 5
+    martial = 5
+    intrigue = 5
+    learning = 5
+    prowess = 10
+
+    health = 5
+
+    flag = pseudo_divinity
+    shown_in_ruler_designer = no
+
+    opposites = {
+        incapable
+        token_pseudo_divine_withered
+    }
+}
+
+token_pseudo_divine_withered = {
+    # Not immortal
+    # No buffs (or reduced buffs)
+
+    diplomacy = 2
+    stewardship = 2
+    martial = 2
+    intrigue = 2
+    learning = 2
+    prowess = 5
+
+    # Negative health handled by modifier
+
+    flag = pseudo_divinity
+    shown_in_ruler_designer = no
+
+    opposites = {
+        token_pseudo_divine
+    }
+}
+
+token_bearer = {
+    monthly_prestige = 1
+    same_faith_opinion = 10
+    dynasty_opinion = 10
+
+    flag = token_bearer
+    shown_in_ruler_designer = no
+}

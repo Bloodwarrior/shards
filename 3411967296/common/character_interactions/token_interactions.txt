@@ -1,0 +1,85 @@
+grant_pseudo_divinity_interaction = {
+    category = interaction_category_friendly
+    desc = grant_pseudo_divinity_interaction_desc
+
+    is_shown = {
+        scope:actor = { has_trait = token_bearer }
+        scope:recipient = {
+            is_close_family_of = scope:actor
+            NOT = { has_trait = token_pseudo_divine }
+        }
+    }
+
+    is_valid = {
+        scope:actor.dynasty = {
+            any_dynasty_member = {
+                count < 10
+                OR = {
+                    has_trait = token_pseudo_divine
+                    has_trait = token_pseudo_divine_withered
+                }
+            }
+        }
+    }
+
+    on_accept = {
+        scope:recipient = {
+            grant_pseudo_divinity_effect = yes
+        }
+    }
+}
+
+seize_token_interaction = {
+    category = interaction_category_hostile
+    desc = seize_token_interaction_desc
+
+    is_shown = {
+        scope:recipient = { has_trait = token_bearer }
+        scope:actor = {
+            NOT = { has_trait = token_bearer }
+            is_close_family_of = scope:recipient
+        }
+    }
+
+    is_valid = {
+        OR = {
+            scope:recipient = { has_modifier = token_drained_modifier }
+            scope:recipient = { is_imprisoned_by = scope:actor }
+            scope:recipient = { is_incapable = yes }
+            scope:actor = { prowess > scope:recipient.prowess }
+        }
+    }
+
+    cost = {
+        prestige = 1000
+    }
+
+    on_accept = {
+        scope:recipient = {
+            remove_trait = token_bearer
+            # Attempt to clear the old empire variable if possible
+            if = {
+                limit = {
+                    tier = tier_empire
+                    primary_title = { has_variable = is_token_empire }
+                }
+                primary_title = {
+                    remove_variable = is_token_empire
+                }
+            }
+        }
+        scope:actor = {
+            add_trait = token_bearer
+            add_trait = token_pseudo_divine
+            set_variable = { name = token_charge value = 100 }
+
+            # Rebind to new empire if Emperor
+            if = {
+                limit = { tier = tier_empire }
+                primary_title = {
+                    set_variable = { name = is_token_empire value = yes }
+                }
+            }
+        }
+    }
+}

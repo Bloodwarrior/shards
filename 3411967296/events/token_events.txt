@@ -1,0 +1,69 @@
+namespace = token
+
+token.0001 = {
+    type = character_event
+    title = token.0001.t
+    desc = token.0001.desc
+    theme = mysticism
+
+    option = {
+        name = token.0001.a
+        add_prestige = 500
+    }
+}
+
+token.0010 = { # Ritual Success
+    type = character_event
+    title = token.0010.t
+    desc = token.0010.desc
+    theme = mysticism
+
+    option = {
+        name = token.0010.a
+    }
+}
+
+token.0020 = { # Sacrifice Success
+    type = character_event
+    title = token.0020.t
+    desc = token.0020.desc
+    theme = death
+
+    option = {
+        name = token.0020.a
+    }
+}
+
+token.1000 = {
+    type = character_event
+    hidden = yes
+
+    immediate = {
+        every_living_character = {
+            limit = {
+                OR = {
+                    has_trait = token_pseudo_divine
+                    has_trait = token_pseudo_divine_withered
+                }
+            }
+            check_token_region_effect = yes
+        }
+
+        every_living_character = {
+            limit = { has_trait = token_bearer }
+            update_token_charge_effect = yes
+        }
+    }
+}
+
+token.1001 = {
+    type = character_event
+    title = token.1001.t
+    desc = token.1001.desc
+    theme = health
+
+    option = {
+        name = token.1001.a
+        add_stress = 10
+    }
+}

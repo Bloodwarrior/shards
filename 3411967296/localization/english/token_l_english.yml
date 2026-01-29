@@ -1,0 +1,51 @@
+l_english:
+ trait_token_pseudo_divine:0 "Pseudo-Divine"
+ trait_token_pseudo_divine_desc:0 "This character possesses a fragment of divine power, allowing them to live as a god among mortals. However, they are bound to the domain of the Token."
+
+ trait_token_pseudo_divine_withered:0 "Fading Divine"
+ trait_token_pseudo_divine_withered_desc:0 "The divine spark in this character is fading due to separation from the Token's domain. They are mortal once more."
+
+ trait_token_bearer:0 "Token Bearer"
+ trait_token_bearer_desc:0 "This character holds the Divine Token, the anchor of their family's power."
+
+ token_empowered_modifier:0 "Divine Surge"
+ token_drained_modifier:0 "Stretched Thin"
+ token_withered_modifier:0 "Withered by Mortality"
+
+ found_token_decision_title:0 "Forge the Divine Token"
+ found_token_decision_desc:0 "We have found the remnants of a slain god. With the right rituals, we can bind its power to our lineage and empire."
+ found_token_decision_tooltip:0 "Start the path of the Pseudo-Divine."
+
+ token_ritual_decision_title:0 "Perform Rejuvenation Ritual"
+ token_ritual_decision_desc:0 "The power of the Token wanes. We must immerse ourselves in the energies to restore it."
+ token_ritual_decision_tooltip:0 "Restore Token Charge."
+
+ token_sacrifice_decision_title:0 "Sacrificial Harvest"
+ token_sacrifice_decision_desc:0 "The Token is dying. Only blood can fuel it now."
+ token_sacrifice_decision_tooltip:0 "Sacrifice a prisoner to massively restore Charge."
+
+ destroy_token_decision_title:0 "Destroy the Token"
+ destroy_token_decision_desc:0 "This power is a curse. We must shatter the Token and return the energy to the cosmos."
+ destroy_token_decision_tooltip:0 "Ends the Pseudo-Divine path."
+
+ grant_pseudo_divinity_interaction:0 "Grant Divine Spark"
+ grant_pseudo_divinity_interaction_desc:0 "Share the power of the Token with a family member."
+
+ seize_token_interaction:0 "Seize the Token"
+ seize_token_interaction_desc:0 "The Bearer is weak. It is time to take the power for yourself."
+
+ token.0001.t:0 "The Vestige Found"
+ token.0001.desc:0 "We have secured the remains of the divine. The Token is forged, and power flows through our veins. We are now the masters of this domain."
+ token.0001.a:0 "We are Gods!"
+
+ token.0010.t:0 "Ritual Complete"
+ token.0010.desc:0 "The energies swirl and settle. The Token hums with renewed power."
+ token.0010.a:0 "Excellent."
+
+ token.0020.t:0 "Blood for Power"
+ token.0020.desc:0 "The life force of the sacrifice is consumed by the Token. It glows with a crimson light."
+ token.0020.a:0 "It is done."
+
+ token.1001.t:0 "The Withered Step"
+ token.1001.desc:0 "You have stepped beyond the domain of the Token. Your divine protection fades, and the weight of mortality crashes down upon you. Return to your lands, or perish!"
+ token.1001.a:0 "I feel... old."
