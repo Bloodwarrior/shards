@@ -1,0 +1,52 @@
+l_english:
+ divine_flavor.1001.t: "A Child's Prayer"
+ divine_flavor.1001.desc: "A young voice reaches your divine ears. A child, [petitioner.GetTitledFirstName], prays fervently for a small miracle. They ask for a companion to ease their loneliness."
+ divine_flavor.1001.a: "Grant the child's wish"
+ divine_flavor.1001.b: "Such trifles do not concern me"
+
+ divine_flavor.1002.t: "The Zealot's Fury"
+ divine_flavor.1002.desc: "Your follower, [zealot.GetTitledFirstName], has taken their devotion to extremes. They persecute those they deem unworthy in your name, causing unrest."
+ divine_flavor.1002.a: "Praise their fervor!"
+ divine_flavor.1002.b: "Rebuke their violence!"
+ divine_flavor.1002.c: "Let them do as they please"
+
+ divine_flavor.1003.t: "The Doubting Scholar"
+ divine_flavor.1003.desc: "[skeptic.GetTitledFirstName] has been spreading doubt about your divinity, claiming your powers are mere trickery or natural phenomena."
+ divine_flavor.1003.a: "Smite the non-believer!"
+ divine_flavor.1003.b: "Enlighten them with a sign"
+ divine_flavor.1003.c: "Their words are wind"
+
+ divine_flavor.1004.t: "Bountiful Harvest"
+ divine_flavor.1004.desc: "The people of [target_county.GetName] cry out for your blessing. Their crops are withering, and they fear famine."
+ divine_flavor.1004.a: "Bless the land with rain and sun"
+ divine_flavor.1004.b: "Nature must take its course"
+
+ divine_flavor.1005.t: "The Plague"
+ divine_flavor.1005.desc: "A sickness spreads in [target_county.GetName]. Your followers beg for deliverance from this suffering."
+ divine_flavor.1005.a: "Cleanse the sickness"
+ divine_flavor.1005.b: "They must endure"
+
+ divine_flavor.1006.t: "Temple Dedication"
+ divine_flavor.1006.desc: "[dedicator.GetTitledFirstName] has completed a new temple in your honor. They invite your presence to consecrate the holy ground."
+ divine_flavor.1006.a: "Bless the temple and its builder"
+ divine_flavor.1006.b: "I have other matters to attend to"
+
+ divine_flavor.1007.t: "Sacrificial Offering"
+ divine_flavor.1007.desc: "[offerer.GetTitledFirstName] prepares to offer [sacrifice.GetTitledFirstName] as a sacrifice to appease you and gain your favor."
+ divine_flavor.1007.a: "Accept the blood offering"
+ divine_flavor.1007.b: "I do not desire this"
+
+ divine_flavor.1008.t: "Lost in Prayer"
+ divine_flavor.1008.desc: "[pray_er.GetTitledFirstName] has spent days in deep meditation, seeking a glimpse of your truth."
+ divine_flavor.1008.a: "Grant them a vision"
+ divine_flavor.1008.b: "Silence is the only answer"
+
+ divine_flavor.1009.t: "The False Prophet"
+ divine_flavor.1009.desc: "[false_prophet.GetTitledFirstName] claims to speak with your voice, twisting your words for their own gain."
+ divine_flavor.1009.a: "Expose their lies!"
+ divine_flavor.1009.b: "Lies eventually consume the liar"
+
+ divine_flavor.1010.t: "Divine Boredom"
+ divine_flavor.1010.desc: "Eternity can be dull. The mortal world seems so... quiet today."
+ divine_flavor.1010.a: "Stir things up with a storm"
+ divine_flavor.1010.b: "Meditate on the nature of existence"

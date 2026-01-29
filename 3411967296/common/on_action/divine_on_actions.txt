@@ -546,3 +546,11 @@ debug_force_prayer = {
 		}
 	}
 }
+yearly_flavor_events = {
+	effect = {
+		every_in_global_list = {
+			variable = divinity_list
+			trigger_event = { id = divine_flavor.0001 days = { 1 360 }}
+		}
+	}
+}
