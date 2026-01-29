@@ -1,0 +1,137 @@
+divine_convert_interaction = {
+	category = interaction_category_religion
+	icon = magic_positive
+	interface_priority = 60
+
+	desc = divine_convert_interaction_desc
+
+	is_shown = {
+		scope:actor = { is_a_divinity = yes }
+		NOT = { scope:actor = scope:recipient }
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			is_alive = yes
+			NOT = { faith = scope:actor.faith }
+		}
+	}
+
+	on_accept = {
+		scope:recipient = {
+			set_character_faith = scope:actor.faith
+			add_opinion = {
+				target = scope:actor
+				modifier = blessed_me_opinion
+			}
+		}
+	}
+
+	auto_accept = yes
+	cost = { piety = 200 }
+}
+
+divine_summon_champion_interaction = {
+	category = interaction_category_religion
+	icon = create_army
+	interface_priority = 50
+
+	desc = divine_summon_champion_interaction_desc
+
+	is_shown = {
+		scope:actor = { is_a_divinity = yes }
+	}
+
+	on_accept = {
+		create_character = {
+			age = { 20 30 }
+			gender = male
+			trait = education_martial_4
+			trait = strong
+			trait = brave
+			skill_martial = { 20 30 }
+			skill_prowess = { 20 30 }
+			faith = scope:actor.faith
+			culture = scope:recipient.culture
+			save_scope_as = new_champion
+		}
+		scope:recipient = {
+			recruit_courtier = scope:new_champion
+			add_opinion = {
+				target = scope:actor
+				modifier = blessed_me_opinion
+			}
+		}
+		scope:new_champion = {
+			add_opinion = {
+				target = scope:actor
+				modifier = blessed_me_opinion
+			}
+		}
+	}
+
+	auto_accept = yes
+	cost = { piety = 300 }
+}
+
+divine_bestow_gold_interaction = {
+	category = interaction_category_religion
+	icon = magic_positive
+	interface_priority = 70
+
+	desc = divine_bestow_gold_interaction_desc
+
+	is_shown = {
+		scope:actor = { is_a_divinity = yes }
+	}
+
+	on_accept = {
+		scope:recipient = {
+			add_gold = 500
+			add_opinion = {
+				target = scope:actor
+				modifier = blessed_me_opinion
+			}
+		}
+	}
+
+	auto_accept = yes
+	cost = { piety = 200 }
+}
+
+divine_shatter_realm_interaction = {
+	category = interaction_category_religion
+	icon = cataclysm
+	interface_priority = 30
+
+	desc = divine_shatter_realm_interaction_desc
+
+	is_shown = {
+		scope:actor = { is_a_divinity = yes }
+		NOT = { scope:actor = scope:recipient }
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			is_landed = yes
+			primary_title = {
+				tier > tier_county
+			}
+		}
+	}
+
+	on_accept = {
+		scope:recipient = {
+			primary_title = {
+				destroy_title = yes
+			}
+			add_opinion = {
+				target = scope:actor
+				modifier = cursed_me_opinion
+			}
+		}
+	}
+
+	auto_accept = yes
+	cost = { piety = 500 }
+}

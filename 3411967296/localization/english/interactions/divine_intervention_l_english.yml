@@ -1,0 +1,9 @@
+l_english:
+ divine_convert_interaction: "Divine Conversion"
+ divine_convert_interaction_desc: "Forcefully convert this character to your divine faith."
+ divine_summon_champion_interaction: "Summon Champion"
+ divine_summon_champion_interaction_desc: "Summon a mighty champion to serve this character."
+ divine_bestow_gold_interaction: "Bestow Gold"
+ divine_bestow_gold_interaction_desc: "Grant a divine gift of gold to this character."
+ divine_shatter_realm_interaction: "Shatter Realm"
+ divine_shatter_realm_interaction_desc: "Shatter the primary title of this character, causing chaos in their realm."
