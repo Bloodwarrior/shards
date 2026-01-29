@@ -1,0 +1,11 @@
+l_english:
+ divine_stance_pantheon_modifier:0 "Pantheon Stance"
+ divine_stance_monotheist_modifier:0 "Monotheist Stance"
+
+ adopt_pantheon_stance_decision:0 "Adopt Pantheon Stance"
+ adopt_pantheon_stance_decision_desc:0 "Open your divine embrace to the world. Accept prayers from those of other faiths, provided they are not evil. You will become a god of the many."
+ adopt_pantheon_stance_decision_tooltip:0 "You will adopt the [GetModifier('divine_stance_pantheon_modifier').GetNameWithTooltip] modifier and allow prayers from compatible faiths without forced conversion."
+
+ adopt_monotheist_stance_decision:0 "Adopt Monotheist Stance"
+ adopt_monotheist_stance_decision_desc:0 "Declare yourself the one true god. Demand absolute submission and conversion from all who seek your favor."
+ adopt_monotheist_stance_decision_tooltip:0 "You will adopt the [GetModifier('divine_stance_monotheist_modifier').GetNameWithTooltip] modifier and force conversion on all petitioners."
