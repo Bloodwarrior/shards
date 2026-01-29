@@ -3,3 +3,7 @@ l_english:
  plague_eruption_interaction_desc: "Unleash a devastating plague upon [target.GetName]."
  love_forsaken_interaction: "Love Forsaken"
  love_forsaken_interaction_desc: "Condemn [recipient.GetShortUIName] to a life devoid of love."
+ temporal_stasis_interaction: "Temporal Stasis"
+ temporal_stasis_interaction_desc: "Freeze time in the target county, bringing all activity to a halt."
+ chronos_boon_interaction: "Chronos' Boon"
+ chronos_boon_interaction_desc: "Grant [recipient.GetShortUIName] the blessing of time, accelerating their growth."

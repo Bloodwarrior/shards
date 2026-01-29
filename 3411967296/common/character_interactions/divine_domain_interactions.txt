@@ -17,7 +17,7 @@ plague_eruption_interaction = {
         }
 
         can_be_picked = {
-                scope:target = { tier = 2 }
+                scope:target = { tier = tier_county }
         }
 
         on_accept = {
@@ -57,6 +57,72 @@ love_forsaken_interaction = {
                         add_opinion = {
                                 target = scope:actor
                                 modifier = cursed_me_opinion
+                        }
+                }
+        }
+
+        auto_accept = yes
+        cost = { piety = 100 }
+}
+
+temporal_stasis_interaction = {
+        category = interaction_category_religion
+        icon = cataclysm
+        interface_priority = 40
+
+        desc = temporal_stasis_interaction_desc
+
+        target_type = title
+        target_filter = recipient_domain_titles
+
+        is_shown = {
+                scope:actor = {
+                        is_a_divinity = yes
+                        has_character_modifier = time_domain_modifier
+                }
+                scope:recipient = { is_landed = yes }
+        }
+
+        can_be_picked = {
+                scope:target = { tier = tier_county }
+        }
+
+        on_accept = {
+                scope:target = {
+                        add_county_modifier = {
+                                modifier = temporal_stasis_modifier
+                                years = 10
+                        }
+                }
+        }
+
+        auto_accept = yes
+        cost = { piety = 100 }
+}
+
+chronos_boon_interaction = {
+        category = interaction_category_religion
+        icon = magic_positive
+        interface_priority = 80
+
+        desc = chronos_boon_interaction_desc
+
+        is_shown = {
+                scope:actor = {
+                        is_a_divinity = yes
+                        has_character_modifier = time_domain_modifier
+                }
+        }
+
+        on_accept = {
+                scope:recipient = {
+                        add_character_modifier = {
+                                modifier = chronos_boon_modifier
+                                years = 20
+                        }
+                        add_opinion = {
+                                target = scope:actor
+                                modifier = blessed_me_opinion
                         }
                 }
         }

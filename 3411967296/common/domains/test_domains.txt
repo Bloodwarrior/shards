@@ -19,3 +19,15 @@ love_domain = {
     }
     other_features = "Devotees can organize a festival to honor their patron.\nLove can be divided into four fields: Self Love (a path to decrease stress and focus on self care), Romantic Love, Platonic Love (friendship), and Hedonistic Love (seduction for the sake of pleasure)"
 }
+
+time_domain = {
+    description = "Control over the flow of time itself. Those who master it can freeze their enemies or accelerate their own growth."
+    devoted_criteria = "Has the patience of a mountain or the speed of lightning. Usually requires high learning or traits related to patience or haste."
+    devoted_effects = "Devoted gain a massive boost to lifestyle experience and learning."
+    follower_effects = "Followers age slower and have more time to react to events."
+    special_powers = {
+        temporal_stasis = "Freeze time in a county, bringing all activity to a halt. The county becomes useless for a duration."
+        chronos_boon = "Accelerate time for a chosen individual, granting them immense knowledge and growth."
+    }
+    other_features = "Time flows differently for you."
+}

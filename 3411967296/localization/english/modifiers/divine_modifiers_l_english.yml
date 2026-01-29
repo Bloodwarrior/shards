@@ -74,3 +74,6 @@
 
  mortals_unhappy_from_prayers: "Mortals Discontent"
  mortals_unhappy_from_prayers_desc: "Mortals are disatisfied you are accepting less prayers"
+ time_domain_modifier: "Time Domain"
+ temporal_stasis_modifier: "Temporal Stasis"
+ chronos_boon_modifier: "Chronos' Boon"
