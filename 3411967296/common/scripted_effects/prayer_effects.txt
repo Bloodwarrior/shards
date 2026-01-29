@@ -498,7 +498,7 @@ choose_prayer_effect = {
 		3 = {
 			modifier = {
 				add = 10
-				has_trait = decietful
+				has_trait = deceitful
 			}
 			modifier = {
 				add = 10
